@@ -1,0 +1,15 @@
+{
+  "version": 10,
+  "updated": "2026-10-20",
+  "reference": "classification\\reference\\Our-All-Periods-Classification-Portfolio (2).html",
+  "reference_sha256": "5671a5aeb93b8cccb2a660cfb564efa912dc47b5fb65582bfb70438b21ef7221",
+  "approach": "Adopt supplied pooled-history PID decisions without rerunning scoring",
+  "counts": {
+    "Public Building": 1197,
+    "Review": 273,
+    "Infrastructure": 2148
+  },
+  "independently_validated": false,
+  "source_retrieval": "No new retrieval",
+  "generator": "scripts/build_adopted_report.py"
+}

@@ -1,0 +1,14 @@
+{
+  "original_path": "C:\\Users\\localadm\\Downloads\\Our-All-Periods-Classification-Portfolio (2).html",
+  "preserved_copy": "classification\\reference\\Our-All-Periods-Classification-Portfolio (2).html",
+  "sha256": "5671a5aeb93b8cccb2a660cfb564efa912dc47b5fb65582bfb70438b21ef7221",
+  "review_date": "2026-10-20",
+  "embedded_records": 3618,
+  "comparison_method": "Latest v9 PID row versus other-team pooled-history final label; Review normalised; agency exclusions separate",
+  "comparison_counts": {
+    "Agree": 2571,
+    "Different": 1018,
+    "v9 only": 49,
+    "Other team only": 29
+  }
+}
