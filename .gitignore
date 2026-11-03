@@ -1,0 +1,8 @@
+# Temporary checks and local editor files
+review-notes/
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.DS_Store
+Thumbs.db
