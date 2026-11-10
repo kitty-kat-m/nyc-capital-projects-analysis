@@ -1,15 +1,25 @@
 # NYC capital projects classification and analysis
 
+[Open the latest interactive report](https://kitty-kat-m.github.io/nyc-capital-projects-analysis/)
+
+The shared report covers project classification, Infrastructure typologies, overview, budget analysis, schedule analysis, predictive analysis and data definitions. The published version is dated 9 November 2026.
+
+- [Leave report feedback](https://github.com/kitty-kat-m/nyc-capital-projects-analysis/issues/new/choose)
+- [How to edit, review and publish updates](CONTRIBUTING.md)
+
+GitHub Pages publishes `docs/index.html`. The link stays the same when the report is updated. Older files below are retained as historical project material.
+
+
 This project separates NYC capital project PIDs into Public Buildings and Infrastructure, then compares their delivery, schedules, spending and reported reasons for delay.
 
-Status: version 10 adopts the supplied other-team pooled-history PID decisions as the working classification baseline on 20 October 2026; repository structure remains proposed. The project is prepared in a local Git repository; upload status is managed in GitHub Desktop.
+Status: the latest report is published through GitHub Pages from `docs/index.html`; earlier reports and planning files are retained below.
 
 ## Start here
 
 - [Review and repository proposal](project-planning/REVIEW-AND-REPOSITORY-PLAN.md)
 - [Analysis plan and variable definitions](project-planning/ANALYSIS-PLAN.md)
 - [File inventory with SHA-256 checksums](project-planning/file-inventory.csv)
-- [Current adopted classification report v10](v10MCPModelCategorisation-AllPeriods.html)
+- [Historical classification report v10](v10MCPModelCategorisation-AllPeriods.html)
 - [Original classification report v9](v9MCPModelCategorisation-AllPeriods.html)
 - [Earlier team comparison](Team-Classification-Discrepancies.html)
 
