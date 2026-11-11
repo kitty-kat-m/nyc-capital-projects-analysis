@@ -6,3 +6,12 @@ __pycache__/
 .vscode/
 .DS_Store
 Thumbs.db
+
+# Private working material
+outputs/
+analysis/
+*.zip
+*.bundle
+*.xlsx
+*.docx
+*.pptx

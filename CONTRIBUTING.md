@@ -18,4 +18,10 @@ GitHub Pages publishes the `docs` folder on `main`. Merging an approved report u
 
 ## Give teammates access
 
-The repository owner can use Settings → Collaborators → Add people. Invite each teammate using their GitHub username. Public visitors can read the report; an invitation is needed to give someone direct write access. No invitations are sent automatically by this setup.
+The repository owner can use Settings â†’ Collaborators â†’ Add people. Invite each teammate using their GitHub username. Public visitors can read the report; an invitation is needed to give someone direct write access. No invitations are sent automatically by this setup.
+
+## Protect personal information
+
+Do not commit personal names, email addresses, local computer paths, private source documents, modelling audit ZIPs or detailed source exports. Use a GitHub no-reply address for commits. Keep necessary public-data provenance in the report without adding personal contact details.
+
+After the 10 November 2026 privacy cleanup, re-clone before editing. Do not push old branches back into the refreshed history.
