@@ -4,7 +4,7 @@
 
 The report covers Classification Model, Infrastructure Typology, Infrastructure Overview, Budget Analysis, Schedule Analysis, Predictive Analysis and Data Definitions.
 
-Current report: 10 November 2026. The master roster contains 3,618 unique PIDs: 2,300 Infrastructure and 1,318 Public Building. Sources cover ten reporting periods from May 2023 to May 2026.
+Current report: 10 November 2026. Predictive results now use six historical assessments (September 2024–May 2026), with review-list sizes of 10%, 20% or 30%, dated project lists and separate 90-day setback results. The master roster contains 3,618 unique PIDs: 2,300 Infrastructure and 1,318 Public Building. Sources cover ten reporting periods from May 2023 to May 2026.
 
 - [Suggest a correction or discuss a chart](https://github.com/kitty-kat-m/nyc-capital-projects-analysis/issues/new/choose)
 - [Edit, review and publish updates](CONTRIBUTING.md)
