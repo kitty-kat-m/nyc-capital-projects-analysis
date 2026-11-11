@@ -237,6 +237,16 @@
       " · " +
       date(f.period) +
       '</text><text x="50" y="350">0</text><text x="685" y="350">100%</text><text x="22" y="45">100%</text></svg>';
+    $("roll-roc-result").innerHTML =
+      "<strong>For " +
+      date(f.from_period) +
+      "–" +
+      date(f.period) +
+      ", ROC AUC is " +
+      f.auc.toFixed(2) +
+      ".</strong> This indicates better-than-chance but imperfect ranking: " +
+      "projects whose forecasts later moved back tend to appear nearer the " +
+      "top of the review list. A score of 0.5 means chance ranking; 1.0 means perfect ranking.";
     const groups = {};
     for (const r of f.scores) {
       if (!r.typology || /review|unassigned/i.test(r.typology)) continue;

@@ -1446,18 +1446,24 @@
     >
       <div id="rolling-evaluation" class="prediction-model-group">
         <section class="card" id="roll-summary">
-          <p class="model-kicker">
-            PREDICTIVE ANALYSIS · SIX-PERIOD HISTORICAL ASSESSMENT
-          </p>
+          <p class="model-kicker">PREDICTIVE ANALYSIS</p>
           <h2>
             Can recorded information help identify projects whose expected
             finish date will move later?
           </h2>
           <p>
-            We test a <strong>random forest</strong> using earlier schedule,
-            budget, spending, agency and location records. Before each report,
-            it ranks projects for review; the following report shows whether
-            their expected finish dates moved later.
+            We compared <strong>random forest</strong>, logistic regression and
+            a simple rule that prioritises projects whose forecasts had moved
+            later before. Random forest found the most later changes for the
+            same number of projects reviewed, so it is the main model shown
+            here.
+          </p>
+          <p>
+            Using schedule, budget, spending, agency and location information
+            already recorded, the model ranks projects for review. We then check
+            the following report to see which expected finish dates actually
+            moved later. This tests a warning list; it does not predict final
+            lateness against a project's original schedule.
           </p>
           <p>
             Results cover six reporting assessments, September 2024–May 2026.
@@ -1491,6 +1497,16 @@
               review capacity.
             </p>
             <h3>Model and test design</h3>
+            <p>
+              At the same highest-20% review capacity across six assessments,
+              random forest identifies 584 later changes, logistic regression
+              469, and the previous-slip rule 450. The rule ranks projects by
+              the share of their earlier comparisons with a later forecast.
+              Earlier development compared models on a validation period; the
+              six-period checks provide the broader comparison reported here.
+              These historical results favour random forest, but do not
+              establish that it will always perform best on future reports.
+            </p>
             <p>
               Random forest: 250 trees, maximum depth 6, minimum leaf size 20,
               random seed 19. Each fold fits again using eligible outcomes from
@@ -1666,14 +1682,12 @@
           </p>
           <div id="roll-roc"></div>
           <ul class="roll-findings">
+            <li id="roll-roc-result"></li>
             <li>
               <strong>Higher and further left is better.</strong> The curve
               shows how many later changes we find as we accept more false
-              alarms.
-            </li>
-            <li>
-              <strong>This is a ranking check.</strong> It does not tell us that
-              a particular project has a confirmed percentage chance of delay.
+              alarms. The AUC is not the percentage of predictions that are
+              correct, or a project's chance of delay.
             </li>
           </ul>
           <details class="roll-notes">
@@ -1767,11 +1781,9 @@
         <p class="model-kicker">ADDITIONAL TESTS · SUMMARY</p>
         <h2>Other experiments · single-period results</h2>
         <p>
-          The 90-day rolling result is shown above. Other experiments below
-          retain their January–May 2026 assessments; they have not been
-          independently confirmed across all six periods. Earlier-reasons
-          evidence remains uncertain, the 35-event budget test is inconclusive,
-          and phase-duration benchmarks leave out unfinished phases.
+          The 90-day model has been tested across six reporting periods. The
+          other experiments below have only a January–May 2026 assessment, so
+          their results are less established.
         </p>
         <p>
           These tests change either the information supplied to the model, the
@@ -2957,6 +2969,30 @@
       <section class="card" id="additional-pred-settings">
         <details>
           <summary>Shared methods for the five new analyses</summary>
+          <h3>Would more history help?</h3>
+          <p>
+            The next step is to repeat these experiments across the reporting
+            periods already available, always learning from earlier records and
+            checking the following report. This would show whether a result
+            holds across time; it would not guarantee better predictions.
+          </p>
+          <ul>
+            <li>
+              <strong>Earlier delay reasons:</strong> repeat the comparison with
+              and without reasons across periods before claiming a benefit.
+            </li>
+            <li>
+              <strong>Budget increases:</strong> the current assessment has only
+              35 qualifying events. More historical events and future reports
+              would strengthen the evidence; repeated rows alone do not.
+            </li>
+            <li>
+              <strong>Phase duration:</strong> include unfinished phases using a
+              method that accounts for work still in progress. More history
+              alone does not fix the bias from using completed phases only.
+            </li>
+          </ul>
+          <h3>Current experiment settings</h3>
           <p>
             Logistic regression uses L2 regularisation, C=1 and a fixed seed.
             Random forest uses 250 trees, maximum depth 6, minimum leaf size 20

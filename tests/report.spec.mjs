@@ -74,6 +74,18 @@ try {
   await page.locator("#ty-search-clear").click();
 
   await page.locator("#tab-predictive").click();
+  assert.match(
+    await page.locator("#roll-summary").textContent(),
+    /logistic regression/,
+  );
+  assert.doesNotMatch(
+    await page.locator("#roll-summary > .model-kicker").textContent(),
+    /SIX-PERIOD/,
+  );
+  assert.match(
+    await page.locator("#roll-roc-result").textContent(),
+    /January 2026–May 2026, ROC AUC is 0.73/,
+  );
   const summary = page.locator("#roll-outcome-summary");
   for (const value of ["53.8%", "28.3%", "38.1%", "38.6%", "419", "584"]) {
     assert.ok(
@@ -103,6 +115,10 @@ try {
   assert.match(await page.locator("#roll-page").textContent(), /184 projects/);
   await page.locator("#roll-period").selectOption("202409");
   assert.match(await page.locator("#roll-list-note").textContent(), /May 2024/);
+  assert.match(
+    await page.locator("#roll-roc-result").textContent(),
+    /May 2024–September 2024/,
+  );
 
   for (const tab of [
     "overview",
