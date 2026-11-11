@@ -34,7 +34,16 @@ At the default review capacity, the highest-scoring 20% are flagged separately w
 
 For the main model, 501 flags do not move later and 949 later changes are missed. The previous-slip rule identifies 450 later changes at the same pooled review capacity. The 90-day target uses a separately trained model with the same modelling approach; it is not the same fitted forest with its output relabelled.
 
-The report also offers 10% and 30% review capacities and supplementary tests. Read their own sample and outcome definitions. The supplementary tests have not all been evaluated across the same six periods and should not inherit the main model's evidence.
+The report also offers 10% and 30% review capacities. The supplementary budget, same-phase, earlier-reason and completed-duration experiments now have their own expanding-window assessments across the same six outcome reports. Each has a different sample and target; their results do not inherit the main model's performance.
+
+| Additional experiment                        | Expanded result                                                                            | Interpretation                                                                                     |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| Budget increase of both at least 10% and $1m | 161 correct flags out of 2,152 (7.5%); 364 events across 10,745 funding-record comparisons | Better than the simple rule, but 1,991 false alarms                                                |
+| Remain active in the same phase              | 1,118/1,155 flags correct (96.8%); overall persistence 86.7%                               | Persistence is common and does not establish delay                                                 |
+| Add earlier reasons                          | 578 correct flags versus 584 without, for the same 1,085 flags                             | No demonstrated gain; the paired PID-bootstrap range for the difference includes zero              |
+| Completed-phase duration                     | Mean error 346 days versus 404 for a phase benchmark, across 708 completed phases          | Better than a simple benchmark but still broad errors; 76.1% coverage for an intended 80% interval |
+
+On the unchanged January–May 2026 test, adding the latest earlier training period leaves budget correct flags at 21, changes phase correct flags from 193 to 192, and removes the earlier-reason gain (both models find 80 changes). Duration mean error changes from 320 to 321 days, while interval coverage improves from 70.5% to 74.7%. The pooled six-period population is different from the original single test, so differences between them cannot be attributed solely to added training data.
 
 ## Interpretation and limits
 

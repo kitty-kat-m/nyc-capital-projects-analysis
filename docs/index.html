@@ -2512,6 +2512,37 @@ body {
     font-size: 12px;
   }
 }
+
+/* Compact comparison of the expanded historical experiments. */
+.rolling-extension-summary {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 900px;
+}
+.rolling-extension-summary th,
+.rolling-extension-summary td {
+  white-space: normal;
+  vertical-align: top;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 14px;
+}
+.rolling-extension-summary th:nth-child(1) {
+  width: 21%;
+}
+.rolling-extension-summary th:nth-child(2) {
+  width: 24%;
+}
+.rolling-extension-summary th:nth-child(3) {
+  width: 31%;
+}
+.rolling-extension-summary th:nth-child(4) {
+  width: 24%;
+}
+#rolling-extension-notes table {
+  min-width: 900px;
+}
 </style>
   </head>
   <body>
@@ -2642,7 +2673,7 @@ body {
           </g>
         </svg>
         <div class="meta-bar">
-          <span>Version 11 · Analysis update: 8 November 2026</span
+          <span>Version 11 · Analysis update: 11 November 2026</span
           ><span
             ><strong>AI assistance:</strong> Codex · Latest review:
             GPT-6.1</span
@@ -4286,165 +4317,1047 @@ body {
         </section>
       </div>
       <section class="card" id="pred-next-steps">
-        <p class="model-kicker">ADDITIONAL TESTS · SUMMARY</p>
-        <h2>Other experiments · single-period results</h2>
+        <p class="model-kicker">ADDITIONAL EXPERIMENTS</p>
+        <h2>Does using more historical data improve the other tests?</h2>
         <p>
-          The 90-day model has been tested across six reporting periods. The
-          other experiments below have only a January–May 2026 assessment, so
-          their results are less established.
+          We reran each experiment across six reporting comparisons, September
+          2024–May 2026, using all earlier eligible records to train each time.
+          The middle column also checks whether extra training improves the
+          <strong>same January–May 2026 test</strong>.
         </p>
-        <p>
-          These tests change either the information supplied to the model, the
-          outcome being predicted, or both.
-          <strong>None yet provides a dependable project-warning tool.</strong>
-        </p>
-        <p class="small">
-          Historical assessment: January–May 2026. Classification tests review
-          the highest-scoring 20% in each eligible sample. Funding records and
-          completed phases are different units from project PIDs.
-        </p>
-        <div class="predictive-experiment-table-wrap">
-          <table class="predictive-experiment-table">
+        <div class="table-container">
+          <table class="rolling-extension-summary">
             <thead>
               <tr>
-                <th>Test and method</th>
-                <th>Predictors / information changed</th>
-                <th>Outcome predicted</th>
-                <th>Result</th>
-                <th>What it tells us</th>
+                <th>Experiment and inputs</th>
+                <th>Same final test: old → more training</th>
+                <th>Results across six periods</th>
+                <th>What we conclude</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th scope="row">
-                  <strong>Substantial forecast setbacks</strong
-                  ><span
-                    >Random forest, compared with logistic regression and a
-                    simple rule.</span
-                  >
-                </th>
                 <td>
-                  Same predictors as the first model; retrained for a different
-                  outcome.
-                </td>
-                <td>Expected finish moves later by at least 90 days.</td>
-                <td>
-                  919 projects; top 20% = 184 flagged. Random forest finds 52 of
-                  134 setbacks; 132 false alarms and 82 missed. Logistic
-                  regression finds 49; simple rule 26.
+                  <strong>Material budget increases</strong><br />Logistic
+                  regression. Budget, spending, previous revisions, agency and
+                  linked schedule information.
                 </td>
                 <td>
-                  Some improvement over the simple rule, but most setbacks are
-                  missed.
+                  <strong>Unchanged:</strong> 21 of 410 flags identify an
+                  increase, with or without the extra training period. The same
+                  35 increases occur in this test.
+                </td>
+                <td>
+                  <strong>161 of 2,152 flags correct (7.5%).</strong> Finds
+                  44.2% of the 364 increases across 10,745 funding-record
+                  comparisons. Overall increase rate: 3.4%.
+                </td>
+                <td>
+                  Better than the simple rule (101 found), but 1,991 false
+                  alarms. More history does not make this a dependable alert.
                 </td>
               </tr>
               <tr>
-                <th scope="row">
-                  <strong>Material budget increases</strong
-                  ><span
-                    >Logistic regression selected; random forest and a simple
-                    rule also tested.</span
-                  >
-                </th>
                 <td>
-                  Uses funding records: budget, spending, prior revisions,
-                  agency, project links and earlier linked schedule signals.
+                  <strong>Remaining in the same phase</strong><br />Random
+                  forest. Phase timing, schedule, financial, agency and
+                  earlier-reason information.
                 </td>
                 <td>
-                  Budget rises by at least 10% AND $1m. Initial test threshold.
+                  <strong>Slightly worse:</strong> correct flags fall from 193
+                  to 192 out of 194. The test still contains 970 projects.
                 </td>
                 <td>
-                  2,046 funding records; top 20% = 410 flagged. Finds 21 of 35
-                  increases; 389 false alarms and 14 missed. Simple rule finds
-                  13.
-                </td>
-                <td>Too many false alarms for a reliable budget warning.</td>
-              </tr>
-              <tr>
-                <th scope="row">
-                  <strong>Remaining in the same phase</strong
-                  ><span
-                    >Random forest, compared with logistic regression and a
-                    simple rule.</span
-                  >
-                </th>
-                <td>
-                  Emphasises current phase and observed time in phase; includes
-                  finances, agencies, schedule history and earlier reasons.
-                </td>
-                <td>
-                  Still active in the same design, procurement or construction
-                  phase.
-                </td>
-                <td>
-                  970 projects; top 20% = 194 flagged. 193 remain in phase.
-                  However, 884 of all 970 projects (91.1%) remain in phase
+                  <strong>1,118 of 1,155 flags correct (96.8%).</strong>
+                  However, 86.7% of all 5,764 project comparisons stay in phase
                   anyway.
                 </td>
                 <td>
-                  Identifies phase persistence, which is common and does not
-                  establish delay.
+                  Predicts phase persistence, not delay. A high success
+                  percentage here does not establish a useful delay warning.
                 </td>
               </tr>
               <tr>
-                <th scope="row">
-                  <strong>Phase duration ranges</strong
-                  ><span
-                    >Quantile regression, compared with phase-based
-                    benchmarks.</span
+                <td>
+                  <strong>Earlier delay reasons</strong><br />Same random
+                  forest, with and without previously recorded reasons. Predicts
+                  any later forecast.
+                </td>
+                <td>
+                  <strong>No added benefit:</strong> with more training, both
+                  versions find 80 changes in 184 flags. The old versions found
+                  70 without reasons and 75 with reasons.
+                </td>
+                <td>
+                  <strong
+                    >578 correct flags with reasons versus 584 without.</strong
                   >
-                </th>
-                <td>
-                  Uses phase, earlier budget, managing agency and borough;
-                  changes to a duration-estimation method.
+                  Precision: 53.3% versus 53.8%, across the same 5,412
+                  comparisons and 1,085 flags.
                 </td>
                 <td>
-                  Actual phase duration in days, with a typical value and an
-                  intended 80% range.
-                </td>
-                <td>
-                  95 completed phases. Mean error: 320 days versus 401 for the
-                  benchmark. Median error: 189 versus 186 days. Ranges cover
-                  70.5%, below the intended 80%.
-                </td>
-                <td>
-                  Large errors; typical-case accuracy does not clearly improve.
+                  No improvement demonstrated. Keep the main model without added
+                  reason fields. The small difference is uncertain.
                 </td>
               </tr>
               <tr>
-                <th scope="row">
-                  <strong>Add earlier delay reasons</strong
-                  ><span
-                    >Same random forest and settings, retrained with added
-                    inputs.</span
+                <td>
+                  <strong>Completed-phase duration ranges</strong><br />Quantile
+                  regression. Phase, earlier budget, managing agency and
+                  borough.
+                </td>
+                <td>
+                  <strong>Similar errors:</strong> mean error changes from 320
+                  to 321 days on the same 95 phases. Range coverage improves
+                  from 70.5% to 74.7%.
+                </td>
+                <td>
+                  <strong
+                    >346-day mean error versus 404 for the phase
+                    benchmark.</strong
                   >
-                </th>
-                <td>
-                  Adds previously recorded reasons to the first model’s
-                  predictors. Outcome stays unchanged.
+                  Median errors: 158 versus 172 days, across 708 completed
+                  phases. Range coverage: 76.1%; intended coverage: 80%.
                 </td>
                 <td>
-                  Any later movement in expected finish—the original model’s
-                  outcome.
-                </td>
-                <td>
-                  Same 919 projects and 184 flags. Correct flags rise from 70 to
-                  75; false alarms fall from 114 to 109; missed changes fall
-                  from 121 to 116.
-                </td>
-                <td>
-                  Small, uncertain gain; not consistent across assessment
-                  periods.
+                  Some improvement over a simple benchmark, but still broad
+                  errors. Unfinished phases remain outside this test.
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p>
+          <strong>More history does not improve every result.</strong> Earlier
+          reasons add no benefit, budget flags still produce many false alarms,
+          and staying in phase is not proof of delay. Duration estimates beat a
+          simple benchmark but remain imprecise.
+        </p>
+        <details class="roll-notes" id="rolling-extension-notes">
+          <summary>Data points, calculations and detailed figures</summary>
+          <h3>What changed?</h3>
+          <p>
+            The earlier models trained on outcomes through September 2025, used
+            September 2025–January 2026 for validation and assessed January–May
+            2026. The new May assessment also learns from the January 2026
+            outcomes. Test projects, targets, predictor definitions and model
+            settings are retained. Each of the other rolling assessments
+            likewise trains only on strictly earlier outcomes.
+          </p>
+          <p>
+            The final-test comparison isolates the added training period. The
+            six-period totals also change the assessment population, so a
+            difference between those totals and a single period cannot be
+            attributed to more training alone. Original model families remain
+            fixed: logistic regression for budget, random forest for phase
+            persistence and reason inputs, and quantile regression for duration.
+            Alternative families are benchmarks, not newly selected winners
+            based on these results.
+          </p>
+          <p>
+            All classifier lists flag the highest-scoring 20%, rounded up
+            separately within each period, with ties resolved by identifier.
+            Comparisons can repeat the same PID or budget across periods. The
+            90-day model already has six-period results in the main summary and
+            is not counted again here.
+          </p>
+          <h3>Samples and outcomes</h3>
+          <ul>
+            <li>
+              <strong>Budget:</strong> 10,745 funding-record/report comparisons
+              across 2,113 distinct budget records. A record is budget-holding
+              agency + FMS ID, linked to Infrastructure at the starting report.
+              The illustrative target remains an increase of both at least 10%
+              and $1 million. The final May assessment still has 35 events; all
+              six assessments contain 364 event comparisons.
+            </li>
+            <li>
+              <strong>Same phase:</strong> 5,764 project/report comparisons
+              across 1,256 PIDs. The target is remaining active in the same
+              design, procurement or construction phase at the following report.
+              Missing next observations are excluded, not treated as no
+              progress.
+            </li>
+            <li>
+              <strong>Earlier reasons:</strong> the same 5,412 forecast
+              comparisons across 1,195 PIDs used by the main rolling model.
+              Reason fields use only text recorded at or before the prediction
+              date. Without reasons, the rerun reproduces the main model's 584
+              correct flags exactly.
+            </li>
+            <li>
+              <strong>Duration:</strong> 708 distinct PID/phase completion
+              events across 617 PIDs. Inputs come from an earlier snapshot
+              before actual completion; each phase is assessed once, when its
+              completion is first reported, subject to the original date checks.
+              Previously completed phases train the next assessment. An intended
+              80% range uses predicted 10th and 90th percentiles.
+            </li>
+          </ul>
+          <p>
+            Earlier reasons reduce correct flags by six overall. A paired
+            bootstrap resampling whole PIDs gives an approximate 95% range of
+            −26 to +13 additional correct flags; it includes no difference. It
+            retains repeated comparisons but omits training and reporting-period
+            uncertainty.
+          </p>
+          <p>
+            These are retrospective checks of already inspected history, not new
+            independent evidence or a fresh upstream download. The
+            completed-only duration test still omits unfinished long phases;
+            more observations do not remove that limitation.
+          </p>
+          <h3>Budget increases · results by period and method</h3>
+          <div class="table-container">
+            <table class="">
+              <thead>
+                <tr>
+                  <th>Outcome report</th>
+                  <th>Method</th>
+                  <th>Comparisons</th>
+                  <th>Events</th>
+                  <th>Flags</th>
+                  <th>Correct flags</th>
+                  <th>False alarms</th>
+                  <th>Missed</th>
+                  <th>Flags correct</th>
+                  <th>Events found</th>
+                  <th>Overall event rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Random forest</td>
+                  <td>1,591</td>
+                  <td>59</td>
+                  <td>319</td>
+                  <td>27</td>
+                  <td>292</td>
+                  <td>32</td>
+                  <td>8.5%</td>
+                  <td>45.8%</td>
+                  <td>3.7%</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Logistic regression</td>
+                  <td>1,591</td>
+                  <td>59</td>
+                  <td>319</td>
+                  <td>27</td>
+                  <td>292</td>
+                  <td>32</td>
+                  <td>8.5%</td>
+                  <td>45.8%</td>
+                  <td>3.7%</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Simple rule</td>
+                  <td>1,591</td>
+                  <td>59</td>
+                  <td>319</td>
+                  <td>20</td>
+                  <td>299</td>
+                  <td>39</td>
+                  <td>6.3%</td>
+                  <td>33.9%</td>
+                  <td>3.7%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Random forest</td>
+                  <td>1,682</td>
+                  <td>72</td>
+                  <td>337</td>
+                  <td>25</td>
+                  <td>312</td>
+                  <td>47</td>
+                  <td>7.4%</td>
+                  <td>34.7%</td>
+                  <td>4.3%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Logistic regression</td>
+                  <td>1,682</td>
+                  <td>72</td>
+                  <td>337</td>
+                  <td>31</td>
+                  <td>306</td>
+                  <td>41</td>
+                  <td>9.2%</td>
+                  <td>43.1%</td>
+                  <td>4.3%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Simple rule</td>
+                  <td>1,682</td>
+                  <td>72</td>
+                  <td>337</td>
+                  <td>13</td>
+                  <td>324</td>
+                  <td>59</td>
+                  <td>3.9%</td>
+                  <td>18.1%</td>
+                  <td>4.3%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Random forest</td>
+                  <td>1,717</td>
+                  <td>52</td>
+                  <td>344</td>
+                  <td>25</td>
+                  <td>319</td>
+                  <td>27</td>
+                  <td>7.3%</td>
+                  <td>48.1%</td>
+                  <td>3.0%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Logistic regression</td>
+                  <td>1,717</td>
+                  <td>52</td>
+                  <td>344</td>
+                  <td>26</td>
+                  <td>318</td>
+                  <td>26</td>
+                  <td>7.6%</td>
+                  <td>50.0%</td>
+                  <td>3.0%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Simple rule</td>
+                  <td>1,717</td>
+                  <td>52</td>
+                  <td>344</td>
+                  <td>15</td>
+                  <td>329</td>
+                  <td>37</td>
+                  <td>4.4%</td>
+                  <td>28.8%</td>
+                  <td>3.0%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Random forest</td>
+                  <td>1,774</td>
+                  <td>93</td>
+                  <td>355</td>
+                  <td>31</td>
+                  <td>324</td>
+                  <td>62</td>
+                  <td>8.7%</td>
+                  <td>33.3%</td>
+                  <td>5.2%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Logistic regression</td>
+                  <td>1,774</td>
+                  <td>93</td>
+                  <td>355</td>
+                  <td>30</td>
+                  <td>325</td>
+                  <td>63</td>
+                  <td>8.5%</td>
+                  <td>32.3%</td>
+                  <td>5.2%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Simple rule</td>
+                  <td>1,774</td>
+                  <td>93</td>
+                  <td>355</td>
+                  <td>28</td>
+                  <td>327</td>
+                  <td>65</td>
+                  <td>7.9%</td>
+                  <td>30.1%</td>
+                  <td>5.2%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Random forest</td>
+                  <td>1,935</td>
+                  <td>53</td>
+                  <td>387</td>
+                  <td>28</td>
+                  <td>359</td>
+                  <td>25</td>
+                  <td>7.2%</td>
+                  <td>52.8%</td>
+                  <td>2.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Logistic regression</td>
+                  <td>1,935</td>
+                  <td>53</td>
+                  <td>387</td>
+                  <td>26</td>
+                  <td>361</td>
+                  <td>27</td>
+                  <td>6.7%</td>
+                  <td>49.1%</td>
+                  <td>2.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Simple rule</td>
+                  <td>1,935</td>
+                  <td>53</td>
+                  <td>387</td>
+                  <td>12</td>
+                  <td>375</td>
+                  <td>41</td>
+                  <td>3.1%</td>
+                  <td>22.6%</td>
+                  <td>2.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Random forest</td>
+                  <td>2,046</td>
+                  <td>35</td>
+                  <td>410</td>
+                  <td>20</td>
+                  <td>390</td>
+                  <td>15</td>
+                  <td>4.9%</td>
+                  <td>57.1%</td>
+                  <td>1.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Logistic regression</td>
+                  <td>2,046</td>
+                  <td>35</td>
+                  <td>410</td>
+                  <td>21</td>
+                  <td>389</td>
+                  <td>14</td>
+                  <td>5.1%</td>
+                  <td>60.0%</td>
+                  <td>1.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Simple rule</td>
+                  <td>2,046</td>
+                  <td>35</td>
+                  <td>410</td>
+                  <td>13</td>
+                  <td>397</td>
+                  <td>22</td>
+                  <td>3.2%</td>
+                  <td>37.1%</td>
+                  <td>1.7%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Remaining in the same phase · results by period and method</h3>
+          <div class="table-container">
+            <table class="">
+              <thead>
+                <tr>
+                  <th>Outcome report</th>
+                  <th>Method</th>
+                  <th>Comparisons</th>
+                  <th>Events</th>
+                  <th>Flags</th>
+                  <th>Correct flags</th>
+                  <th>False alarms</th>
+                  <th>Missed</th>
+                  <th>Flags correct</th>
+                  <th>Events found</th>
+                  <th>Overall event rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Random forest</td>
+                  <td>952</td>
+                  <td>814</td>
+                  <td>191</td>
+                  <td>183</td>
+                  <td>8</td>
+                  <td>631</td>
+                  <td>95.8%</td>
+                  <td>22.5%</td>
+                  <td>85.5%</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Logistic regression</td>
+                  <td>952</td>
+                  <td>814</td>
+                  <td>191</td>
+                  <td>179</td>
+                  <td>12</td>
+                  <td>635</td>
+                  <td>93.7%</td>
+                  <td>22.0%</td>
+                  <td>85.5%</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Simple rule</td>
+                  <td>952</td>
+                  <td>814</td>
+                  <td>191</td>
+                  <td>153</td>
+                  <td>38</td>
+                  <td>661</td>
+                  <td>80.1%</td>
+                  <td>18.8%</td>
+                  <td>85.5%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Random forest</td>
+                  <td>954</td>
+                  <td>821</td>
+                  <td>191</td>
+                  <td>188</td>
+                  <td>3</td>
+                  <td>633</td>
+                  <td>98.4%</td>
+                  <td>22.9%</td>
+                  <td>86.1%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Logistic regression</td>
+                  <td>954</td>
+                  <td>821</td>
+                  <td>191</td>
+                  <td>187</td>
+                  <td>4</td>
+                  <td>634</td>
+                  <td>97.9%</td>
+                  <td>22.8%</td>
+                  <td>86.1%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Simple rule</td>
+                  <td>954</td>
+                  <td>821</td>
+                  <td>191</td>
+                  <td>151</td>
+                  <td>40</td>
+                  <td>670</td>
+                  <td>79.1%</td>
+                  <td>18.4%</td>
+                  <td>86.1%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Random forest</td>
+                  <td>951</td>
+                  <td>841</td>
+                  <td>191</td>
+                  <td>179</td>
+                  <td>12</td>
+                  <td>662</td>
+                  <td>93.7%</td>
+                  <td>21.3%</td>
+                  <td>88.4%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Logistic regression</td>
+                  <td>951</td>
+                  <td>841</td>
+                  <td>191</td>
+                  <td>184</td>
+                  <td>7</td>
+                  <td>657</td>
+                  <td>96.3%</td>
+                  <td>21.9%</td>
+                  <td>88.4%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Simple rule</td>
+                  <td>951</td>
+                  <td>841</td>
+                  <td>191</td>
+                  <td>177</td>
+                  <td>14</td>
+                  <td>664</td>
+                  <td>92.7%</td>
+                  <td>21.0%</td>
+                  <td>88.4%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Random forest</td>
+                  <td>968</td>
+                  <td>806</td>
+                  <td>194</td>
+                  <td>188</td>
+                  <td>6</td>
+                  <td>618</td>
+                  <td>96.9%</td>
+                  <td>23.3%</td>
+                  <td>83.3%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Logistic regression</td>
+                  <td>968</td>
+                  <td>806</td>
+                  <td>194</td>
+                  <td>185</td>
+                  <td>9</td>
+                  <td>621</td>
+                  <td>95.4%</td>
+                  <td>23.0%</td>
+                  <td>83.3%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Simple rule</td>
+                  <td>968</td>
+                  <td>806</td>
+                  <td>194</td>
+                  <td>161</td>
+                  <td>33</td>
+                  <td>645</td>
+                  <td>83.0%</td>
+                  <td>20.0%</td>
+                  <td>83.3%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Random forest</td>
+                  <td>969</td>
+                  <td>831</td>
+                  <td>194</td>
+                  <td>188</td>
+                  <td>6</td>
+                  <td>643</td>
+                  <td>96.9%</td>
+                  <td>22.6%</td>
+                  <td>85.8%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Logistic regression</td>
+                  <td>969</td>
+                  <td>831</td>
+                  <td>194</td>
+                  <td>187</td>
+                  <td>7</td>
+                  <td>644</td>
+                  <td>96.4%</td>
+                  <td>22.5%</td>
+                  <td>85.8%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Simple rule</td>
+                  <td>969</td>
+                  <td>831</td>
+                  <td>194</td>
+                  <td>159</td>
+                  <td>35</td>
+                  <td>672</td>
+                  <td>82.0%</td>
+                  <td>19.1%</td>
+                  <td>85.8%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Random forest</td>
+                  <td>970</td>
+                  <td>884</td>
+                  <td>194</td>
+                  <td>192</td>
+                  <td>2</td>
+                  <td>692</td>
+                  <td>99.0%</td>
+                  <td>21.7%</td>
+                  <td>91.1%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Logistic regression</td>
+                  <td>970</td>
+                  <td>884</td>
+                  <td>194</td>
+                  <td>192</td>
+                  <td>2</td>
+                  <td>692</td>
+                  <td>99.0%</td>
+                  <td>21.7%</td>
+                  <td>91.1%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Simple rule</td>
+                  <td>970</td>
+                  <td>884</td>
+                  <td>194</td>
+                  <td>181</td>
+                  <td>13</td>
+                  <td>703</td>
+                  <td>93.3%</td>
+                  <td>20.5%</td>
+                  <td>91.1%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Adding earlier reasons · results by period and method</h3>
+          <div class="table-container">
+            <table class="">
+              <thead>
+                <tr>
+                  <th>Outcome report</th>
+                  <th>Method</th>
+                  <th>Comparisons</th>
+                  <th>Events</th>
+                  <th>Flags</th>
+                  <th>Correct flags</th>
+                  <th>False alarms</th>
+                  <th>Missed</th>
+                  <th>Flags correct</th>
+                  <th>Events found</th>
+                  <th>Overall event rate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Without earlier reasons</td>
+                  <td>897</td>
+                  <td>183</td>
+                  <td>180</td>
+                  <td>82</td>
+                  <td>98</td>
+                  <td>101</td>
+                  <td>45.6%</td>
+                  <td>44.8%</td>
+                  <td>20.4%</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>With earlier reasons</td>
+                  <td>897</td>
+                  <td>183</td>
+                  <td>180</td>
+                  <td>81</td>
+                  <td>99</td>
+                  <td>102</td>
+                  <td>45.0%</td>
+                  <td>44.3%</td>
+                  <td>20.4%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Without earlier reasons</td>
+                  <td>888</td>
+                  <td>283</td>
+                  <td>178</td>
+                  <td>94</td>
+                  <td>84</td>
+                  <td>189</td>
+                  <td>52.8%</td>
+                  <td>33.2%</td>
+                  <td>31.9%</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>With earlier reasons</td>
+                  <td>888</td>
+                  <td>283</td>
+                  <td>178</td>
+                  <td>93</td>
+                  <td>85</td>
+                  <td>190</td>
+                  <td>52.2%</td>
+                  <td>32.9%</td>
+                  <td>31.9%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Without earlier reasons</td>
+                  <td>896</td>
+                  <td>291</td>
+                  <td>180</td>
+                  <td>111</td>
+                  <td>69</td>
+                  <td>180</td>
+                  <td>61.7%</td>
+                  <td>38.1%</td>
+                  <td>32.5%</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>With earlier reasons</td>
+                  <td>896</td>
+                  <td>291</td>
+                  <td>180</td>
+                  <td>111</td>
+                  <td>69</td>
+                  <td>180</td>
+                  <td>61.7%</td>
+                  <td>38.1%</td>
+                  <td>32.5%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Without earlier reasons</td>
+                  <td>898</td>
+                  <td>332</td>
+                  <td>180</td>
+                  <td>116</td>
+                  <td>64</td>
+                  <td>216</td>
+                  <td>64.4%</td>
+                  <td>34.9%</td>
+                  <td>37.0%</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>With earlier reasons</td>
+                  <td>898</td>
+                  <td>332</td>
+                  <td>180</td>
+                  <td>115</td>
+                  <td>65</td>
+                  <td>217</td>
+                  <td>63.9%</td>
+                  <td>34.6%</td>
+                  <td>37.0%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Without earlier reasons</td>
+                  <td>914</td>
+                  <td>253</td>
+                  <td>183</td>
+                  <td>101</td>
+                  <td>82</td>
+                  <td>152</td>
+                  <td>55.2%</td>
+                  <td>39.9%</td>
+                  <td>27.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>With earlier reasons</td>
+                  <td>914</td>
+                  <td>253</td>
+                  <td>183</td>
+                  <td>98</td>
+                  <td>85</td>
+                  <td>155</td>
+                  <td>53.6%</td>
+                  <td>38.7%</td>
+                  <td>27.7%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Without earlier reasons</td>
+                  <td>919</td>
+                  <td>191</td>
+                  <td>184</td>
+                  <td>80</td>
+                  <td>104</td>
+                  <td>111</td>
+                  <td>43.5%</td>
+                  <td>41.9%</td>
+                  <td>20.8%</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>With earlier reasons</td>
+                  <td>919</td>
+                  <td>191</td>
+                  <td>184</td>
+                  <td>80</td>
+                  <td>104</td>
+                  <td>111</td>
+                  <td>43.5%</td>
+                  <td>41.9%</td>
+                  <td>20.8%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Duration · results by period and method</h3>
+          <div class="table-container">
+            <table class="">
+              <thead>
+                <tr>
+                  <th>Outcome report</th>
+                  <th>Method</th>
+                  <th>Earlier training phases</th>
+                  <th>Test phases</th>
+                  <th>Mean error (days)</th>
+                  <th>Median error (days)</th>
+                  <th>Range coverage</th>
+                  <th>Mean range width (days)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Phase benchmark</td>
+                  <td>386</td>
+                  <td>117</td>
+                  <td>315.3</td>
+                  <td>132.0</td>
+                  <td>82.1%</td>
+                  <td>1040.9</td>
+                </tr>
+                <tr>
+                  <td>2024-09</td>
+                  <td>Quantile regression</td>
+                  <td>386</td>
+                  <td>117</td>
+                  <td>291.9</td>
+                  <td>156.0</td>
+                  <td>79.5%</td>
+                  <td>865.2</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Phase benchmark</td>
+                  <td>509</td>
+                  <td>149</td>
+                  <td>510.1</td>
+                  <td>157.0</td>
+                  <td>74.5%</td>
+                  <td>1008.9</td>
+                </tr>
+                <tr>
+                  <td>2025-01</td>
+                  <td>Quantile regression</td>
+                  <td>509</td>
+                  <td>149</td>
+                  <td>453.9</td>
+                  <td>157.2</td>
+                  <td>73.8%</td>
+                  <td>878.6</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Phase benchmark</td>
+                  <td>675</td>
+                  <td>100</td>
+                  <td>259.4</td>
+                  <td>119.5</td>
+                  <td>89.0%</td>
+                  <td>961.0</td>
+                </tr>
+                <tr>
+                  <td>2025-05</td>
+                  <td>Quantile regression</td>
+                  <td>675</td>
+                  <td>100</td>
+                  <td>224.2</td>
+                  <td>102.6</td>
+                  <td>87.0%</td>
+                  <td>755.4</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Phase benchmark</td>
+                  <td>789</td>
+                  <td>127</td>
+                  <td>348.4</td>
+                  <td>154.5</td>
+                  <td>77.2%</td>
+                  <td>1075.1</td>
+                </tr>
+                <tr>
+                  <td>2025-09</td>
+                  <td>Quantile regression</td>
+                  <td>789</td>
+                  <td>127</td>
+                  <td>281.7</td>
+                  <td>157.8</td>
+                  <td>79.5%</td>
+                  <td>1020.0</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Phase benchmark</td>
+                  <td>939</td>
+                  <td>120</td>
+                  <td>537.0</td>
+                  <td>285.0</td>
+                  <td>62.5%</td>
+                  <td>1263.8</td>
+                </tr>
+                <tr>
+                  <td>2026-01</td>
+                  <td>Quantile regression</td>
+                  <td>939</td>
+                  <td>120</td>
+                  <td>454.3</td>
+                  <td>256.5</td>
+                  <td>64.2%</td>
+                  <td>1139.1</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Phase benchmark</td>
+                  <td>1,070</td>
+                  <td>95</td>
+                  <td>401.9</td>
+                  <td>189.0</td>
+                  <td>70.5%</td>
+                  <td>1226.0</td>
+                </tr>
+                <tr>
+                  <td>2026-05</td>
+                  <td>Quantile regression</td>
+                  <td>1,070</td>
+                  <td>95</td>
+                  <td>321.2</td>
+                  <td>191.8</td>
+                  <td>74.7%</td>
+                  <td>934.6</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Models and preparation</h3>
+          <p>
+            Classifier settings and preprocessing are unchanged. Random forest
+            uses 250 trees, maximum depth 6, minimum leaf size 20 and seed 19.
+            Logistic regression uses L2 regularisation, C=1 and seed 19.
+            Quantile regression uses 100 boosting stages, depth 2, minimum leaf
+            size 10 and seed 19. Missing-value handling and category encoding
+            are fitted separately on each training window. Simple rules
+            prioritise larger previous budget increases or longer observed time
+            in phase.
+          </p>
+        </details>
       </section>
       <details class="card" id="additional-predictive-support">
         <summary>
-          Supporting charts, methods and detailed results for these five tests
+          Original January–May 2026 tests · archived supporting figures
         </summary>
+        <p class="small">
+          These original single-period figures are retained to document the
+          before-and-after comparison. The expanded results in the table above
+          are the current assessment.
+        </p>
         <div class="predictive-extension-details">
           <section
             class="card predictive-card extra-pred-card"
@@ -5476,30 +6389,12 @@ body {
       </details>
       <section class="card" id="additional-pred-settings">
         <details>
-          <summary>Shared methods for the five new analyses</summary>
-          <h3>Would more history help?</h3>
+          <summary>Original single-period experiment settings</summary>
           <p>
-            The next step is to repeat these experiments across the reporting
-            periods already available, always learning from earlier records and
-            checking the following report. This would show whether a result
-            holds across time; it would not guarantee better predictions.
+            The expanded six-period assessment is complete and reported above.
+            The settings and original outputs below describe the earlier
+            January–May 2026 experiments.
           </p>
-          <ul>
-            <li>
-              <strong>Earlier delay reasons:</strong> repeat the comparison with
-              and without reasons across periods before claiming a benefit.
-            </li>
-            <li>
-              <strong>Budget increases:</strong> the current assessment has only
-              35 qualifying events. More historical events and future reports
-              would strengthen the evidence; repeated rows alone do not.
-            </li>
-            <li>
-              <strong>Phase duration:</strong> include unfinished phases using a
-              method that accounts for work still in progress. More history
-              alone does not fix the bias from using completed phases only.
-            </li>
-          </ul>
           <h3>Current experiment settings</h3>
           <p>
             Logistic regression uses L2 regularisation, C=1 and a fixed seed.
@@ -6004,10 +6899,11 @@ body {
                 </td>
                 <td>
                   The current master-based analysis uses MCP extracts retrieved
-                  on 8 November 2026; predictive results were recalculated on 10
-                  November 2026. All use the saved September source build. These
-                  dates do not imply a fresh upstream download or observations
-                  after May 2026.
+                  on 8 November 2026; the main predictive results were
+                  recalculated on 10 November and the additional rolling
+                  experiments on 11 November 2026. All use the saved September
+                  source build. These dates do not imply a fresh upstream
+                  download or observations after May 2026.
                 </td>
               </tr>
               <tr>
@@ -6823,17 +7719,18 @@ body {
               <tr>
                 <td>Additional predictive tests</td>
                 <td>
-                  A separate random forest predicts forecast movements of at
-                  least 90 days. Other experiments examine material budget
-                  revisions, same-phase persistence, completed-phase duration
-                  ranges and earlier reason flags.
+                  The separate 90-day model and the budget, same-phase,
+                  earlier-reason and duration experiments now have six
+                  expanding-window assessments, September 2024–May 2026.
                 </td>
                 <td>
-                  The 90-day rolling model finds 419 of 1,097 setbacks across
-                  six periods (38.6% precision; 38.2% recall). Other experiments
-                  retain their clearly labelled single-period assessments. They
-                  use different outcomes and, for budgets or phases, different
-                  observation units.
+                  Budget: 161/2,152 flags correct (7.5%) across 10,745 funding
+                  comparisons; phase persistence: 1,118/1,155 (96.8%) against
+                  86.7% overall. Earlier reasons find 578 changes versus 584
+                  without. Duration: mean error 346 days across 708 completed
+                  phases, compared with 404 for phase benchmarks; 76.1% coverage
+                  of an intended 80% range. Units and samples differ; details
+                  are in the predictive tab.
                 </td>
               </tr>
               <tr>
@@ -6880,6 +7777,10 @@ body {
           chart calculations and fitted-model outputs. This reference
           distinguishes source fields from calculated measures and states their
           meaning for the current portfolio and reporting coverage.
+        </p>
+        <p>
+          The additional-experiment definitions and results were updated on 11
+          November 2026 to reflect the expanded six-period assessments.
         </p>
         <p>
           Each chart retains its specific data points, calculations and

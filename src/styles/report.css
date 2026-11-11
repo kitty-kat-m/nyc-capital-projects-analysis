@@ -2505,3 +2505,34 @@ body {
     font-size: 12px;
   }
 }
+
+/* Compact comparison of the expanded historical experiments. */
+.rolling-extension-summary {
+  width: 100%;
+  table-layout: fixed;
+  min-width: 900px;
+}
+.rolling-extension-summary th,
+.rolling-extension-summary td {
+  white-space: normal;
+  vertical-align: top;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 14px;
+}
+.rolling-extension-summary th:nth-child(1) {
+  width: 21%;
+}
+.rolling-extension-summary th:nth-child(2) {
+  width: 24%;
+}
+.rolling-extension-summary th:nth-child(3) {
+  width: 31%;
+}
+.rolling-extension-summary th:nth-child(4) {
+  width: 24%;
+}
+#rolling-extension-notes table {
+  min-width: 900px;
+}

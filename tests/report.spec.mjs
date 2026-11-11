@@ -87,6 +87,25 @@ try {
     /January 2026–May 2026, ROC AUC is 0.73/,
   );
   const summary = page.locator("#roll-outcome-summary");
+  assert.equal(
+    await page.locator(".rolling-extension-summary tbody tr").count(),
+    4,
+  );
+  const extensions = await page
+    .locator(".rolling-extension-summary")
+    .textContent();
+  for (const value of ["161", "2,152", "7.5%", "1,118", "578", "346", "76.1%"])
+    assert.ok(extensions.includes(value), `Missing expanded result: ${value}`);
+  assert.equal(
+    await page.locator("#rolling-extension-notes").getAttribute("open"),
+    null,
+  );
+  await page
+    .locator("#pred-next-steps")
+    .screenshot({ path: path.join(output, "expanded-experiments.png") });
+  await page.locator("#rolling-extension-notes > summary").click();
+  assert.equal(await page.locator("#rolling-extension-notes table").count(), 4);
+  await page.locator("#rolling-extension-notes > summary").click();
   for (const value of ["53.8%", "28.3%", "38.1%", "38.6%", "419", "584"]) {
     assert.ok(
       (await summary.textContent()).includes(value),
