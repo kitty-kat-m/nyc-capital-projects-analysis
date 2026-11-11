@@ -1,0 +1,22 @@
+{
+  "styles": ["src/styles/report.css"],
+  "scripts": [
+    "src/vendor/d3.v7.9.0.min.js",
+    "src/js/shared.js",
+    "src/js/classification.js",
+    "src/js/typologies.js",
+    "src/js/charts.js",
+    "src/js/descriptive.js",
+    "src/js/experiments.js",
+    "src/js/predictive.js",
+    "src/js/navigation.js"
+  ],
+  "data": [
+    "projectData",
+    "typologyData",
+    "descriptive-data",
+    "additional-prediction-data",
+    "rolling-model-data"
+  ],
+  "output": "docs/index.html"
+}

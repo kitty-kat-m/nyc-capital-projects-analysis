@@ -1,0 +1,19 @@
+{
+  "name": "nyc-capital-projects-analysis",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portable NYC capital-project classification and infrastructure analysis report",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check && node scripts/check.mjs",
+    "test": "node tests/report.spec.mjs",
+    "format": "prettier --write src/report.html src/manifest.json src/js src/styles scripts tests README.md CONTRIBUTING.md docs/README.md METHODOLOGY.md ARCHITECTURE.md DATA_PROVENANCE.md THIRD_PARTY_NOTICES.md package.json"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1",
+    "prettier": "3.6.2"
+  }
+}

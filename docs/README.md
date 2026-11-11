@@ -1,7 +1,7 @@
 # Published report
 
-[Open the live report](https://kitty-kat-m.github.io/nyc-capital-projects-analysis/)
+[Open the interactive report](https://kitty-kat-m.github.io/nyc-capital-projects-analysis/).
 
-`index.html` contains the report, data and charts in one file. Updated 10 November 2026.
+`index.html` is the generated, self-contained GitHub Pages report. It includes the saved data, styles and chart library, so the same file can be opened locally.
 
-Review edits in a browser and submit a pull request replacing this file. Merging to `main` publishes the update at the same link. Keep audit packages and source documents private.
+Edit the maintained files in `src/` and run `npm run build`; do not maintain a second copy by hand. See [Architecture](../ARCHITECTURE.md) and [Contributing](../CONTRIBUTING.md).

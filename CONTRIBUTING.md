@@ -1,27 +1,29 @@
-# Working together on the report
+# Contributing
 
-## Read and comment
+## Suggest a correction
 
-Open the published report from the README. To suggest a change, open a GitHub Issue using the Report feedback template. Give the tab, graph title, proposed change, and any supporting source. A screenshot is helpful. Teammates can reply in the issue.
+Use the Report feedback issue template. Include the tab, chart title, proposed change and supporting evidence. Do not include personal contact information or private source files. Comments belong in GitHub Issues or pull requests; the published report itself is a viewing page.
 
-The published webpage is for viewing. Comments and editing happen in this repository, not directly on the webpage.
+## Make an update
 
-## Make and review an edit
+1. Pull the latest `main` and create a branch.
+2. Edit the appropriate file in `src/`; consult [Architecture](ARCHITECTURE.md).
+3. Run `npm run build` and `npm run check`.
+4. Open `docs/index.html` and check the affected tabs. Run `npm test` for behaviour or layout changes.
+5. Commit both the maintained source and generated report. Open a pull request describing the change, its effect and validation.
 
-Repository collaborators with write access can use GitHub Desktop to fetch/pull the latest version, create a branch, and edit `docs/index.html` locally. Open it in a browser to review the result. Commit the change, push the branch, and open a pull request. Teammates can discuss and review the changes before it is merged.
+Keep commentary concise. Put field definitions, formulas, sample exclusions and detailed tables in the chart's data-notes dropdown. A changed result must be accompanied by its data source and calculation rule.
 
-The HTML is a large generated report. Agree who is editing it at a given time; separate feedback issues make coordination easier. Keep the input dataset and calculation definitions consistent when rebuilding a graph.
+The build reads existing embedded datasets from `docs/index.html`. For an approved replacement report, `node scripts/build.mjs --data-from /path/to/report.html` can preserve its five expected datasets while applying the maintained presentation. This is not a dataset reconciliation or model-training command: validate any replacement separately.
 
-## Publish the latest version
+## Publish
 
-GitHub Pages publishes the `docs` folder on `main`. Merging an approved report update to `main` triggers a new build. The website link stays the same. Check the Pages build and refresh the published report before sharing an update.
+GitHub Pages serves `docs/` on `main`. Merge a reviewed change, check the Pages build, then confirm the published report displays correctly. The website link remains the same.
 
-## Give teammates access
+Write access is managed by the repository owner through GitHub's collaborator settings. Visitors can submit issues or propose changes through a fork.
 
-The repository owner can use Settings â†’ Collaborators â†’ Add people. Invite each teammate using their GitHub username. Public visitors can read the report; an invitation is needed to give someone direct write access. No invitations are sent automatically by this setup.
+## Privacy and attribution
 
-## Protect personal information
+Keep audit ZIPs, source workbooks, raw exports, personal emails and local computer paths out of commits. Use a GitHub no-reply address. Preserve required third-party licence notices and public-data attribution.
 
-Do not commit personal names, email addresses, local computer paths, private source documents, modelling audit ZIPs or detailed source exports. Use a GitHub no-reply address for commits. Keep necessary public-data provenance in the report without adding personal contact details.
-
-After the 10 November 2026 privacy cleanup, re-clone before editing. Do not push old branches back into the refreshed history.
+The repository's earlier history was replaced for privacy in November 2026. Collaborators holding an older clone should re-clone and transfer only reviewed, unpublished work; do not restore old branches or files.

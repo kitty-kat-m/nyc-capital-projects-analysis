@@ -1,0 +1,4419 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NYC Capital Projects — Infrastructure Analysis</title>
+    <!-- REPORT:STYLES -->
+  </head>
+  <body>
+    <main class="container">
+      <header class="city-header">
+        <div class="city-header-content">
+          <div class="city-brand">
+            <span class="city-mark" aria-hidden="true"
+              ><svg
+                class="brand-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 15h20 M4 15V3 M20 15V3 M4 6q8 10 16 0 M8 11v4 M16 11v4 M3 20h6v-2h6v3h6"
+                /></svg></span
+            ><span class="city-eyebrow"
+              >NYC CAPITAL PROJECTS · TEAM ANALYSIS</span
+            >
+          </div>
+          <h1>NYC Capital<br /><span>Projects.</span></h1>
+          <p class="city-subtitle">Classification, funding &amp; delivery</p>
+          <p class="city-period">
+            May 2023–May 2026 <span>·</span> Ten reporting periods
+          </p>
+        </div>
+        <svg
+          class="nyc-skyline"
+          viewBox="0 0 660 305"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <linearGradient id="city-fill" x2="0" y2="1">
+              <stop stop-color="#5e9b9e" stop-opacity=".32" />
+              <stop offset="1" stop-color="#5e9b9e" stop-opacity=".04" />
+            </linearGradient>
+          </defs>
+          <g
+            fill="url(#city-fill)"
+            stroke="#7caaa9"
+            stroke-width="1.25"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M12 211v-57h26v-30h28v87h14v-85h36v-16h24v101h13v-45h28v45h14V96h24V78h9V59h6V29h3v30h6v19h9v18h24v115h15v-71h28v71h15v-107h12V87h11V63h9v24h12v17h12v107h13v-52h28v52h15V99h14V74h12V49h9V18h3V0h2v18h3v31h9v25h12v25h14v112h17v-98h27v-12h21v110h15v-56h38v56h16v-80h26v80h28"
+            />
+            <path
+              d="M205 105h42 M205 113h42 M205 121h42 M427 113h46 M427 124h46 M427 135h46 M87 139h23 M87 150h23 M87 161h23 M311 120h32 M311 132h32 M311 144h32 M503 127h30 M503 140h30"
+              fill="none"
+              opacity=".65"
+            />
+          </g>
+          <path
+            d="M0 213h660 M25 224h190 M246 224h270 M538 224h103 M95 235h287 M414 235h162"
+            stroke="#b5cacc"
+            stroke-opacity=".3"
+            fill="none"
+          />
+          <path
+            d="M80 211C155 178 233 178 313 211 M102 205v-37 M290 205v-37 M102 170q94 55 188 0 M143 190v21 M187 197v14 M234 192v19"
+            stroke="#d9a371"
+            stroke-opacity=".85"
+            fill="none"
+            stroke-width="1.7"
+          />
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M12 244h636"
+              stroke="#8aa7a7"
+              stroke-width="1"
+              stroke-dasharray="2 6"
+              opacity=".5"
+            />
+            <path
+              d="M32 253h205v19h130v-13h236"
+              stroke="#d7a36f"
+              stroke-width="4"
+              opacity=".85"
+            />
+            <path
+              d="M66 285h92v-22h95v29h205v-14h175"
+              stroke="#76b7b9"
+              stroke-width="3"
+              opacity=".9"
+            />
+            <path
+              d="M116 213v40 M303 213v59 M485 213v-5h12v51 M562 213v65"
+              stroke="#a5bfbb"
+              stroke-width="2"
+              opacity=".65"
+            />
+            <path
+              d="M105 213h23 M292 213h23 M480 210h24 M551 213h23"
+              stroke="#dbac7e"
+              stroke-width="3"
+            />
+            <circle
+              cx="237"
+              cy="253"
+              r="5"
+              fill="#173746"
+              stroke="#dbac7e"
+              stroke-width="2"
+            />
+            <circle
+              cx="367"
+              cy="272"
+              r="5"
+              fill="#173746"
+              stroke="#dbac7e"
+              stroke-width="2"
+            />
+            <circle
+              cx="158"
+              cy="285"
+              r="4"
+              fill="#173746"
+              stroke="#76b7b9"
+              stroke-width="2"
+            />
+            <path d="M30 297h590" stroke="#8aa7a7" opacity=".25" />
+          </g>
+        </svg>
+        <div class="meta-bar">
+          <span>Version 11 · Analysis update: 8 November 2026</span
+          ><span
+            ><strong>AI assistance:</strong> Codex · Latest review:
+            GPT-6.1</span
+          >
+        </div>
+      </header>
+      <nav class="tab-nav" role="tablist" aria-label="Project sections">
+        <button
+          id="tab-classification"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-classification"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M4 4h6v6H4z M14 4h6v6h-6z M4 14h6v6H4z M14 17l2 2 4-5"
+            /></svg
+          ><span>Classification Model</span></button
+        ><button
+          id="tab-typologies"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-typologies"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M2 15h20 M4 15V3 M20 15V3 M4 6q8 10 16 0 M8 11v4 M16 11v4 M3 20h6v-2h6v3h6"
+            /></svg
+          ><span>Infrastructure Typology</span></button
+        ><button
+          id="tab-overview"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-overview"
+          tabindex="-1"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 21V11h5v10 M10 21V5h5v16 M17 21V9h4v12 M1 21h22" /></svg
+          ><span>Infrastructure Overview</span></button
+        ><button
+          id="tab-pid-budget"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-pid-budget"
+          tabindex="-1"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 3v18h18 M6 15l4-5 5 3 5-7" /></svg
+          ><span>Budget Analysis</span></button
+        ><button
+          id="tab-schedule"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-schedule"
+          tabindex="-1"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path
+              d="M7 3v4 M17 3v4 M3 9h18 M4 5h16v16H4z M8 13h3 M8 17h6 M15 13h2"
+            /></svg
+          ><span>Schedule Analysis</span></button
+        ><button
+          id="tab-predictive"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-predictive"
+          tabindex="-1"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.65"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 20V4 M3 20h18 M6 16l4-6 4 3 6-9 M16 4h4v4" />
+            <circle cx="10" cy="10" r="1.5" />
+            <circle cx="14" cy="13" r="1.5" /></svg
+          ><span>Predictive Analysis</span></button
+        ><button
+          id="tab-definitions"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-definitions"
+          tabindex="-1"
+        >
+          <svg
+            class="tab-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Z M12 5v15"
+            /></svg
+          ><span>Data Definitions</span>
+        </button>
+      </nav>
+      <div
+        id="panel-classification"
+        role="tabpanel"
+        aria-labelledby="tab-classification"
+      >
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-label">Eligible unique PIDs</div>
+            <div class="stat-value">3,618</div>
+            <div class="stat-desc">All unique PIDs in the supplied master</div>
+          </div>
+          <div class="stat-card pb-card">
+            <div class="stat-label">Public Buildings</div>
+            <div class="stat-value">1,318</div>
+            <div class="stat-desc">36.4% of master PIDs</div>
+          </div>
+          <div class="stat-card infra-card">
+            <div class="stat-label">Infrastructure</div>
+            <div class="stat-value">2,300</div>
+            <div class="stat-desc">63.6% of master PIDs</div>
+          </div>
+          <div class="stat-card review-card">
+            <div class="stat-label">Unresolved main classifications</div>
+            <div class="stat-value">0</div>
+            <div class="stat-desc">Every master PID has a main category</div>
+          </div>
+        </div>
+
+        <section class="card">
+          <h2>How the classification works</h2>
+          <p>
+            The classification identifies Public Building projects from
+            Infrastructure projects by examining the physical asset and the work
+            described. Each eligible PID receives one classification using
+            project descriptions and related information recorded across the
+            available reporting periods. Project names, scope descriptions,
+            linked budget names and ten-year-plan categories are read together,
+            with the recorded decision reason explaining how that evidence
+            supports the result.
+          </p>
+          <ol>
+            <li><strong>Establish one project record per PID.</strong></li>
+            <li>
+              <strong>Exclusions.</strong> Projects with BOE/DOE, CUNY, NYCHA or
+              H+H/HHC sponsorship anywhere in the selected history are excluded.
+            </li>
+            <li>
+              <strong>Identify the physical asset and scope.</strong> Agency
+              Project Name, FMS Name, Project Description and 10-Year Plan
+              Category provide complementary evidence. Historical descriptions
+              help interpret abbreviated or incomplete wording in an individual
+              snapshot. Recorded project-specific resolutions are retained
+              alongside that evidence.
+            </li>
+            <li>
+              <strong>Assign Public Building or Infrastructure.</strong>
+              Building assets and systems serving their indoor use are
+              classified as Public Building. Outdoor, transport, site and
+              utility assets are classified as Infrastructure.
+            </li>
+            <li>
+              <strong>Assess the work within its setting.</strong> A Parks
+              project may involve a building or an outdoor asset. Similarly,
+              work at a wider infrastructure facility may concern an indoor
+              building system.
+            </li>
+            <li>
+              <strong>Needs Review.</strong> Projects whose classification
+              remains unresolved are retained as Review. There is no accepted
+              Mixed category in this portfolio.
+            </li>
+          </ol>
+        </section>
+        <section class="card">
+          <h2>Project portfolio</h2>
+          <p>
+            Search project details, classification reasons and historical text.
+            Expand a project to inspect the classification evidence.
+          </p>
+          <div class="controls">
+            <input
+              id="search"
+              type="search"
+              aria-label="Search portfolio"
+              placeholder="Search all projects: PID 52, project name or agency"
+            /><select id="domain" aria-label="Classification">
+              <option value="all">All classifications</option>
+              <option>Public Building</option>
+              <option>Infrastructure</option>
+              <option>Review</option></select
+            ><button id="search-clear" type="button">
+              Clear search &amp; filters</button
+            ><button id="download">Download filtered CSV</button>
+          </div>
+          <p class="small">
+            Search matches PIDs, names, descriptions and agencies. Multiple
+            words can appear in any order. Typing searches all classifications;
+            select a classification afterwards to narrow the results.
+          </p>
+          <p id="resultCount" aria-live="polite"></p>
+          <div class="pager">
+            <button id="prev">Previous</button><span id="pageLabel"></span
+            ><button id="next">Next</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>PID / classification</th>
+                  <th>Latest project and agencies</th>
+                  <th>Reporting coverage</th>
+                  <th>Classification rationale</th>
+                  <th>Historical evidence</th>
+                </tr>
+              </thead>
+              <tbody id="projectTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="card">
+          <h2>Portfolio scope and source coverage</h2>
+          <p>
+            The reference inventory records 3,668 source PIDs. After 50 agency
+            exclusions, 3,618 eligible projects remain. Its companion
+            project-period table records 26,786 observations. This report
+            presents one summary per eligible PID, together with historical text
+            evidence.
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Source dataset</th>
+                <th>Role</th>
+                <th>Records in reference export</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project detail · fb86-vt7u</td>
+                <td>Scope, agencies, funding links and milestones</td>
+                <td>56,525</td>
+              </tr>
+              <tr>
+                <td>Schedule history · 95tx-snak</td>
+                <td>
+                  Schedule changes, completion evidence and additional PIDs
+                </td>
+                <td>22,464</td>
+              </tr>
+              <tr>
+                <td>Budget and spending history · qj5n-h5qp</td>
+                <td>Funding history</td>
+                <td>53,495</td>
+              </tr>
+              <tr>
+                <td>Budget and spending by fiscal year · gyhf-rsr3</td>
+                <td>Fiscal-year financial breakdowns</td>
+                <td>288,446</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top: 12px">
+            The reference export records 420,930 source rows across the four
+            datasets. Project detail and schedule history establish the project
+            inventory; budget history and fiscal-year spending support financial
+            measures. Source counts describe the saved export rather than a
+            fresh retrieval. Reproduction requirements are recorded below.
+          </p>
+        </section>
+        <section class="card">
+          <h2>How to read the analysis measures</h2>
+          <ul>
+            <li>
+              <strong>Phase duration:</strong> Actual phase end minus actual
+              phase start, in days.
+            </li>
+            <li>
+              <strong>Budget growth:</strong> Change from the first observed
+              attributable budget, which may differ from the original approved
+              budget.
+            </li>
+            <li>
+              <strong>Budget spent:</strong> Spend to date divided by current
+              budget, expressed as a percentage. This measures expenditure
+              rather than physical completion.
+            </li>
+            <li>
+              <strong>Forecast slippage:</strong> Active forecast completion
+              minus the first observed forecast.
+            </li>
+            <li>
+              <strong>Completion delay:</strong> Reported actual completion
+              minus a verified pre-completion forecast baseline.
+            </li>
+            <li>
+              <strong>Shared funding:</strong> A budget may fund several PIDs
+              and a PID may link to several budgets. Shared funding is not
+              assigned in full to each PID. Keep attribution flags visible and
+              do not sum budgets or spending across reporting periods.
+            </li>
+          </ul>
+          <p>
+            Measures describe the latest available project summary. Quality
+            flags identify limitations in the supporting records. Full source
+            inputs and transformation code are needed to verify calculations and
+            reproduce period-by-period analysis. Predictive analysis must also
+            avoid treating later historical evidence as information available at
+            an earlier date.
+          </p>
+        </section>
+        <section class="card">
+          <h2>Version and reproducibility</h2>
+          <p>
+            Version 11 retains the project-level classifications and adds
+            proposed Infrastructure typologies and an analysis research plan.
+            The classification reference is the project-level portfolio supplied
+            by the collaborating team, prepared October 16, 2026. Its 3,618
+            labels, recorded rationales and evidence are preserved. This update
+            improves the methodological explanation without changing any
+            classification or measure. The report presents recorded decisions;
+            it does not execute a new classifier or claim independent validation
+            of every decision. The earlier v9 remains available for comparison.
+          </p>
+          <p>
+            <a
+              href="classification/reference/Our-All-Periods-Classification-Portfolio%20(2).html"
+              >Classification reference portfolio</a
+            >
+            ·
+            <a href="classification/reference/adopted-pid-decisions-v10.csv"
+              >Classification decisions CSV</a
+            >
+            ·
+            <a
+              href="classification/reference/adopted-report-v10-provenance.json"
+              >Version 10 provenance</a
+            >
+            ·
+            <a href="v9MCPModelCategorisation-AllPeriods.html"
+              >Original v9 report</a
+            >
+          </p>
+          <p>
+            The table, filters, historical evidence and CSV export work offline.
+            Companion links require this folder structure. The reference's
+            project-period CSV, complete measure definitions, source exports and
+            combination audit remain to be recovered.
+          </p>
+        </section>
+      </div>
+      <div
+        id="panel-typologies"
+        role="tabpanel"
+        aria-labelledby="tab-typologies"
+        hidden
+      >
+        <section class="card" id="typology-current-review">
+          <h2>Classifying Infrastructure assets</h2>
+          <p>
+            Each Infrastructure PID is assessed against 15 asset categories
+            using its project names, descriptions, linked budget names and other
+            available scope information. The primary category follows the
+            principal asset and work; secondary elements remain in the record.
+          </p>
+          <p>
+            <strong id="typology-current-counts"
+              >2,300 Infrastructure PIDs: 2,253 assigned typologies · 47 need
+              review.</strong
+            >
+            Confidence describes the strength of the available classification
+            evidence. An unrated record is shown as “Not separately rated”;
+            confidence labels are not statistical probabilities.
+          </p>
+          <p>
+            The reference check identified
+            <strong
+              >1 PID with a scope or recorded-decision conflict to check</strong
+            >
+            and <strong>30 with only a sponsor-reference difference</strong>.
+            These are flagged in the project table; the reference is not used to
+            force classifications by agency.
+          </p>
+          <p class="small">
+            Classification rationale, confidence, project descriptions and
+            reference checks are combined in the single project table below.
+          </p>
+        </section>
+        <section class="card">
+          <h2>Infrastructure typologies</h2>
+          <p>Source: recommended Infrastructure typologies for 2026</p>
+          <details>
+            <summary>What still needs a decision</summary>
+            <ul>
+              <li>Category coverage: 2 PIDs</li>
+              <li>
+                Outside current categories — energy / institutional utilities:
+                11 PIDs
+              </li>
+              <li>
+                Outside current categories — telecom / building services: 3 PIDs
+              </li>
+              <li>Building / infrastructure boundary: 4 PIDs</li>
+              <li>Outside current categories — industrial plant: 2 PIDs</li>
+              <li>Scope needed: 1 PIDs</li>
+              <li>
+                Outside current categories — zoo power distribution: 1 PIDs
+              </li>
+              <li>
+                Additional master-roster projects needing a subtype decision: 23
+                PIDs
+              </li>
+            </ul>
+            <p>
+              Every PID has been screened across saved project names, scopes,
+              linked budget names, plan labels and agency context. This includes
+              targeted scope assessments and source checks; it is not
+              independent validation of every assignment.
+            </p>
+          </details>
+          <div class="typology-counts">
+            <button
+              class="typology-count"
+              data-filter="Parks, playgrounds and outdoor recreation"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 3l-6 8h3l-4 5h6v5h2v-5h6l-4-5h3z" /></svg
+              ><strong>838</strong
+              ><span>Parks, playgrounds and outdoor recreation</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Urban forestry, habitat and natural-area restoration"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 3C5 3 3 10 6 16s14 4 13-13z M5 21L16 8" /></svg
+              ><strong>220</strong
+              ><span>Urban forestry, habitat and natural-area restoration</span
+              ><small>Classified PIDs</small></button
+            ><button class="typology-count" data-filter="Streets and roadways">
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M7 3L3 21 M17 3l4 18 M12 3v4 M12 10v4 M12 17v4" /></svg
+              ><strong>96</strong><span>Streets and roadways</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Pedestrian, bicycle and public-realm networks"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 21V11h5v10 M10 21V5h5v16 M17 21V9h4v12 M1 21h22"
+                /></svg
+              ><strong>436</strong
+              ><span>Pedestrian, bicycle and public-realm networks</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Bridges and transportation tunnels"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 18h20 M5 18V6 M19 18V6 M5 8c4 8 10 8 14 0 M9 13v5 M15 13v5"
+                /></svg
+              ><strong>100</strong
+              ><span>Bridges and transportation tunnels</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Retaining walls and slope stabilization"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 5h18v15H3z M3 10h18 M3 15h18 M9 5v5 M15 10v5 M9 15v5"
+                /></svg
+              ><strong>15</strong
+              ><span>Retaining walls and slope stabilization</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Drinking-water supply, storage, treatment and transmission"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 3C10 7 5 12 5 16a7 7 0 0014 0c0-4-5-9-7-13z M8 16c0 2 1 3 3 3"
+                /></svg
+              ><strong>55</strong
+              ><span
+                >Drinking-water supply, storage, treatment and
+                transmission</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Drinking-water distribution"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8h8V4h5v8h7 M2 13h4v7h9v-4h7 M6 17h5 M18 8v8 M3 6v9"
+                /></svg
+              ><strong>59</strong><span>Drinking-water distribution</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Sewers and storm drainage"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8h8V4h5v8h7 M2 13h4v7h9v-4h7 M6 17h5 M18 8v8 M3 6v9"
+                /></svg
+              ><strong>153</strong><span>Sewers and storm drainage</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Wastewater treatment and resource recovery"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 3C10 7 5 12 5 16a7 7 0 0014 0c0-4-5-9-7-13z M8 16c0 2 1 3 3 3"
+                /></svg
+              ><strong>85</strong
+              ><span>Wastewater treatment and resource recovery</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Combined sewer overflow—CSO—facilities"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 8h8V4h5v8h7 M2 13h4v7h9v-4h7 M6 17h5 M18 8v8 M3 6v9"
+                /></svg
+              ><strong>17</strong
+              ><span>Combined sewer overflow—CSO—facilities</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Green stormwater systems and Bluebelts"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M19 3C5 3 3 10 6 16s14 4 13-13z M5 21L16 8" /></svg
+              ><strong>44</strong
+              ><span>Green stormwater systems and Bluebelts</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Flood and shoreline protection"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 5h18v15H3z M3 10h18 M3 15h18 M9 5v5 M15 10v5 M9 15v5"
+                /></svg
+              ><strong>33</strong><span>Flood and shoreline protection</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Marine, ferry and waterfront structures"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 17c3-4 4 4 7 0s4 4 7 0 4 1 5 0 M5 13h14l-3 4H8z M12 3v10 M12 4l6 6h-6"
+                /></svg
+              ><strong>97</strong
+              ><span>Marine, ferry and waterfront structures</span
+              ><small>Classified PIDs</small></button
+            ><button
+              class="typology-count"
+              data-filter="Solid-waste, recycling and composting infrastructure"
+            >
+              <svg
+                class="count-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.65"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M8 4h7l3 5 M15 6l3 3 3-3 M20 13l-4 7h-5 M13 17l-3 3 3 3 M6 19l-4-7 3-5 M3 10l2-3 4 1"
+                /></svg
+              ><strong>5</strong
+              ><span>Solid-waste, recycling and composting infrastructure</span
+              ><small>Classified PIDs</small></button
+            ><button class="typology-count unresolved" data-filter="review">
+              <strong>47</strong><span>Needs typology review</span
+              ><small>Unassigned PIDs</small>
+            </button>
+          </div>
+          <details>
+            <summary>The 15 typologies: definitions and counts</summary>
+            <p>
+              Counts below include the applied 3 November judgement review
+              alongside the earlier scope-rule assignments. Classify the
+              principal asset and function. Classification rule: CSO in the
+              project title takes precedence and places the PID in the CSO
+              category, including CSO-related green infrastructure. Stormwater
+              systems differ from habitat restoration. Marine access differs
+              from flood protection. Mixed work is assigned a primary category
+              where its main function is sufficiently described; secondary
+              components are retained. Unresolved primary assets and taxonomy
+              gaps remain for review. Work-type and purpose tags retain detail
+              without competing with the primary typology.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Infrastructure category</th>
+                  <th>What it covers</th>
+                  <th>Classified PIDs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Parks, playgrounds and outdoor recreation</td>
+                  <td>
+                    Playgrounds, ballfields, courts, outdoor pools and general
+                    park reconstruction, including site services and visitor
+                    parking supporting a specifically identified park. Clearly
+                    building-serving systems retain a boundary flag. Scope
+                    clarification: includes outdoor sports stadiums and their
+                    spectator seating. Scope clarification: includes outdoor
+                    public memorial spaces and their supporting landscape and
+                    lighting.
+                  </td>
+                  <td>778</td>
+                </tr>
+                <tr>
+                  <td>Urban forestry, habitat and natural-area restoration</td>
+                  <td>
+                    Tree planting, forest restoration, ecological restoration
+                  </td>
+                  <td>220</td>
+                </tr>
+                <tr>
+                  <td>Streets and roadways</td>
+                  <td>
+                    Street reconstruction, roadway rehabilitation, resurfacing;
+                    working coverage also includes standalone off-street surface
+                    parking and internal vehicle circulation
+                  </td>
+                  <td>91</td>
+                </tr>
+                <tr>
+                  <td>Pedestrian, bicycle and public-realm networks</td>
+                  <td>
+                    Sidewalks, plazas, streetscapes, bicycle paths, greenways,
+                    step streets
+                  </td>
+                  <td>433</td>
+                </tr>
+                <tr>
+                  <td>Bridges and transportation tunnels</td>
+                  <td>
+                    Vehicular, pedestrian, bicycle and mixed-use structures
+                  </td>
+                  <td>98</td>
+                </tr>
+                <tr>
+                  <td>Retaining walls and slope stabilization</td>
+                  <td>
+                    Retaining structures, rock-face and slope stabilization
+                  </td>
+                  <td>14</td>
+                </tr>
+                <tr>
+                  <td>
+                    Drinking-water supply, storage, treatment and transmission
+                  </td>
+                  <td>
+                    Reservoirs, dams, aqueducts, water tunnels, treatment
+                    facilities
+                  </td>
+                  <td>52</td>
+                </tr>
+                <tr>
+                  <td>Drinking-water distribution</td>
+                  <td>Trunk and local water mains</td>
+                  <td>58</td>
+                </tr>
+                <tr>
+                  <td>Sewers and storm drainage</td>
+                  <td>
+                    Sanitary, storm and combined sewers; drainage and associated
+                    pumping
+                  </td>
+                  <td>149</td>
+                </tr>
+                <tr>
+                  <td>Wastewater treatment and resource recovery</td>
+                  <td>
+                    Treatment plants, process systems, sludge and biosolids
+                    facilities
+                  </td>
+                  <td>84</td>
+                </tr>
+                <tr>
+                  <td>Combined sewer overflow—CSO—facilities</td>
+                  <td>
+                    CSO storage, conveyance and treatment assets. Classification
+                    rule: all Infrastructure PIDs with CSO in the current
+                    project title are included, including CSO-related green
+                    infrastructure.
+                  </td>
+                  <td>17</td>
+                </tr>
+                <tr>
+                  <td>Green stormwater systems and Bluebelts</td>
+                  <td>
+                    Bioswales, rain gardens, infiltration systems, stormwater
+                    wetlands
+                  </td>
+                  <td>43</td>
+                </tr>
+                <tr>
+                  <td>Flood and shoreline protection</td>
+                  <td>Floodwalls, floodgates, protective shoreline works</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>Marine, ferry and waterfront structures</td>
+                  <td>
+                    Ferry landings, terminals, piers, docks, waterfront access
+                    structures; working coverage also includes ferry vessels and
+                    their operating systems
+                  </td>
+                  <td>90</td>
+                </tr>
+                <tr>
+                  <td>Solid-waste, recycling and composting infrastructure</td>
+                  <td>Transfer facilities, recycling and composting sites</td>
+                  <td>5</td>
+                </tr>
+              </tbody>
+            </table>
+          </details>
+          <div class="controls">
+            <input
+              id="ty-search"
+              type="search"
+              aria-label="Search Infrastructure typologies"
+              placeholder="Search Infrastructure: PID 52, project name or agency"
+            /><select id="ty-filter" aria-label="Infrastructure typology">
+              <option value="all">All Infrastructure PIDs</option>
+              <option value="review">Needs typology review</option>
+              <option value="conflicts">Scope / decision conflicts</option>
+              <option value="reference">Sponsor reference differences</option>
+              <option>Parks, playgrounds and outdoor recreation</option>
+              <option>
+                Urban forestry, habitat and natural-area restoration
+              </option>
+              <option>Streets and roadways</option>
+              <option>Pedestrian, bicycle and public-realm networks</option>
+              <option>Bridges and transportation tunnels</option>
+              <option>Retaining walls and slope stabilization</option>
+              <option>
+                Drinking-water supply, storage, treatment and transmission
+              </option>
+              <option>Drinking-water distribution</option>
+              <option>Sewers and storm drainage</option>
+              <option>Wastewater treatment and resource recovery</option>
+              <option>Combined sewer overflow—CSO—facilities</option>
+              <option>Green stormwater systems and Bluebelts</option>
+              <option>Flood and shoreline protection</option>
+              <option>Marine, ferry and waterfront structures</option>
+              <option>
+                Solid-waste, recycling and composting infrastructure
+              </option></select
+            ><button id="ty-search-clear" type="button">
+              Clear search &amp; filters</button
+            ><button id="ty-download">Download typology decisions CSV</button>
+          </div>
+          <p class="small">
+            Typing searches all Infrastructure typologies. Enter an exact PID
+            (for example, PID 52), or any project words in any order; select a
+            typology afterwards to narrow results.
+          </p>
+          <p id="ty-count" aria-live="polite"></p>
+          <div class="pager">
+            <button id="ty-prev">Previous</button><span id="ty-page"></span
+            ><button id="ty-next">Next</button>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>PID / project</th>
+                  <th>Primary typology</th>
+                  <th>Project description and managing agency</th>
+                  <th>Project descriptions and classification evidence</th>
+                </tr>
+              </thead>
+              <tbody id="ty-body"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="card" id="typology-reference">
+          <h2>Typology and sponsor reference</h2>
+          <p>
+            This crosswalk connects the supplied category/sponsor reference with
+            the current 15 asset categories. Repeated agency names have been
+            removed. The listed agencies are examples to check against, not
+            eligibility rules or an exhaustive list. Unusual sponsor
+            combinations are flagged separately from conflicts in the project
+            evidence.
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Reference category</th>
+                  <th>Listed sponsor agencies</th>
+                  <th>Current category / categories</th>
+                  <th>How to interpret the mapping</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>ADA Pedestrian Work</td>
+                  <td>DOT, DPR, EDC</td>
+                  <td>Pedestrian, bicycle and public-realm networks</td>
+                  <td>Accessibility work within pedestrian routes.</td>
+                </tr>
+                <tr>
+                  <td>CSO Consent Decree Projects</td>
+                  <td>DEP, DPR</td>
+                  <td>Combined sewer overflow—CSO—facilities</td>
+                  <td>
+                    The CSO intervention determines the category, rather than
+                    the programme label alone.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Corrections Infrastructure</td>
+                  <td>DOC</td>
+                  <td>Scope-specific assessment</td>
+                  <td>
+                    No automatic asset-category match. Use the actual work:
+                    buildings, yards, utility networks and other assets require
+                    different treatment.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Downstate Wastewater Treatment Projects</td>
+                  <td>DEP, DOT</td>
+                  <td>Wastewater treatment and resource recovery</td>
+                  <td>
+                    Treatment/process facilities; standalone sewer-conveyance
+                    pumping is considered with sewers.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Non-Vehicular Bridges</td>
+                  <td>DEP, DPR, EDC, MOR</td>
+                  <td>Bridges and transportation tunnels</td>
+                  <td>
+                    Combined with vehicular bridges in the current asset
+                    framework.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Parkland (Infra)</td>
+                  <td>DCAS, DEP, DOT, DPR, DSNY, EDC</td>
+                  <td>
+                    Parks, playgrounds and outdoor recreation<br />Urban
+                    forestry, habitat and natural-area restoration
+                  </td>
+                  <td>
+                    Split recreation assets from forestry/ecological restoration
+                    according to scope.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Plaza/Streetscape Projects</td>
+                  <td>DOT, DPR</td>
+                  <td>Pedestrian, bicycle and public-realm networks</td>
+                  <td>Public-realm and pedestrian network works.</td>
+                </tr>
+                <tr>
+                  <td>Resiliency Projects</td>
+                  <td>DCAS, DEP, DOT, DPR, DSNY, EDC, HHC</td>
+                  <td>
+                    Flood and shoreline protection<br />Green stormwater systems
+                    and Bluebelts
+                  </td>
+                  <td>
+                    Classify the intervention: flood/shoreline protection or
+                    green stormwater assets. Resiliency alone does not identify
+                    an asset.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Retaining Wall Projects</td>
+                  <td>DPR</td>
+                  <td>Retaining walls and slope stabilization</td>
+                  <td>
+                    Standalone retaining structures and slope works; agency
+                    examples are not an exclusive list.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Road Work Projects</td>
+                  <td>DCAS, DDC, DEP, DOT, DPR, DSNY, EDC, HPD</td>
+                  <td>Streets and roadways</td>
+                  <td>
+                    Road reconstruction, rehabilitation and resurfacing;
+                    identify a different primary utility intervention when
+                    clearly described.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sewer System and Watermain Projects</td>
+                  <td>DCAS, DEP, DOC, DPR, DSNY, EDC</td>
+                  <td>
+                    Sewers and storm drainage<br />Drinking-water distribution
+                  </td>
+                  <td>
+                    Split sewer/drainage and water-main distribution. Mixed
+                    schemes follow the principal named intervention with
+                    secondary scope retained.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sidewalk Work</td>
+                  <td>DOT, DPR</td>
+                  <td>Pedestrian, bicycle and public-realm networks</td>
+                  <td>Sidewalk and related pedestrian-route works.</td>
+                </tr>
+                <tr>
+                  <td>Upstate Water Supply Projects</td>
+                  <td>DEP, DOC, DOT, DPR, EDC</td>
+                  <td>
+                    Drinking-water supply, storage, treatment and transmission
+                  </td>
+                  <td>
+                    Water-supply reservoirs, dams, aqueducts, water tunnels and
+                    treatment/transmission systems.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Vehicular Bridges</td>
+                  <td>DOT</td>
+                  <td>Bridges and transportation tunnels</td>
+                  <td>
+                    Combined with non-vehicular bridges; use the physical bridge
+                    asset, not a nearby street/location mention.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">
+            Marine/ferry/waterfront and solid-waste infrastructure do not have
+            direct counterparts in this reference. Forestry and green-stormwater
+            categories are more specific splits of broader earlier labels.
+            “Corrections Infrastructure” is an agency/service grouping rather
+            than a single physical asset type.
+          </p>
+        </section>
+      </div>
+      <div
+        id="panel-overview"
+        role="tabpanel"
+        aria-labelledby="tab-overview"
+        hidden
+      >
+        <section class="card">
+          <p class="story-step">INFRASTRUCTURE OVERVIEW</p>
+          <h2>The Infrastructure portfolio at a glance</h2>
+          <p>
+            The portfolio contains 2,300 Infrastructure PIDs, with work recorded
+            across all five NYC boroughs. It includes 14 named sponsor agencies
+            and 15 asset typologies.
+          </p>
+          <div class="pred-stats" id="overview-facts"></div>
+          <p>
+            Projects are tracked by PID and reporting period, with financial
+            information connected through linked FMS records. Ten reporting
+            periods cover May 2023 to May 2026. The reported delivery phases run
+            from
+            <strong
+              >Pre-Design → Design → Procurement → Construction →
+              Close-out</strong
+            >.
+          </p>
+          <p>
+            Financial records describe budgets, spending and budget revisions.
+            Schedule records describe phases, milestone dates, forecast
+            completion and recorded reasons for change. Explore financial and
+            duration measures in Budget Analysis and Schedule Analysis.
+          </p>
+        </section>
+        <div id="desc-charts"></div>
+      </div>
+      <div
+        id="panel-schedule"
+        role="tabpanel"
+        aria-labelledby="tab-schedule"
+        hidden
+      >
+        <section class="card">
+          <p class="story-step">SCHEDULE ANALYSIS</p>
+          <h2>Infrastructure Schedules and Delivery Time</h2>
+          <p>
+            Compare completion timing, phase lengths and changes in expected
+            finish dates for Infrastructure projects.
+          </p>
+          <h3>Schedule variables</h3>
+          <div class="variable-columns">
+            <ul>
+              <li>Actual and forecast completion dates</li>
+              <li>Design, procurement and construction durations (days)</li>
+              <li>
+                Estimated project duration: forecast completion − design start
+              </li>
+            </ul>
+            <ul>
+              <li>Forecast movement between reports (days)</li>
+              <li>
+                Actual or expected completion versus first recorded forecast
+              </li>
+              <li>Median, minimum and maximum timing gaps (days)</li>
+            </ul>
+          </div>
+        </section>
+        <div id="schedule-desc-charts"></div>
+      </div>
+      <div
+        id="panel-pid-budget"
+        role="tabpanel"
+        aria-labelledby="tab-pid-budget"
+        hidden
+      >
+        <section class="card">
+          <p class="story-step">BUDGET ANALYSIS</p>
+          <h2>Infrastructure Budgets and Spending</h2>
+          <p>
+            Explore spending progress, budget scale and reported budget
+            revisions across Infrastructure types. All findings below use
+            current records and explicit financial-link rules.
+          </p>
+          <h3>Variables used in this analysis</h3>
+          <div class="variable-columns">
+            <div>
+              <h4>Budget and spending</h4>
+              <ul>
+                <li>Reported total budget</li>
+                <li>Cumulative spend to date</li>
+                <li>Spend as a percentage of reported budget</li>
+                <li>Budget change: amount and percentage</li>
+                <li>Mean spending percentage by typology</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Project and schedule context</h4>
+              <ul>
+                <li>Infrastructure typology and sponsor agency</li>
+                <li>Completed construction duration (days)</li>
+                <li>Eligible PID count</li>
+                <li>Mean spending and duration comparisons</li>
+                <li>Reporting period and all linked funding-record keys</li>
+              </ul>
+            </div>
+          </div>
+          <p class="small">
+            The five headline charts use complete, exclusively linked funding
+            where required. Shared funding is not silently allocated between
+            PIDs. Budget change measures a revision in the budget, not spending
+            progress.
+          </p>
+          <div class="desc-commentary">
+            <h3>Conclusion</h3>
+            <p>
+              The measures describe budget size, spending relative to budget and
+              revisions between reports. Construction duration and typology
+              provide context for comparing these financial patterns.
+            </p>
+          </div>
+        </section>
+        <div id="budget-desc-charts"></div>
+        <article class="card" id="budget-spending-correlation">
+          <h2>Budget–Spending Relationship by Typology</h2>
+          <p>
+            Larger reported budgets generally accompany larger spending amounts.
+            Across the 1,843 plotted projects, the overall relationship is
+            moderately positive (Pearson r = 0.42). The typology examples below
+            compare the same financial measures.
+          </p>
+          <p class="small">
+            This additional summary uses each PID’s latest available budget and
+            spending record across the saved reporting series.
+          </p>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Project group</th>
+                  <th>Eligible PIDs</th>
+                  <th>Pearson r</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>All plotted Infrastructure projects</td>
+                  <td>1,843</td>
+                  <td>0.42</td>
+                </tr>
+                <tr>
+                  <td>Flood and shoreline protection</td>
+                  <td>27</td>
+                  <td>0.75</td>
+                </tr>
+                <tr>
+                  <td>Marine, ferry and waterfront structures</td>
+                  <td>90</td>
+                  <td>0.73</td>
+                </tr>
+                <tr>
+                  <td>Bridges and transportation tunnels</td>
+                  <td>93</td>
+                  <td>0.62</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">
+            These are descriptive associations in financial scale. They do not
+            establish causation, delivery speed or project performance.
+          </p>
+        </article>
+      </div>
+    </main>
+    <div
+      id="panel-predictive"
+      role="tabpanel"
+      aria-labelledby="tab-predictive"
+      hidden
+    >
+      <div id="rolling-evaluation" class="prediction-model-group">
+        <section class="card" id="roll-summary">
+          <p class="model-kicker">
+            PREDICTIVE ANALYSIS · SIX-PERIOD HISTORICAL ASSESSMENT
+          </p>
+          <h2>
+            Can recorded information help identify projects whose expected
+            finish date will move later?
+          </h2>
+          <p>
+            We test a <strong>random forest</strong> using earlier schedule,
+            budget, spending, agency and location records. Before each report,
+            it ranks projects for review; the following report shows whether
+            their expected finish dates moved later.
+          </p>
+          <p>
+            Results cover six reporting assessments, September 2024–May 2026.
+            The default review list is the highest-ranked 20% in each period.
+          </p>
+          <div id="roll-outcome-summary"></div>
+          <p>
+            <strong
+              >The model’s review list is more likely to contain projects whose
+              expected finish dates move later.</strong
+            >
+            It helps prioritise checks, but cannot confirm which projects will
+            be delayed.
+          </p>
+          <details class="roll-notes">
+            <summary>Data points, calculations and detailed figures</summary>
+            <h3>Explore review-list sizes</h3>
+            <label for="roll-size"
+              ><strong
+                >How much of the project list should we review?</strong
+              ></label
+            >
+            <select id="roll-size">
+              <option value="10">Highest-ranked 10%</option>
+              <option value="20" selected>Highest-ranked 20%</option>
+              <option value="30">Highest-ranked 30%</option>
+            </select>
+            <p>
+              The choice changes the any-later-forecast results and combined
+              assessment below. The separate 90-day model remains at a fixed 20%
+              review capacity.
+            </p>
+            <h3>Model and test design</h3>
+            <p>
+              Random forest: 250 trees, maximum depth 6, minimum leaf size 20,
+              random seed 19. Each fold fits again using eligible outcomes from
+              earlier reports only. Numeric inputs use training medians with
+              missing indicators; categories use explicit missing values and
+              one-hot encoding. Settings are held constant across folds.
+            </p>
+            <p>
+              The master roster contains 2,300 Infrastructure PIDs. Six
+              assessments cover September 2024, January/May/September 2025 and
+              January/May 2026:
+              <strong
+                >5,412 eligible project/report comparisons, with 1,533 later
+                forecasts</strong
+              >. The same PID can appear in more than one assessment; these are
+              not 5,412 unique projects. Each fold requires comparable
+              explicitly Forecast dates at both reports. Missing, Actual and
+              untyped date pairs are excluded.
+            </p>
+            <h3>What counts as a flag or a change?</h3>
+            <p>
+              A later forecast means the next report's expected completion date
+              is after the starting report's forecast. Rank projects by model
+              score, break ties by PID, and flag the highest 10%, 20% or 30%,
+              rounded up separately within each period. Scores are not
+              calibrated probabilities; the project list shows ranks.
+            </p>
+            <p>
+              Flags correct (precision) = correct flags ÷ all flags. Changes
+              found (recall) = correct flags ÷ all later forecasts. The overall
+              later rate uses every eligible comparison. A longer list normally
+              catches more changes and adds false alarms.
+            </p>
+            <div id="roll-capacity-table"></div>
+            <h3>Reporting dates and limits</h3>
+            <p>
+              Saved MCP exports were created on 8 November 2026 from the local
+              source build; this is not a fresh upstream download. Each
+              comparison spans adjacent four-month reports. This is
+              retrospective expanding-window evaluation: it improves the view
+              across time but does not create a new independent test after
+              repeated model development. Future reports should confirm
+              performance.
+            </p>
+            <p>
+              The earlier May 2024 assessment had only two earlier outcome
+              periods available for fitting: 32 of 182 flags were correct
+              (17.6%), below its 20.1% overall rate. The six-period summary
+              starts in September 2024, once more history is available. This
+              early failed check is retained here rather than omitted silently.
+            </p>
+            <h3>Results by reporting period</h3>
+            <div id="roll-fold-table"></div>
+            <p>
+              The review-list choice updates these figures. Each PID counts once
+              within a period and can recur across periods.
+            </p>
+            <h3>Comparison with a simple review rule</h3>
+            <p>
+              We also checked whether the model helps more than simply reviewing
+              projects whose forecasts had moved later more often before. This
+              is a benchmark rule, not an earlier model.
+            </p>
+            <div class="roll-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>How the review list is chosen</th>
+                    <th>Review flags</th>
+                    <th>Later changes found</th>
+                    <th>Flags correct</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Random forest: highest-ranked 20%</td>
+                    <td>1,085</td>
+                    <td>584</td>
+                    <td>53.8%</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Highest prior share of later forecast movements: top 20%
+                    </td>
+                    <td>1,085</td>
+                    <td>450</td>
+                    <td>41.5%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              Both lists use the same six periods and fixed 20% capacity. Ties
+              are resolved by PID. The model finds 134 more later forecast
+              changes than the simple rule.
+            </p>
+            <h3>90-day setback model</h3>
+            <p>
+              This uses the same predictors, random-forest settings and
+              expanding-window design, retrained for a different outcome:
+              forecast completion moves later by at least 90 days at the
+              following report. Across six periods, 1,097 of 5,412 comparisons
+              meet this outcome. The highest 20% in each period produce 1,085
+              flags: 419 correct, 666 false alarms and 678 missed setbacks.
+              Precision is 38.6%; recall is 38.2%; the overall event rate is
+              20.3%. It is a different fitted model from the any-later-change
+              model. The simple previous-slip-size rule finds 230 at the same
+              capacity.
+            </p>
+            <p>
+              These tests concern changes to expected finish dates, not
+              confirmed late completion against original approved schedules.
+              Comparisons can include the same project in different periods.
+            </p>
+          </details>
+        </section>
+        <section class="card" id="roll-selected-assessment">
+          <h2>What did the model get right and wrong overall?</h2>
+          <p id="roll-assessment-title"></p>
+          <div class="roll-matrix-labels">
+            <span>Left unflagged</span><span>Flagged for review</span>
+          </div>
+          <div class="roll-matrix" id="roll-matrix"></div>
+          <p class="small">
+            Top row: forecast unchanged or earlier · Bottom row: forecast moved
+            later
+          </p>
+          <ul class="roll-findings" id="roll-assessment-findings"></ul>
+          <details class="roll-notes">
+            <summary>Data points, calculations and detailed figures</summary>
+            <p id="roll-accuracy"></p>
+            <p>
+              These figures combine all six assessments using the selected
+              review-list size. The model only uses information available at
+              each starting report; the outcome comes from the following report.
+              A flag means review priority, not a confirmed delay. The old
+              “score of 50” option has been removed from the current assessment
+              because these scores are not confirmed probabilities.
+            </p>
+          </details>
+          <details class="roll-notes" id="roll-project-details">
+            <summary>Explore individual projects and reporting periods</summary>
+            <label for="roll-period"
+              ><strong>Choose the reporting comparison</strong></label
+            >
+            <select id="roll-period"></select>
+            <h3>The model’s ranked project list</h3>
+            <p id="roll-list-note"></p>
+            <div class="roll-list-controls">
+              <label
+                >Find a project
+                <input
+                  id="roll-search"
+                  type="search"
+                  placeholder="PID, project, agency or typology" /></label
+              ><label
+                ><input id="roll-flagged-only" type="checkbox" /> Show flagged
+                projects only</label
+              >
+            </div>
+            <div id="roll-project-table"></div>
+            <div class="roll-pagination">
+              <button id="roll-prev">Previous</button
+              ><span id="roll-page"></span><button id="roll-next">Next</button>
+            </div>
+          </details>
+        </section>
+        <section class="card" id="roll-ranking">
+          <h2>How well does the model rank projects?</h2>
+          <p>
+            A useful ranking places more projects with later forecasts near the
+            top. This ROC curve uses the reporting comparison selected above.
+          </p>
+          <div id="roll-roc"></div>
+          <ul class="roll-findings">
+            <li>
+              <strong>Higher and further left is better.</strong> The curve
+              shows how many later changes we find as we accept more false
+              alarms.
+            </li>
+            <li>
+              <strong>This is a ranking check.</strong> It does not tell us that
+              a particular project has a confirmed percentage chance of delay.
+            </li>
+          </ul>
+          <details class="roll-notes">
+            <summary>Data points, calculations and detailed figures</summary>
+            <p>
+              Vertical axis: fraction of later forecast changes identified.
+              Horizontal axis: fraction of unchanged/earlier forecasts
+              incorrectly flagged. The diagonal represents chance ranking. ROC
+              AUC is calculated separately for each assessment; it is not the
+              percentage of predictions that are correct. The selected list size
+              affects the confusion matrix but not the ROC curve.
+            </p>
+          </details>
+        </section>
+        <section class="card" id="roll-infrastructure-types">
+          <h2>
+            Which infrastructure types have more projects on the review list?
+          </h2>
+          <p>
+            For the selected reporting comparison, bars show the
+            <strong>share of assessed projects flagged for review</strong>
+            within each type. This shows where the list concentrates, rather
+            than how accurately we predict each type.
+          </p>
+          <div id="roll-types" class="roll-bars"></div>
+          <ul class="roll-findings">
+            <li>
+              <strong
+                >A higher share means more projects are prioritised.</strong
+              >
+              It reflects the schedule, financial and agency information
+              recorded for those projects.
+            </li>
+            <li>
+              <strong>Typology groups the results after prediction.</strong> It
+              is not a model input. Small groups and unresolved classifications
+              limit comparisons.
+            </li>
+          </ul>
+          <details class="roll-notes">
+            <summary>Data points, calculations and detailed figures</summary>
+            <div id="roll-types-table"></div>
+            <p>
+              The chart shows the ten groups with the highest flagged share. The
+              table includes all assigned groups, eligible counts and observed
+              outcomes. Unresolved typology PIDs remain in the model and project
+              list but are omitted from typology comparisons. Current labels are
+              used for grouping; many assignments have not been separately
+              confidence-rated and should not be treated as independently
+              verified.
+            </p>
+          </details>
+        </section>
+        <section class="card" id="roll-inputs">
+          <h2>Which information adds useful predictive detail?</h2>
+          <div id="roll-input-table"></div>
+          <ul class="roll-findings">
+            <li>
+              <strong>Schedules carry most of the useful signal.</strong>
+              Schedule and phase information finds 534 correct flags; the full
+              model finds 584.
+            </li>
+            <li>
+              <strong
+                >Finance, agency and location add some improvement.</strong
+              >
+              These comparisons show added prediction value, not what causes
+              delays.
+            </li>
+          </ul>
+          <details class="roll-notes">
+            <summary>Data points, calculations and detailed figures</summary>
+            <p>
+              Each model is retrained with the listed inputs using the same six
+              reporting assessments, random-forest settings and top-20% capacity
+              (1,085 flags). Schedule inputs: time observed in current phase,
+              days to the expected finish, previous forecast movement, prior
+              share of later movements and number of earlier observations, plus
+              current phase. Financial inputs add linked budget, spending share
+              and funding-link status. The full model adds managing agency,
+              sponsor, self-managed status and borough. The rolling results
+              replace the prominently displayed one-period
+              permutation-importance chart. Removing days-to-finish from the
+              full model reduces correct flags to 512; that does not establish
+              whether nearer or more distant dates cause changes.
+            </p>
+          </details>
+        </section>
+      </div>
+      <section class="card" id="pred-next-steps">
+        <p class="model-kicker">ADDITIONAL TESTS · SUMMARY</p>
+        <h2>Other experiments · single-period results</h2>
+        <p>
+          The 90-day rolling result is shown above. Other experiments below
+          retain their January–May 2026 assessments; they have not been
+          independently confirmed across all six periods. Earlier-reasons
+          evidence remains uncertain, the 35-event budget test is inconclusive,
+          and phase-duration benchmarks leave out unfinished phases.
+        </p>
+        <p>
+          These tests change either the information supplied to the model, the
+          outcome being predicted, or both.
+          <strong>None yet provides a dependable project-warning tool.</strong>
+        </p>
+        <p class="small">
+          Historical assessment: January–May 2026. Classification tests review
+          the highest-scoring 20% in each eligible sample. Funding records and
+          completed phases are different units from project PIDs.
+        </p>
+        <div class="predictive-experiment-table-wrap">
+          <table class="predictive-experiment-table">
+            <thead>
+              <tr>
+                <th>Test and method</th>
+                <th>Predictors / information changed</th>
+                <th>Outcome predicted</th>
+                <th>Result</th>
+                <th>What it tells us</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <strong>Substantial forecast setbacks</strong
+                  ><span
+                    >Random forest, compared with logistic regression and a
+                    simple rule.</span
+                  >
+                </th>
+                <td>
+                  Same predictors as the first model; retrained for a different
+                  outcome.
+                </td>
+                <td>Expected finish moves later by at least 90 days.</td>
+                <td>
+                  919 projects; top 20% = 184 flagged. Random forest finds 52 of
+                  134 setbacks; 132 false alarms and 82 missed. Logistic
+                  regression finds 49; simple rule 26.
+                </td>
+                <td>
+                  Some improvement over the simple rule, but most setbacks are
+                  missed.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <strong>Material budget increases</strong
+                  ><span
+                    >Logistic regression selected; random forest and a simple
+                    rule also tested.</span
+                  >
+                </th>
+                <td>
+                  Uses funding records: budget, spending, prior revisions,
+                  agency, project links and earlier linked schedule signals.
+                </td>
+                <td>
+                  Budget rises by at least 10% AND $1m. Initial test threshold.
+                </td>
+                <td>
+                  2,046 funding records; top 20% = 410 flagged. Finds 21 of 35
+                  increases; 389 false alarms and 14 missed. Simple rule finds
+                  13.
+                </td>
+                <td>Too many false alarms for a reliable budget warning.</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <strong>Remaining in the same phase</strong
+                  ><span
+                    >Random forest, compared with logistic regression and a
+                    simple rule.</span
+                  >
+                </th>
+                <td>
+                  Emphasises current phase and observed time in phase; includes
+                  finances, agencies, schedule history and earlier reasons.
+                </td>
+                <td>
+                  Still active in the same design, procurement or construction
+                  phase.
+                </td>
+                <td>
+                  970 projects; top 20% = 194 flagged. 193 remain in phase.
+                  However, 884 of all 970 projects (91.1%) remain in phase
+                  anyway.
+                </td>
+                <td>
+                  Identifies phase persistence, which is common and does not
+                  establish delay.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <strong>Phase duration ranges</strong
+                  ><span
+                    >Quantile regression, compared with phase-based
+                    benchmarks.</span
+                  >
+                </th>
+                <td>
+                  Uses phase, earlier budget, managing agency and borough;
+                  changes to a duration-estimation method.
+                </td>
+                <td>
+                  Actual phase duration in days, with a typical value and an
+                  intended 80% range.
+                </td>
+                <td>
+                  95 completed phases. Mean error: 320 days versus 401 for the
+                  benchmark. Median error: 189 versus 186 days. Ranges cover
+                  70.5%, below the intended 80%.
+                </td>
+                <td>
+                  Large errors; typical-case accuracy does not clearly improve.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <strong>Add earlier delay reasons</strong
+                  ><span
+                    >Same random forest and settings, retrained with added
+                    inputs.</span
+                  >
+                </th>
+                <td>
+                  Adds previously recorded reasons to the first model’s
+                  predictors. Outcome stays unchanged.
+                </td>
+                <td>
+                  Any later movement in expected finish—the original model’s
+                  outcome.
+                </td>
+                <td>
+                  Same 919 projects and 184 flags. Correct flags rise from 70 to
+                  75; false alarms fall from 114 to 109; missed changes fall
+                  from 121 to 116.
+                </td>
+                <td>
+                  Small, uncertain gain; not consistent across assessment
+                  periods.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <details class="card" id="additional-predictive-support">
+        <summary>
+          Supporting charts, methods and detailed results for these five tests
+        </summary>
+        <div class="predictive-extension-details">
+          <section
+            class="card predictive-card extra-pred-card"
+            id="extra-substantial"
+          >
+            <h2>
+              Testing the Same Modelling Approach on Substantial Forecast
+              Setbacks
+            </h2>
+            <div class="extension-explanation">
+              <p>
+                <strong>How this relates to the first model:</strong> We keep
+                the same predictor information, random-forest method and
+                settings, but retrain it for a different outcome:
+                <strong>a setback of at least 90 days</strong>, rather than any
+                later movement.
+              </p>
+              <dl>
+                <div>
+                  <dt>Information used</dt>
+                  <dd>
+                    Earlier forecast changes, time observed in phase, days until
+                    expected finish, budget, spending, agencies, borough and
+                    funding-link information.
+                  </dd>
+                </div>
+                <div>
+                  <dt>What we predict</dt>
+                  <dd>
+                    Whether a project’s expected finish date moves later by
+                    <strong>90 days or more</strong> between January and May
+                    2026.
+                  </dd>
+                </div>
+                <div>
+                  <dt>How we test it</dt>
+                  <dd>
+                    January 2026 or earlier information is used to make
+                    predictions; May 2026 records provide the observed result.
+                    The same 919 projects are assessed; 134 have a setback of at
+                    least 90 days. Each approach flags its highest-scoring 20%:
+                    184 projects.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Approaches compared</dt>
+                  <dd>
+                    Random forest and logistic regression are each trained again
+                    for this outcome. The simple rule prioritises larger
+                    previous forecast setbacks. Random forest was selected using
+                    the earlier validation period.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="extra-chart-substantial" class="extra-result-chart"></div>
+            <div class="extension-result-summary">
+              <p><strong>Random forest result · top 20% review rule</strong></p>
+              <div class="extension-result-grid">
+                <div><strong>184</strong><span>projects flagged</span></div>
+                <div><strong>52</strong><span>correct flags</span></div>
+                <div><strong>132</strong><span>false alarms</span></div>
+                <div>
+                  <strong>82</strong><span>qualifying cases missed</span>
+                </div>
+              </div>
+            </div>
+            <ul class="chart-findings">
+              <li>
+                <strong
+                  >Random forest finds 52 of the 134 substantial
+                  setbacks.</strong
+                >
+                That is twice the simple rule’s 26, but only three more than
+                logistic regression’s 49, with the same 184-project review list.
+              </li>
+              <li>
+                <strong>Performance remains limited.</strong> It misses 82
+                substantial setbacks and produces 132 false alarms. Those false
+                alarms may include smaller setbacks, but do not meet the 90-day
+                target.
+              </li>
+            </ul>
+            <details class="pred-note">
+              <summary>Data points, calculations and detailed figures</summary>
+              <p>
+                <strong>Outcome:</strong> next Forecast completion date minus
+                current Forecast completion date is at least 90 calendar days.
+                Both dates must explicitly be Forecast. The new test excludes 30
+                actual completions and two untyped pairs from the older
+                951-project sample. Inputs are earlier date movements, days
+                until expected finish, phase history, budget, spending, agencies
+                and location; no outcome-period information is supplied.
+              </p>
+              <p>
+                Training: 6,096 earlier comparisons; validation: 914 projects;
+                assessment: 919 projects. Random forest was selected using
+                earlier validation average precision.
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Approach</th>
+                      <th>Flagged</th>
+                      <th>Correct flags</th>
+                      <th>False alarms</th>
+                      <th>Missed cases</th>
+                      <th>Precision</th>
+                      <th>Share found</th>
+                      <th>ROC AUC</th>
+                      <th>Average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>184</td>
+                      <td>49</td>
+                      <td>135</td>
+                      <td>85</td>
+                      <td>26.6%</td>
+                      <td>36.6%</td>
+                      <td>0.702</td>
+                      <td>24.7%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>184</td>
+                      <td>52</td>
+                      <td>132</td>
+                      <td>82</td>
+                      <td>28.3%</td>
+                      <td>38.8%</td>
+                      <td>0.707</td>
+                      <td>27.4%</td>
+                    </tr>
+                    <tr>
+                      <td>Simple rule</td>
+                      <td>184</td>
+                      <td>26</td>
+                      <td>158</td>
+                      <td>108</td>
+                      <td>14.1%</td>
+                      <td>19.4%</td>
+                      <td>0.496</td>
+                      <td>13.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Earlier validation average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>31.9%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>49.9%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The simple rule ranks by the previous positive recorded date
+                movement. Random selection would find about 26.8 cases on
+                average. Conditional 95% bootstrap precision interval for the
+                selected model: 21.7%–34.7%.
+              </p>
+              <p>
+                Sources: saved MCP exports and master Infrastructure roster; no
+                fresh upstream download. All inputs precede the outcome. Current
+                reviewed typologies are not predictors. Training uses outcomes
+                through September 2025; model selection uses September
+                2025–January 2026; assessment uses January–May 2026. The final
+                interval was previously examined in this project: these are
+                exploratory historical results requiring confirmation on new
+                reports. No final-test parameter tuning was performed. Different
+                outcomes have different eligible samples; repeated training
+                comparisons are not different projects.
+              </p>
+              <p>
+                <button type="button" data-extra-download="substantial">
+                  Download the historical assessment data (CSV)
+                </button>
+              </p>
+            </details>
+          </section>
+          <section
+            class="card predictive-card extra-pred-card"
+            id="extra-budget"
+          >
+            <h2>Testing Prediction of Material Budget Increases</h2>
+            <div class="extension-explanation">
+              <p>
+                <strong>How this relates to the first model:</strong> This is a
+                different prediction task. We reuse random forest and logistic
+                regression, but train them on
+                <strong>funding records and financial predictors</strong> to
+                predict budget revisions.
+              </p>
+              <dl>
+                <div>
+                  <dt>Information used</dt>
+                  <dd>
+                    Budget size, spending share, previous budget changes,
+                    reporting history, budget-holding agency, numbers of linked
+                    projects and available earlier schedule signals from those
+                    projects.
+                  </dd>
+                </div>
+                <div>
+                  <dt>What we predict</dt>
+                  <dd>
+                    Whether a funding record’s budget increases by
+                    <strong>at least 10% and at least $1 million</strong> by May
+                    2026. Both conditions must hold. This is an initial test
+                    threshold, not an agreed standard.
+                  </dd>
+                </div>
+                <div>
+                  <dt>How we test it</dt>
+                  <dd>
+                    January 2026 or earlier information is used to make
+                    predictions; May 2026 records provide the observed result.
+                    We assess 2,046 unique agency + FMS ID budget records linked
+                    to Infrastructure; 35 meet the increase threshold. Each
+                    approach flags the top 20%: 410 records. A funding record is
+                    not necessarily one project.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Approaches compared</dt>
+                  <dd>
+                    Random forest, logistic regression and a rule based on
+                    previous budget increases. Logistic regression was selected
+                    using earlier validation results; the models are fitted
+                    separately from the schedule models.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="extra-chart-budget" class="extra-result-chart"></div>
+            <div class="extension-result-summary">
+              <p>
+                <strong
+                  >Logistic regression result · top 20% review rule</strong
+                >
+              </p>
+              <div class="extension-result-grid">
+                <div>
+                  <strong>410</strong><span>funding records flagged</span>
+                </div>
+                <div><strong>21</strong><span>correct flags</span></div>
+                <div><strong>389</strong><span>false alarms</span></div>
+                <div>
+                  <strong>14</strong><span>qualifying cases missed</span>
+                </div>
+              </div>
+            </div>
+            <ul class="chart-findings">
+              <li>
+                <strong
+                  >Logistic regression identifies 21 of the 35 material
+                  increases.</strong
+                >
+                It finds eight more than the simple rule and two more than
+                random forest, using the same 410-record review list.
+              </li>
+              <li>
+                <strong>Most budget flags are false alarms.</strong> 389 of 410
+                flags do not meet the increase threshold, and 14 material
+                increases are missed. This test is not yet a reliable
+                budget-warning tool.
+              </li>
+            </ul>
+            <details class="pred-note">
+              <summary>Data points, calculations and detailed figures</summary>
+              <p>
+                <strong>Unit:</strong> one budget-record agency + FMS ID per
+                report. A record enters when it links to at least one master
+                Infrastructure PID at the starting report. Shared records are
+                counted once in full, can fund other projects, and are not
+                apportioned to Infrastructure. The download lists all linked
+                counterparts.
+              </p>
+              <p>
+                <strong>Outcome:</strong> later budget minus earlier budget is
+                at least $1 million AND at least 10% of the positive earlier
+                budget. This initial illustrative threshold is not an official
+                or group-approved standard. It predicts a budget revision, not a
+                final cost overrun; no revision-amount prediction is claimed.
+              </p>
+              <p>
+                <strong>Inputs:</strong> current budget, spending share,
+                previous percentage change, history length, agency, counts of
+                all and Infrastructure links, and available earlier schedule
+                signals aggregated across linked Infrastructure PIDs. Missing
+                schedule signals remain missing. Training: 10,306 budget-period
+                comparisons; validation: 1,935; assessment: 2,046 unique budget
+                records.
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Approach</th>
+                      <th>Flagged</th>
+                      <th>Correct flags</th>
+                      <th>False alarms</th>
+                      <th>Missed cases</th>
+                      <th>Precision</th>
+                      <th>Share found</th>
+                      <th>ROC AUC</th>
+                      <th>Average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>410</td>
+                      <td>21</td>
+                      <td>389</td>
+                      <td>14</td>
+                      <td>5.1%</td>
+                      <td>60.0%</td>
+                      <td>0.718</td>
+                      <td>3.6%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>410</td>
+                      <td>19</td>
+                      <td>391</td>
+                      <td>16</td>
+                      <td>4.6%</td>
+                      <td>54.3%</td>
+                      <td>0.777</td>
+                      <td>7.0%</td>
+                    </tr>
+                    <tr>
+                      <td>Simple rule</td>
+                      <td>410</td>
+                      <td>13</td>
+                      <td>397</td>
+                      <td>22</td>
+                      <td>3.2%</td>
+                      <td>37.1%</td>
+                      <td>0.599</td>
+                      <td>3.2%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Earlier validation average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>11.0%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>10.6%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Logistic regression was selected on earlier validation. Random
+                forest has higher final-test average precision, but was not
+                substituted after seeing those outcomes. The simple rule ranks
+                by previous positive budget-percentage increase. Conditional
+                precision interval: 3.2%–7.3%. Shared PIDs create dependence
+                between some budget records that this unit-level interval does
+                not fully capture.
+              </p>
+              <p>
+                Sources: saved MCP exports and master Infrastructure roster; no
+                fresh upstream download. All inputs precede the outcome. Current
+                reviewed typologies are not predictors. Training uses outcomes
+                through September 2025; model selection uses September
+                2025–January 2026; assessment uses January–May 2026. The final
+                interval was previously examined in this project: these are
+                exploratory historical results requiring confirmation on new
+                reports. No final-test parameter tuning was performed. Different
+                outcomes have different eligible samples; repeated training
+                comparisons are not different projects.
+              </p>
+              <p>
+                <button type="button" data-extra-download="budget">
+                  Download the historical assessment data (CSV)
+                </button>
+              </p>
+            </details>
+          </section>
+          <section
+            class="card predictive-card extra-pred-card"
+            id="extra-phase"
+          >
+            <h2>Testing Prediction of Projects Remaining in the Same Phase</h2>
+            <div class="extension-explanation">
+              <p>
+                <strong>How this relates to the first model:</strong> We train
+                the same classification methods for a different outcome:
+                <strong>remaining in a phase</strong>. We also include
+                previously recorded reasons as predictors. This does not measure
+                whether the project is late.
+              </p>
+              <dl>
+                <div>
+                  <dt>Information used</dt>
+                  <dd>
+                    Current phase, observed time in phase, earlier forecast
+                    movements, expected finish, budget, spending, agencies,
+                    borough, funding links and previously recorded reasons.
+                  </dd>
+                </div>
+                <div>
+                  <dt>What we predict</dt>
+                  <dd>
+                    Whether a project remains active in the same design,
+                    procurement or construction phase in May 2026.
+                  </dd>
+                </div>
+                <div>
+                  <dt>How we test it</dt>
+                  <dd>
+                    January 2026 or earlier information is used to make
+                    predictions; May 2026 records provide the observed result.
+                    We assess 970 eligible projects; 884 remain in the same
+                    phase. Each approach selects its highest-scoring 20%: 194
+                    projects.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Approaches compared</dt>
+                  <dd>
+                    Random forest, logistic regression and a rule that
+                    prioritises projects observed longer in their phase. Random
+                    forest was selected using earlier validation.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="extra-chart-phase" class="extra-result-chart"></div>
+            <div class="extension-result-summary">
+              <p><strong>Random forest result · top 20% review rule</strong></p>
+              <div class="extension-result-grid">
+                <div><strong>194</strong><span>projects flagged</span></div>
+                <div><strong>193</strong><span>correct flags</span></div>
+                <div><strong>1</strong><span>false alarms</span></div>
+                <div>
+                  <strong>691</strong><span>qualifying cases missed</span>
+                </div>
+              </div>
+            </div>
+            <ul class="chart-findings">
+              <li>
+                <strong
+                  >193 of the 194 random-forest selections remain in the same
+                  phase.</strong
+                >
+                Logistic regression identifies 192 and the simple rule 181.
+                Remaining in phase is already very common: 884 of 970 projects
+                (91.1%) do so.
+              </li>
+              <li>
+                <strong
+                  >This result is not evidence of accurate delay
+                  prediction.</strong
+                >
+                A project can remain in construction for four months as planned.
+                The list covers only 193 of the 884 same-phase cases; a delay
+                warning would require a dependable planned phase-end date.
+              </li>
+            </ul>
+            <details class="pred-note">
+              <summary>Data points, calculations and detailed figures</summary>
+              <p>
+                <strong>Outcome:</strong> same normalised phase at the next
+                report AND lifecycle still in progress. A recorded completion
+                ends persistence even when the label still says Design or
+                Construction. Supported phase changes/completions form the other
+                outcome. Cancelled, on-hold, transferred, defaulted, unsupported
+                and missing next states are excluded rather than counted as
+                ordinary progress. A phase change can also be a backward move;
+                it is not automatically progress.
+              </p>
+              <p>
+                <strong>Inputs:</strong> phase, months consecutively observed in
+                phase, date movements, days until expected finish, exclusive
+                budget, spending, agencies, borough, funding status and earlier
+                recorded reason flags. Training: 6,488 comparisons; validation:
+                969; test: 970 unique PIDs. Random forest was selected on
+                earlier validation. Observed phase history is not assumed to be
+                actual time since phase start.
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Approach</th>
+                      <th>Flagged</th>
+                      <th>Correct flags</th>
+                      <th>False alarms</th>
+                      <th>Missed cases</th>
+                      <th>Precision</th>
+                      <th>Share found</th>
+                      <th>ROC AUC</th>
+                      <th>Average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>194</td>
+                      <td>192</td>
+                      <td>2</td>
+                      <td>692</td>
+                      <td>99.0%</td>
+                      <td>21.7%</td>
+                      <td>0.723</td>
+                      <td>96.4%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>194</td>
+                      <td>193</td>
+                      <td>1</td>
+                      <td>691</td>
+                      <td>99.5%</td>
+                      <td>21.8%</td>
+                      <td>0.806</td>
+                      <td>97.4%</td>
+                    </tr>
+                    <tr>
+                      <td>Simple rule</td>
+                      <td>194</td>
+                      <td>181</td>
+                      <td>13</td>
+                      <td>703</td>
+                      <td>93.3%</td>
+                      <td>20.5%</td>
+                      <td>0.491</td>
+                      <td>91.5%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Earlier validation average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Logistic regression</td>
+                      <td>92.5%</td>
+                    </tr>
+                    <tr>
+                      <td>Random forest</td>
+                      <td>93.8%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                The simple rule ranks by months already observed in the phase.
+                Always predicting same phase would be right for 91.1% of all
+                test projects, so high watchlist precision alone is not evidence
+                of a strong general delay model. The review list finds only
+                21.8% of all same-phase outcomes. Conditional precision
+                interval: 98.4%–100.0%.
+              </p>
+              <p>
+                Sources: saved MCP exports and master Infrastructure roster; no
+                fresh upstream download. All inputs precede the outcome. Current
+                reviewed typologies are not predictors. Training uses outcomes
+                through September 2025; model selection uses September
+                2025–January 2026; assessment uses January–May 2026. The final
+                interval was previously examined in this project: these are
+                exploratory historical results requiring confirmation on new
+                reports. No final-test parameter tuning was performed. Different
+                outcomes have different eligible samples; repeated training
+                comparisons are not different projects.
+              </p>
+              <p>
+                <button type="button" data-extra-download="phase">
+                  Download the historical assessment data (CSV)
+                </button>
+              </p>
+            </details>
+          </section>
+          <section
+            class="card predictive-card extra-pred-card"
+            id="extra-duration"
+          >
+            <h2>Testing Estimates of Phase Duration and Likely Ranges</h2>
+            <div class="extension-explanation">
+              <p>
+                <strong>How this relates to the first model:</strong> This
+                changes both the outcome and modelling method. Instead of a
+                yes/no warning, we predict
+                <strong>a number of days and a duration range</strong>. A
+                quantile regression method is used, rather than the first
+                model’s random-forest classifier.
+              </p>
+              <dl>
+                <div>
+                  <dt>Information used</dt>
+                  <dd>
+                    The phase being estimated, budget information, managing
+                    agency and borough, recorded before the phase finishes.
+                    Current typology is not an input to this fitted model.
+                  </dd>
+                </div>
+                <div>
+                  <dt>What we predict</dt>
+                  <dd>
+                    Actual duration of the phase: its actual end date minus
+                    actual start date. The model estimates a typical duration
+                    and a range intended to cover 80% of outcomes.
+                  </dd>
+                </div>
+                <div>
+                  <dt>How we test it</dt>
+                  <dd>
+                    Models learn from earlier completed phases and are checked
+                    on 95 phases from 95 projects first recorded complete in May
+                    2026, with actual ends after January 2026 and usable earlier
+                    inputs.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Approaches compared</dt>
+                  <dd>
+                    A gradient-boosting quantile model versus simple medians and
+                    duration ranges for each phase. This is not the same model
+                    as the forecast-change classifier.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="extra-chart-duration" class="extra-result-chart"></div>
+            <div class="extension-result-summary">
+              <p>
+                <strong>Duration-model assessment · 95 completed phases</strong>
+              </p>
+              <div class="extension-result-grid">
+                <div>
+                  <strong>320 days</strong
+                  ><span>mean prediction error: model</span>
+                </div>
+                <div>
+                  <strong>401 days</strong
+                  ><span>mean prediction error: simple benchmark</span>
+                </div>
+                <div>
+                  <strong>70.5%</strong
+                  ><span>actual durations inside the predicted ranges</span>
+                </div>
+              </div>
+            </div>
+            <ul class="chart-findings">
+              <li>
+                <strong
+                  >The model reduces mean prediction error from 401 to 320
+                  days.</strong
+                >
+                However, the median error is almost unchanged: 189 days for the
+                model versus 186 for the benchmark. Typical-case accuracy has
+                not clearly improved.
+              </li>
+              <li>
+                <strong
+                  >Duration ranges are less reliable than intended.</strong
+                >
+                Only 70.5% of actual durations fall inside ranges intended to
+                cover 80%. Errors remain large; these are exploratory estimates,
+                not dependable delivery commitments.
+              </li>
+            </ul>
+            <details class="pred-note">
+              <summary>Data points, calculations and detailed figures</summary>
+              <p>
+                <strong>Outcome:</strong> actual phase end minus actual phase
+                start, in days. Each PID/phase enters once, on first usable
+                completion observation. Conflicting/negative dates and ends
+                later than the report month-start cut-off are excluded. Inputs
+                come from an earlier report after phase start and before actual
+                phase end.
+              </p>
+              <p>
+                Training: 939 earlier completed phases; validation: 120 first
+                observed complete in January 2026 with an actual end after
+                September 2025; test: 95 first observed complete in May 2026
+                with an actual end after January 2026. 2,056 other completed
+                PID/phase cases lack an earlier in-phase input snapshot. These
+                are phase cases, not unique projects. Ongoing phases have no
+                final actual-duration target and are excluded; completed-only
+                samples can underrepresent long unfinished work.
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Phase</th>
+                      <th>Earlier completed phases</th>
+                      <th>Assessment phases</th>
+                      <th>Median: days</th>
+                      <th>Central 80% range: days</th>
+                      <th>Assessment median: days</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Design</td>
+                      <td>316</td>
+                      <td>29</td>
+                      <td>516</td>
+                      <td>174–2,016</td>
+                      <td>613</td>
+                    </tr>
+                    <tr>
+                      <td>Procurement</td>
+                      <td>341</td>
+                      <td>36</td>
+                      <td>483</td>
+                      <td>271–813</td>
+                      <td>404</td>
+                    </tr>
+                    <tr>
+                      <td>Construction</td>
+                      <td>282</td>
+                      <td>30</td>
+                      <td>456</td>
+                      <td>245–1,425</td>
+                      <td>392</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Approach</th>
+                      <th>Median absolute error: days</th>
+                      <th>Mean absolute error: days</th>
+                      <th>80% interval coverage</th>
+                      <th>Mean width: days</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Phase-only reference</td>
+                      <td>186</td>
+                      <td>401</td>
+                      <td>70.5%</td>
+                      <td>1,140</td>
+                    </tr>
+                    <tr>
+                      <td>Quantile regression</td>
+                      <td>189</td>
+                      <td>320</td>
+                      <td>70.5%</td>
+                      <td>935</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                <strong>Reference:</strong> training-only phase median and
+                10th/90th percentiles. <strong>Quantile model:</strong> three
+                gradient-boosting regressors predict the 10th, 50th and 90th
+                percentiles using phase, budget, managing agency and borough
+                known before completion. Crossing quantiles are sorted; negative
+                estimates are clipped to zero. Typology is not used as a
+                predictor. An intended 80% interval should contain about 80% of
+                actual later outcomes. The table reports the measured coverage
+                rather than assuming this has been achieved.
+              </p>
+              <p>
+                Sources: saved MCP exports and master Infrastructure roster; no
+                fresh upstream download. All inputs precede the outcome. Current
+                reviewed typologies are not predictors. Training uses outcomes
+                through September 2025; model selection uses September
+                2025–January 2026; assessment uses January–May 2026. The final
+                interval was previously examined in this project: these are
+                exploratory historical results requiring confirmation on new
+                reports. No final-test parameter tuning was performed. Different
+                outcomes have different eligible samples; repeated training
+                comparisons are not different projects.
+              </p>
+              <p>
+                <button type="button" data-extra-download="duration">
+                  Download the historical assessment data (CSV)
+                </button>
+              </p>
+            </details>
+          </section>
+          <section
+            class="card predictive-card extra-pred-card"
+            id="extra-reasons"
+          >
+            <h2>Testing Whether Earlier Reasons Improve the Original Model</h2>
+            <div class="extension-explanation">
+              <p>
+                <strong>How this relates to the first model:</strong> Here the
+                outcome stays the same as the first model. We keep the
+                random-forest method and settings, add
+                <strong>previously recorded delay reasons</strong> to the
+                predictors, and retrain it.
+              </p>
+              <dl>
+                <div>
+                  <dt>Information used</dt>
+                  <dd>
+                    The original schedule, financial and agency predictors, with
+                    or without earlier recorded scope/design, funding, approval,
+                    site, procurement and other reason indicators. Only reasons
+                    known by January 2026 are used.
+                  </dd>
+                </div>
+                <div>
+                  <dt>What we predict</dt>
+                  <dd>
+                    Any later movement in the expected finish date by May
+                    2026—the same outcome as the first model, not the 90-day
+                    target.
+                  </dd>
+                </div>
+                <div>
+                  <dt>How we test it</dt>
+                  <dd>
+                    January 2026 or earlier information is used to make
+                    predictions; May 2026 records provide the observed result.
+                    Both versions use the same 919 projects and flag their
+                    highest-scoring 184. There are 191 later forecast changes to
+                    find.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Approaches compared</dt>
+                  <dd>
+                    Two random forests: original predictors versus original
+                    predictors plus earlier reasons. This isolates the effect of
+                    adding information rather than changing the prediction
+                    question.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+            <div id="extra-chart-reasons" class="extra-result-chart"></div>
+            <div class="extension-result-summary">
+              <p>
+                <strong
+                  >Same 919 projects · same 184-project review-list size</strong
+                >
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Random-forest version</th>
+                      <th>Correct flags</th>
+                      <th>False alarms</th>
+                      <th>Later changes missed</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Original inputs</td>
+                      <td>70</td>
+                      <td>114</td>
+                      <td>121</td>
+                    </tr>
+                    <tr>
+                      <td>Add earlier recorded reasons</td>
+                      <td>75</td>
+                      <td>109</td>
+                      <td>116</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <ul class="chart-findings">
+              <li>
+                <strong
+                  >Adding earlier reasons finds five more later changes.</strong
+                >
+                The same-sized list identifies 75 instead of 70 changes, with
+                five fewer false alarms and five fewer missed changes.
+              </li>
+              <li>
+                <strong>The improvement is small and uncertain.</strong> It did
+                not improve results consistently across assessment periods. We
+                cannot yet conclude that earlier reasons reliably improve the
+                warning list.
+              </li>
+            </ul>
+            <details class="pred-note">
+              <summary>Data points, calculations and detailed figures</summary>
+              <p>
+                <strong>Outcome:</strong> next explicitly Forecast completion
+                date moves later by at least one day. Both models use identical
+                observations and settings; only reason inputs differ. Training:
+                6,096 earlier comparisons. 560 of 919 assessed PIDs have an
+                earlier recorded reason.
+              </p>
+              <p>
+                <strong>New inputs:</strong> flags for scope/design,
+                funding/budget, approval/legal/regulatory,
+                site/utilities/hazards, procurement/contracts, other reasons and
+                no recorded reason. Each flag uses only text recorded by the
+                starting report. Categories can overlap. Missing reasons do not
+                establish no problem. This transparent keyword coding is not an
+                independently validated causal taxonomy.
+              </p>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Approach</th>
+                      <th>Flagged</th>
+                      <th>Correct flags</th>
+                      <th>False alarms</th>
+                      <th>Missed cases</th>
+                      <th>Precision</th>
+                      <th>Share found</th>
+                      <th>ROC AUC</th>
+                      <th>Average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Without earlier reasons</td>
+                      <td>184</td>
+                      <td>70</td>
+                      <td>114</td>
+                      <td>121</td>
+                      <td>38.0%</td>
+                      <td>36.6%</td>
+                      <td>0.707</td>
+                      <td>36.3%</td>
+                    </tr>
+                    <tr>
+                      <td>With earlier reasons</td>
+                      <td>184</td>
+                      <td>75</td>
+                      <td>109</td>
+                      <td>116</td>
+                      <td>40.8%</td>
+                      <td>39.3%</td>
+                      <td>0.720</td>
+                      <td>38.3%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Model</th>
+                      <th>Earlier validation average precision</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Without earlier reasons</td>
+                      <td>52.7%</td>
+                    </tr>
+                    <tr>
+                      <td>With earlier reasons</td>
+                      <td>53.0%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Final-test average precision changes from 36.3% to 38.3%. On
+                earlier validation, the reason-augmented list finds 98 cases
+                versus 101 without reasons at equal capacity: the gain is not
+                consistent at that cut-off. The paired interval resamples
+                assessment PIDs 600 times at fixed fitted rankings/flag
+                membership; it omits training and period uncertainty. Predictive
+                association does not establish causation.
+              </p>
+              <p>
+                Sources: saved MCP exports and master Infrastructure roster; no
+                fresh upstream download. All inputs precede the outcome. Current
+                reviewed typologies are not predictors. Training uses outcomes
+                through September 2025; model selection uses September
+                2025–January 2026; assessment uses January–May 2026. The final
+                interval was previously examined in this project: these are
+                exploratory historical results requiring confirmation on new
+                reports. No final-test parameter tuning was performed. Different
+                outcomes have different eligible samples; repeated training
+                comparisons are not different projects.
+              </p>
+              <p>
+                <button type="button" data-extra-download="reasons">
+                  Download the historical assessment data (CSV)
+                </button>
+              </p>
+            </details>
+          </section>
+        </div>
+      </details>
+      <section class="card" id="additional-pred-settings">
+        <details>
+          <summary>Shared methods for the five new analyses</summary>
+          <p>
+            Logistic regression uses L2 regularisation, C=1 and a fixed seed.
+            Random forest uses 250 trees, maximum depth 6, minimum leaf size 20
+            and seed 19. Numeric missing values use training medians and missing
+            flags; categories use training-only encoding and rare-category
+            pooling. No future reason, budget, phase, date or target field is
+            supplied as a predictor.
+          </p>
+          <p>
+            Classification comparisons review the highest-scored 20%, rounded
+            up, on the same eligible units within each question. Equal scores
+            use a deterministic PID/budget-key order independent of outcomes.
+            Scores rank candidates; they are not calibrated probabilities.
+            Precision is correct flags divided by all flags; share found is
+            correct flags divided by all true cases. Average precision
+            summarises precision–recall performance; ROC AUC measures ranking.
+          </p>
+          <p>
+            95% bootstrap intervals use 400 final-test unit resamples at fixed
+            flag membership. They omit training and period uncertainty. Shared
+            financial records introduce further dependence. Duration assessment
+            uses newly observed actual phase completions, not random rows; a PID
+            can contribute more than one different phase. Quantile regressors
+            use 100 boosting stages, depth 2, minimum leaf size 10 and seed 19,
+            with quantiles sorted to avoid crossing. The earlier validation
+            comparison is retained in the downloadable analysis outputs.
+          </p>
+          <p>
+            No composite watchlist is reintroduced. These are additional
+            historical predictive analyses, with new targets and explicit
+            samples.
+          </p>
+          <p>
+            <button type="button" data-extra-download="audit">
+              Download all new results and validation figures (JSON)
+            </button>
+          </p>
+        </details>
+      </section>
+      <details class="card" id="model-input-definitions">
+        <summary>Predictive model inputs and settings</summary>
+        <p>
+          These inputs are available at the starting report or earlier. Typology
+          is used only to group results after prediction.
+        </p>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Input</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Time observed in current phase (months)</td>
+                <td>
+                  Months across consecutive reports showing the same phase. This
+                  is the observed history, not necessarily the actual phase
+                  start.
+                </td>
+              </tr>
+              <tr>
+                <td>Days until expected completion</td>
+                <td>
+                  Expected finish date minus the starting report date. For
+                  example, 200 means expected completion is 200 days after that
+                  report; a negative value means that forecast date has already
+                  passed.
+                </td>
+              </tr>
+              <tr>
+                <td>Previous change in expected finish (days)</td>
+                <td>
+                  The last available adjacent-report change in forecast
+                  completion. Positive means moved later; negative means moved
+                  earlier.
+                </td>
+              </tr>
+              <tr>
+                <td>How often earlier forecasts moved later</td>
+                <td>
+                  The proportion of usable earlier adjacent-report comparisons
+                  with a later forecast; 0.75 means three quarters moved later.
+                </td>
+              </tr>
+              <tr>
+                <td>Number of earlier project reports</td>
+                <td>
+                  Count of available observations for that PID up to and
+                  including the starting report.
+                </td>
+              </tr>
+              <tr>
+                <td>Project budget size</td>
+                <td>
+                  Reported budget from complete funding linked exclusively to
+                  the PID. A logarithmic transformation reduces the influence of
+                  extremely large budgets; it does not change the original
+                  source amount.
+                </td>
+              </tr>
+              <tr>
+                <td>Budget spent to date (%)</td>
+                <td>
+                  Cumulative spend divided by eligible reported budget,
+                  multiplied by 100. It measures spending, not physical
+                  completion.
+                </td>
+              </tr>
+              <tr>
+                <td>Current phase</td>
+                <td>
+                  The stage recorded at the starting report, such as design,
+                  procurement or construction.
+                </td>
+              </tr>
+              <tr>
+                <td>Managing agency</td>
+                <td>The agency responsible for managing delivery.</td>
+              </tr>
+              <tr>
+                <td>Self-managed status</td>
+                <td>
+                  Whether one recorded sponsor is also the managing agency;
+                  unknown and multiple-sponsor cases are retained separately.
+                </td>
+              </tr>
+              <tr>
+                <td>Budget-to-project link status</td>
+                <td>
+                  Whether usable funding is exclusive to the PID, shared across
+                  PIDs, or missing/incomplete. Shared funding is not silently
+                  allocated to individual projects.
+                </td>
+              </tr>
+              <tr>
+                <td>Project borough</td>
+                <td>
+                  Recorded project location, including missing or broader
+                  location labels.
+                </td>
+              </tr>
+              <tr>
+                <td>Sponsor agency</td>
+                <td>
+                  The agency or recorded agency combination on whose behalf the
+                  project is delivered.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Random forest: 250 trees, maximum depth 6, minimum leaf size 20,
+          random seed 19. Each rolling assessment fits preprocessing and the
+          model using earlier comparisons only. Missing numeric inputs use
+          training medians and missing indicators; categorical inputs are
+          encoded with explicit missing categories. Scores rank review priority;
+          they are not calibrated probabilities.
+        </p>
+      </details>
+    </div>
+    <div
+      id="panel-definitions"
+      role="tabpanel"
+      aria-labelledby="tab-definitions"
+      hidden
+    >
+      <section class="card" id="rolling-data-definitions">
+        <h2>Current predictive evaluation: six reporting periods</h2>
+        <p>
+          The main predictive section now uses an expanding-window random
+          forest, fitted again before each outcome report using earlier
+          comparisons only. Six outcomes run from September 2024 to May 2026,
+          covering 5,412 eligible project/report comparisons and 1,533 later
+          forecasts. A PID may recur across periods.
+        </p>
+        <p>
+          At the highest-20% review capacity: 1,085 flags, 584 correct flags
+          (53.8% precision), 501 false alarms and 949 missed changes (38.1%
+          recall). The overall later rate is 28.3%. For 90-day setbacks, the
+          separate retrained model finds 419 of 1,097 events among 1,085 flags
+          (38.6% precision; 38.2% recall).
+        </p>
+        <p>
+          Each fold uses only earlier outcomes for fitting. Final rolling
+          comparison: January–May 2026, 919 PIDs, 191 later forecasts, 184 flags
+          and 80 correct flags. The separate additional experiments have their
+          own labelled outcomes and eligible samples.
+        </p>
+        <p>
+          Review rank is a priority order, not a calibrated probability. A later
+          forecast means the expected finish moves later between reports; it
+          does not establish actual lateness against an original approved
+          deadline.
+        </p>
+      </section>
+      <section class="card">
+        <p class="story-step">DATA DEFINITIONS</p>
+        <h2>Understanding the data behind this report</h2>
+        <p>
+          This reference explains where the data come from, what each record
+          represents, and how the report calculates its measures. It covers the
+          four NYC Open Data sources available through the MCP, the project
+          classifications and the analysis variables.
+        </p>
+        <div class="pred-stats">
+          <div><strong>10</strong><span>Reporting periods</span></div>
+          <div>
+            <strong>May 2023–May 2026</strong
+            ><span>Three years of reporting history</span>
+          </div>
+          <div>
+            <strong>3,618</strong
+            ><span>Unique eligible PIDs in the classification portfolio</span>
+          </div>
+          <div>
+            <strong>2,300</strong
+            ><span>Infrastructure PIDs in the current roster</span>
+          </div>
+        </div>
+        <p class="small">
+          Available reporting periods: May and September 2023; January, May and
+          September 2024; January, May and September 2025; January and May 2026.
+          The data do not contain ten observations for every PID.
+        </p>
+      </section>
+      <section class="card" id="additional-predictive-definitions">
+        <h2>New Predictive Outcomes and Variables</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Definition</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Substantial forecast setback</td>
+                <td>
+                  May 2026 Forecast completion date is at least 90 days later
+                  than January 2026 for the same PID. Both dates must be
+                  explicitly Forecast; Actual/untyped pairs are excluded.
+                </td>
+              </tr>
+              <tr>
+                <td>Material budget revision</td>
+                <td>
+                  A distinct budget-holding agency + FMS ID has a budget
+                  increase of at least 10% AND $1 million between January and
+                  May 2026, with positive starting budget. This is an initial
+                  test threshold, not an agreed official materiality rule.
+                </td>
+              </tr>
+              <tr>
+                <td>Same-phase outcome</td>
+                <td>
+                  At the next scheduled report, the PID is still in progress in
+                  the same Design, Procurement or Construction phase. A
+                  completion ends persistence even if its phase label is
+                  unchanged. Remaining in phase does not itself establish delay.
+                </td>
+              </tr>
+              <tr>
+                <td>Actual phase duration</td>
+                <td>
+                  Actual end minus actual start in days; one first usable
+                  completion per PID/phase.
+                </td>
+              </tr>
+              <tr>
+                <td>Predicted duration interval</td>
+                <td>
+                  Separate 10th and 90th percentile predictions form an intended
+                  central 80% range; the 50th percentile predicts the median.
+                </td>
+              </tr>
+              <tr>
+                <td>Earlier reason flags</td>
+                <td>
+                  Reason themes from text recorded by the prediction date, plus
+                  other/no-recorded-reason flags.
+                </td>
+              </tr>
+              <tr>
+                <td>Budget-linked schedule inputs</td>
+                <td>
+                  Mean available earlier forecast movement/days remaining across
+                  linked Infrastructure PIDs, construction share and counts of
+                  all/Infrastructure links. Shared budget records are not
+                  duplicated or apportioned.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card" id="master-data-reference">
+        <h2>Master dataset and source coverage</h2>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Current basis</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Population</td>
+                <td>
+                  3,618 unique master PIDs: 2,300 Infrastructure and 1,318
+                  Public Building; no unresolved main classifications.
+                </td>
+              </tr>
+              <tr>
+                <td>Typology</td>
+                <td>
+                  The workbook’s Infrastructure typology fields are blank.
+                  Reviewed mappings are retained and additional scope decisions
+                  are recorded separately; 47 Infrastructure PIDs still require
+                  a subtype decision. These rows remain in the dataset but their
+                  segments are omitted from graphs.
+                </td>
+              </tr>
+              <tr>
+                <td>MCP reconciliation</td>
+                <td>
+                  All 3,618 master PID/period observations match either
+                  dashboard-aligned or native schedule records. Of these, 103
+                  are native-only at the master period; 59 are Infrastructure.
+                  They are retained in the extract and source-coverage
+                  worksheet.
+                </td>
+              </tr>
+              <tr>
+                <td>Analytical histories</td>
+                <td>
+                  Dashboard-aligned MCP histories provide 16,132 observations
+                  for 2,282 Infrastructure PIDs. Latest-known analytical records
+                  can predate the master period; 18 master Infrastructure PIDs
+                  have no dashboard-aligned history. Chart eligibility is
+                  disclosed rather than filling gaps.
+                </td>
+              </tr>
+              <tr>
+                <td>Financial relationships</td>
+                <td>
+                  All linked FMS budget keys are retained. The one-row-per-PID
+                  master can combine several FMS IDs. Budget lines remain
+                  distinct by holding agency and FMS ID; shared funding is not
+                  silently allocated or repeatedly summed.
+                </td>
+              </tr>
+              <tr>
+                <td>Dates and measures</td>
+                <td>
+                  Excel serial dates are converted to calendar dates. Original
+                  master values and computed columns are preserved in the
+                  extract; charts recalculate measures from their stated MCP
+                  date and funding rules.
+                </td>
+              </tr>
+              <tr>
+                <td>Freshness</td>
+                <td>
+                  MCP exports retrieved 8 November 2026 from the saved build
+                  downloaded 14 September 2026. Ten reporting periods: May
+                  2023–May 2026. This is not a fresh upstream Open Data
+                  download.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Sources, access and reporting dates</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Source / process</th>
+                <th scope="col">What it provides</th>
+                <th scope="col">How we use it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a
+                    href="https://data.cityofnewyork.us/d/fb86-vt7u"
+                    target="_blank"
+                    rel="noopener"
+                    >Citywide budget and schedule detail · fb86-vt7u</a
+                  >
+                </td>
+                <td>
+                  Links between agency schedules, FMS funding records, sponsors,
+                  locations and phase milestones.
+                </td>
+                <td>
+                  Source for project descriptions, schedule/funding links and
+                  milestone fields. Repeated linked/location rows are
+                  deduplicated before analysis.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://data.cityofnewyork.us/d/qj5n-h5qp"
+                    target="_blank"
+                    rel="noopener"
+                    >Citywide budget, spend history and variance · qj5n-h5qp</a
+                  >
+                </td>
+                <td>
+                  Reported budgets, cumulative spend and budget movements over
+                  time.
+                </td>
+                <td>
+                  Funding history is keyed by budget-holding agency, FMS ID and
+                  reporting period. Original adoption records are distinct from
+                  reporting snapshots.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://data.cityofnewyork.us/d/95tx-snak"
+                    target="_blank"
+                    rel="noopener"
+                    >Citywide schedule history and variance · 95tx-snak</a
+                  >
+                </td>
+                <td>
+                  Reported phase, completion date/type and changes between
+                  schedule observations.
+                </td>
+                <td>
+                  Schedule history is keyed by PID and reporting period. The
+                  descriptive exports use the MCP’s dashboard-aligned schedule
+                  history; native source-only observations are not silently
+                  added.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://data.cityofnewyork.us/d/gyhf-rsr3"
+                    target="_blank"
+                    rel="noopener"
+                    >Citywide budget and spend by fiscal year · gyhf-rsr3</a
+                  >
+                </td>
+                <td>
+                  City/non-City budget and spending information by fiscal year
+                  and reporting period.
+                </td>
+                <td>
+                  Available through the MCP for fiscal-year analysis; its rows
+                  are not added to snapshot budgets or cumulative spending. The
+                  current descriptive/predictive charts do not use every field
+                  in this source.
+                </td>
+              </tr>
+              <tr>
+                <td>MCP data access</td>
+                <td>
+                  The Model Context Protocol connects Codex to tools that query
+                  the saved NYC capital-project data and its data dictionary.
+                </td>
+                <td>
+                  Data access and source definitions are recorded separately
+                  from model judgement. MCP is the access route; NYC Open Data
+                  is the underlying source.
+                </td>
+              </tr>
+              <tr>
+                <td>Codex assistance</td>
+                <td>
+                  AI-assisted classification, review, report preparation and
+                  analysis.
+                </td>
+                <td>
+                  Project descriptions support classification decisions.
+                  Calculations and statistical models are implemented
+                  explicitly; a language model’s judgement is not a substitute
+                  for a measured result. D3.js displays charts and tables; it
+                  does not determine classification or fit the predictive
+                  models.
+                </td>
+              </tr>
+              <tr>
+                <td>Reporting period versus data download</td>
+                <td>
+                  The latest saved reporting period is May 2026. The local
+                  source build was downloaded on 14 September 2026.
+                </td>
+                <td>
+                  The current master-based analysis uses MCP extracts retrieved
+                  on 8 November 2026; predictive results were recalculated on 10
+                  November 2026. All use the saved September source build. These
+                  dates do not imply a fresh upstream download or observations
+                  after May 2026.
+                </td>
+              </tr>
+              <tr>
+                <td>Different analysis samples</td>
+                <td>
+                  The master roster contains 2,300 Infrastructure PIDs.
+                  Dashboard-aligned histories cover 2,282 in 16,132 PID/report
+                  observations; 18 have no such history.
+                </td>
+                <td>
+                  The six rolling assessments contain 5,412 eligible
+                  project/report comparisons. January–May 2026 has 919. The
+                  first-to-latest forecast chart uses 1,004 PIDs. Budget and
+                  completed-phase analyses use different eligible samples.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Identifiers and the unit being counted</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Field / term</th>
+                <th scope="col">Meaning</th>
+                <th scope="col">Use in this report</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>pid</code> · PID</td>
+                <td>
+                  An agency-managed schedule identifier. This report treats each
+                  unique PID as its project-level classification unit.
+                </td>
+                <td>
+                  One PID can have several funding records; one funding record
+                  can support several PIDs. PID is not interchangeable with an
+                  FMS budget record.
+                </td>
+              </tr>
+              <tr>
+                <td><code>fms_id</code> · FMS ID</td>
+                <td>Identifier in the City’s Financial Management System.</td>
+                <td>
+                  Identify a funding record using
+                  <strong>budget-holding agency + FMS ID</strong>. The same FMS
+                  ID under different holders is treated as a different record.
+                </td>
+              </tr>
+              <tr>
+                <td>Linked budget line / funding record</td>
+                <td>
+                  In this report, one distinct pair of budget-holding agency and
+                  FMS ID linked to a PID.
+                </td>
+                <td>
+                  Count each pair once at the chosen reporting period. A link is
+                  not an allocation of the entire amount to one PID.
+                </td>
+              </tr>
+              <tr>
+                <td><code>budget_line</code> · source field</td>
+                <td>
+                  The source dictionary defines this field as a capital budget
+                  unit of appropriation.
+                </td>
+                <td>
+                  This raw appropriation field is different from the report’s
+                  shorthand “linked budget line”, which means the agency/FMS
+                  funding-record key.
+                </td>
+              </tr>
+              <tr>
+                <td><code>reporting_period</code></td>
+                <td>
+                  The published snapshot month, stored as YYYYMM; reports are
+                  normally January, May and September.
+                </td>
+                <td>
+                  Schedule observation = PID × reporting period; budget
+                  observation = holding agency × FMS ID × reporting period.
+                  Fiscal-year records also need fiscal year.
+                </td>
+              </tr>
+              <tr>
+                <td>Latest available record</td>
+                <td>Each PID’s own most recent saved observation.</td>
+                <td>
+                  Across-all-periods snapshots count each PID once; its latest
+                  observation can predate May 2026. This does not establish that
+                  it was present in the May 2026 snapshot.
+                </td>
+              </tr>
+              <tr>
+                <td>Reporting comparison</td>
+                <td>A pair of observations for the same eligible entity.</td>
+                <td>
+                  A PID may contribute more than one pair across history. Charts
+                  state whether they count unique PIDs, budget records or
+                  repeated reporting comparisons.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Project descriptions, location and agencies</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">Definition</th>
+                <th scope="col">Interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>agency_project_name</code></td>
+                <td>
+                  Project name in the managing agency’s project-management
+                  system.
+                </td>
+                <td>
+                  Read with the detailed description and linked funding names; a
+                  location or broad keyword alone can be misleading.
+                </td>
+              </tr>
+              <tr>
+                <td><code>agency_project_description</code></td>
+                <td>
+                  Short description of the capital project supplied by its
+                  sponsor.
+                </td>
+                <td>
+                  Classification also considers available scope text, FMS
+                  project names and ten-year-plan descriptions from the
+                  available reporting history.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>fms_project_name</code>;
+                  <code>ten_year_plan_category</code>
+                </td>
+                <td>
+                  Linked financial-system project name; category of work in the
+                  City’s Ten-Year Capital Strategy.
+                </td>
+                <td>
+                  Supporting context, not an automatic assignment of the
+                  report’s asset typology.
+                </td>
+              </tr>
+              <tr>
+                <td><code>borough</code>; <code>community_board</code></td>
+                <td>
+                  Reported geographic location and community-board information.
+                </td>
+                <td>
+                  Specific boroughs take precedence over Citywide labels;
+                  multiple specific boroughs are grouped as Multiple. Citywide,
+                  Multiple and unknown locations remain in the data; the
+                  five-borough phase chart omits them from the displayed bars.
+                  Counts do not measure population density or allocate
+                  expenditure geographically.
+                </td>
+              </tr>
+              <tr>
+                <td><code>sponsor_agency</code></td>
+                <td>
+                  Agency on whose behalf the project is managed; the source can
+                  list multiple sponsors.
+                </td>
+                <td>
+                  Sponsor and managing agency are different roles. Combined
+                  sponsor labels are retained where a chart requires additive
+                  groups; charts that count each sponsor separately must
+                  identify overlaps.
+                </td>
+              </tr>
+              <tr>
+                <td><code>managing_agency</code></td>
+                <td>
+                  Agency responsible for managing construction and delivery of a
+                  schedule. In budget tables, it identifies the budget holder.
+                </td>
+                <td>
+                  The schedule manager and a linked budget holder are not
+                  assumed to be identical. Agency context can support
+                  classification but does not override the named asset and
+                  scope.
+                </td>
+              </tr>
+              <tr>
+                <td>Self-managed status</td>
+                <td>
+                  Whether the recorded sponsor and schedule-managing agency
+                  match.
+                </td>
+                <td>
+                  The predictive archive records Yes only for one matching
+                  sponsor; missing and multi-sponsor cases are treated
+                  separately rather than assumed to be Yes.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Financial fields</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Field / measure</th>
+                <th scope="col">Definition</th>
+                <th scope="col">How to read it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>total_budget</code></td>
+                <td>
+                  Reported total cost represented by FMS commitments in the
+                  source dictionary.
+                </td>
+                <td>
+                  A budget/funding-record amount at a reporting date. It is not
+                  automatically the original estimate, final actual cost or a
+                  uniquely attributable PID budget.
+                </td>
+              </tr>
+              <tr>
+                <td><code>spend_to_date</code></td>
+                <td>Cumulative spending represented by FMS liquidations.</td>
+                <td>
+                  A cumulative stock, not spending during one reporting
+                  interval. Summing it across reporting periods would
+                  double-count.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>spend_to_date_1</code> / typed <code>spend_pct</code>
+                </td>
+                <td>Source percentage of reported budget spent.</td>
+                <td>
+                  For combined exclusive funding, the descriptive charts
+                  calculate 100 × summed spend / summed budget. This is a
+                  spending-progress measure, not physical completion. Values
+                  above 100% are retained.
+                </td>
+              </tr>
+              <tr>
+                <td><code>budget_variance</code></td>
+                <td>
+                  Current reported budget minus its prior nearest reported
+                  budget.
+                </td>
+                <td>
+                  A change in budget, not actual spending minus budget. Native
+                  values can bridge missing periods; newly calculated
+                  adjacent-period comparisons are labelled separately.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>budget_variance_1</code> /
+                  <code>budget_variance_pct</code>
+                </td>
+                <td>
+                  100 × (current budget − previous budget) / previous budget.
+                </td>
+                <td>
+                  The denominator is the earlier budget. Zero/missing earlier
+                  budgets cannot support this percentage.
+                  Original-adoption-to-current growth is a different comparison.
+                </td>
+              </tr>
+              <tr>
+                <td>Exclusive linked budget / spend</td>
+                <td>
+                  Sum across all linked funding records only when every record
+                  is exclusively linked to that PID and all required amounts are
+                  valid.
+                </td>
+                <td>
+                  The descriptive charts withhold shared or incomplete sums.
+                  They do not silently select one linked line or split shared
+                  money equally.
+                </td>
+              </tr>
+              <tr>
+                <td>Shared linked funding</td>
+                <td>A funding record linked to more than one PID.</td>
+                <td>
+                  A PID may be shown with linked financial context elsewhere,
+                  but that full amount is not an allocated project cost and must
+                  not be added across PIDs. Read each chart’s rules before
+                  comparing totals.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Schedule and milestone fields</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Field</th>
+                <th scope="col">Definition</th>
+                <th scope="col">Use / limitation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>current_phase</code></td>
+                <td>
+                  Recorded phase: commonly Pre-Design, Design, Construction
+                  Procurement, Construction or Close-out.
+                </td>
+                <td>
+                  Completed and other source states remain in the data; the
+                  phase-distribution charts display the five delivery phases. A
+                  current phase is different from a completed phase with
+                  recorded start/end dates.
+                </td>
+              </tr>
+              <tr>
+                <td><code>current_phase_start</code></td>
+                <td>Recorded start date of the current phase.</td>
+                <td>
+                  Use only when available and valid. The predictive model’s
+                  observed phase time is a different, history-derived measure.
+                </td>
+              </tr>
+              <tr>
+                <td><code>forecast_current_phase_end</code></td>
+                <td>Expected end of the current phase.</td>
+                <td>
+                  A phase forecast, not whole-project completion. Not every
+                  analysis export contains this field.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>actual_design_start</code> /
+                  <code>actual_design_end</code>
+                </td>
+                <td>Recorded actual design milestone dates.</td>
+                <td>
+                  Actual design start is the available proxy for the start of
+                  active project delivery; it does not capture every earlier
+                  planning activity.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>actual_construction</code> /
+                  <code>actual_construction_1</code>
+                </td>
+                <td>
+                  Raw fields for actual construction procurement start / end.
+                </td>
+                <td>
+                  Their names are abbreviated in the raw source; the report maps
+                  them to procurement start/end, not to construction start/end.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>actual_construction_start</code> /
+                  <code>actual_construction_end</code>
+                </td>
+                <td>Recorded actual construction start and end.</td>
+                <td>
+                  The MCP’s lifecycle interpretation treats actual construction
+                  end as substantial completion; this is distinct from financial
+                  close-out.
+                </td>
+              </tr>
+              <tr>
+                <td><code>forecast_completion</code></td>
+                <td>Expected completion date for the whole project.</td>
+                <td>
+                  Compare the same PID’s forecasts between reports to measure
+                  forecast movement. Movement is not lateness against an
+                  original baseline.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>completion_date</code> +
+                  <code>completion_date_type</code>
+                </td>
+                <td>
+                  The schedule-source completion date may be
+                  <strong>Forecast or Actual</strong>, identified by its type
+                  field.
+                </td>
+                <td>
+                  Do not treat completion_date as an actual finish without
+                  checking completion_date_type. A change between different date
+                  types is not automatically a pure forecast revision.
+                </td>
+              </tr>
+              <tr>
+                <td><code>variance_day</code></td>
+                <td>
+                  Current completion_date minus completion_date at the prior
+                  nearest reporting observation, in days.
+                </td>
+                <td>
+                  Native schedule change; inspect date type and observation
+                  periods. Positive generally means a later recorded date. The
+                  report’s forecast-only recalculations have their own
+                  eligibility rules.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code>reason_for_delay</code>; native
+                  <code>reason_for_forecast_completion_change</code>
+                </td>
+                <td>
+                  Recorded explanation for a schedule issue or change in
+                  forecast, depending on the source field.
+                </td>
+                <td>
+                  Blank does not establish that no delay occurred. The overview
+                  bar chart and typology heatmap use the same individual
+                  recorded reasons across all available history, with minor
+                  wording variants combined. The predictive earlier-reasons test
+                  separately groups earlier text into broader input flags.
+                </td>
+              </tr>
+              <tr>
+                <td>Missing milestone dates</td>
+                <td>
+                  Dates can be absent because a milestone has not occurred, the
+                  agency did not provide it, or milestones are suppressed
+                  outside active delivery phases.
+                </td>
+                <td>
+                  Missing does not mean zero days or proven poor reporting.
+                  Missingness, invalid dates and inapplicable milestones should
+                  be distinguished.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Classification and calculated analysis measures</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Measure</th>
+                <th scope="col">Formula / logic</th>
+                <th scope="col">Meaning and safeguards</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primary classification</td>
+                <td>
+                  One Infrastructure or Public Building label per master PID:
+                  2,300 and 1,318 respectively.
+                </td>
+                <td>
+                  The supplied master dataset determines these main labels. MCP
+                  descriptions and links provide supporting evidence. All 3,618
+                  master PIDs have a main classification; unresolved asset
+                  subtypes are a separate typology question.
+                </td>
+              </tr>
+              <tr>
+                <td>Infrastructure typology</td>
+                <td>
+                  One assigned primary asset category from the 15-category
+                  framework, or an unresolved subtype. There are 2,253 assigned
+                  and 47 unresolved Infrastructure PIDs.
+                </td>
+                <td>
+                  The principal asset and intervention determine the category.
+                  Supporting lighting/drainage/access do not automatically
+                  create multiple primary categories. Confidence labels describe
+                  judgement, not statistical probabilities.
+                </td>
+              </tr>
+              <tr>
+                <td>Design / procurement / construction duration</td>
+                <td>Actual phase end − actual phase start, in days.</td>
+                <td>
+                  The new descriptive views use the latest valid start/end pair
+                  that coexists in one report at or before the selected
+                  observation. Missing/reversed dates and actual ends after
+                  their reporting month are excluded; zero-day phases are
+                  retained. Samples differ by phase.
+                </td>
+              </tr>
+              <tr>
+                <td>Estimated total project duration</td>
+                <td>Forecast completion − actual design start, in days.</td>
+                <td>
+                  Forward valid dates only; the start must already have occurred
+                  by the report month. This combines elapsed and forecast time;
+                  it is not actual completed project duration.
+                </td>
+              </tr>
+              <tr>
+                <td>Actual completed duration · conditional measure</td>
+                <td>Verified actual completion date − actual design start.</td>
+                <td>
+                  Requires an Actual date type and valid timestamps. It must be
+                  distinguished from estimated duration; not every chart in this
+                  report has these inputs or uses this measure.
+                </td>
+              </tr>
+              <tr>
+                <td>Forecast completion movement</td>
+                <td>
+                  Later report forecast minus earlier report forecast, in days.
+                </td>
+                <td>
+                  Positive means moved later; negative means moved earlier.
+                  Missing follow-up is excluded. Schedule charts compare first
+                  and latest usable forecasts; predictive assessments compare
+                  adjacent reports with explicitly Forecast dates at both ends.
+                </td>
+              </tr>
+              <tr>
+                <td>Average forecast delay per project</td>
+                <td>
+                  For each PID: max(0, latest forecast − first usable earlier
+                  forecast), in days. Sum these values within each assigned
+                  typology and divide once by its eligible PID count.
+                </td>
+                <td>
+                  One value per PID; unchanged or earlier forecasts contribute
+                  zero. This measures accumulated expected delay within the
+                  saved observation window, not an average of interval changes
+                  or confirmed actual lateness.
+                </td>
+              </tr>
+              <tr>
+                <td>Calculated budget change</td>
+                <td>
+                  Later comparable budget − earlier comparable budget;
+                  percentage = change / earlier budget × 100.
+                </td>
+                <td>
+                  The new descriptive views require adjacent observations with
+                  identical linked-record sets and complete exclusive budgets.
+                  The denominator must be positive for percentage change.
+                </td>
+              </tr>
+              <tr>
+                <td>Phase / estimated-duration percentage change</td>
+                <td>
+                  100 × (later recorded duration − earlier recorded duration) /
+                  earlier recorded duration.
+                </td>
+                <td>
+                  Requires valid durations at both observations and an earlier
+                  duration greater than zero. A changing completed-phase
+                  duration can reflect revised milestone records, rather than
+                  additional time spent in a finished phase.
+                </td>
+              </tr>
+              <tr>
+                <td>Average percentage change</td>
+                <td>
+                  Arithmetic mean of eligible percentage changes at the
+                  specified unit.
+                </td>
+                <td>
+                  An average over PID/report pairs gives repeated PIDs more
+                  weight than a mean of per-PID averages. The chart must state
+                  the chosen unit. It is not automatically compound growth.
+                </td>
+              </tr>
+              <tr>
+                <td>Spending progress</td>
+                <td>100 × spend to date / reported budget.</td>
+                <td>
+                  Positive budget required. Financial expenditure measures
+                  spending progress; it does not prove physical completion.
+                </td>
+              </tr>
+              <tr>
+                <td>Delay / on-time flag · requires a baseline</td>
+                <td>
+                  Compare a verified actual finish with a documented earlier
+                  forecast or agreed baseline; signed difference = actual −
+                  baseline.
+                </td>
+                <td>
+                  An on-time flag cannot be established from two current
+                  forecasts or a duration quartile. Clamping early finishes to
+                  zero is appropriate only for an explicitly defined “days late”
+                  measure, not signed schedule change. No original-baseline
+                  lateness is inferred where that baseline is unavailable.
+                </td>
+              </tr>
+              <tr>
+                <td>Percentages involving schedule dates</td>
+                <td>
+                  Use differences in days or ratios of durations, not division
+                  by a calendar date.
+                </td>
+                <td>
+                  A calendar-date denominator does not produce a meaningful
+                  schedule percentage.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Predictive measures and interpretation</h2>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Term</th>
+                <th>Definition / calculation</th>
+                <th>Interpretation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Main model and question</td>
+                <td>
+                  Random-forest classifier: 250 trees, maximum depth 6, minimum
+                  20 observations per leaf.
+                </td>
+                <td>
+                  Ranks projects for review based on whether expected completion
+                  moves later at the following report. It is fitted again before
+                  each assessed outcome period using earlier data only.
+                </td>
+              </tr>
+              <tr>
+                <td>Forecast-change target</td>
+                <td>
+                  May 2026 Forecast completion date > January 2026 Forecast
+                  completion date for the same PID.
+                </td>
+                <td>
+                  Both dates must explicitly be Forecast. Actual/untyped pairs,
+                  missing follow-up and invalid dates are excluded. The target
+                  is any later movement, not eventual lateness against an
+                  original approved schedule.
+                </td>
+              </tr>
+              <tr>
+                <td>Training / validation / assessment</td>
+                <td>
+                  Expanding-window historical assessment over six outcome
+                  reports: September 2024, January/May/September 2025, and
+                  January/May 2026.
+                </td>
+                <td>
+                  Each period trains on earlier outcomes only, holding the
+                  random-forest settings constant. There are 5,412 assessed
+                  comparisons and 1,533 later movements. The full eligible
+                  history has 7,929 comparisons from 1,299 PIDs. Retrospective
+                  checks do not replace confirmation on future reports.
+                </td>
+              </tr>
+              <tr>
+                <td>Information supplied to the main model</td>
+                <td>
+                  Current phase; observed time in phase; days until expected
+                  finish; previous forecast movement; earlier frequency of later
+                  movements; number of earlier observations; exclusive linked
+                  budget; spending share; managing agency; sponsor; self-managed
+                  status; funding-link status; borough.
+                </td>
+                <td>
+                  Only starting-period or earlier information is used. Missing
+                  numeric values are imputed using training-set medians with
+                  missing-value indicators; missing categories are identified
+                  separately. Typology groups the outputs but is not a
+                  predictor.
+                </td>
+              </tr>
+              <tr>
+                <td>Observed phase time</td>
+                <td>
+                  Months from the earliest consecutive report showing the
+                  current phase to the prediction report.
+                </td>
+                <td>
+                  A lower bound within the saved reporting history, not the full
+                  actual phase duration.
+                </td>
+              </tr>
+              <tr>
+                <td>Days until expected finish</td>
+                <td>
+                  Current forecast completion date − prediction-report date, in
+                  days.
+                </td>
+                <td>
+                  Describes how near or far the recorded forecast is at the
+                  prediction date. Feature importance does not by itself show
+                  which direction increases risk.
+                </td>
+              </tr>
+              <tr>
+                <td>Model review score</td>
+                <td>
+                  The classifier’s raw output multiplied by 100, displayed as a
+                  score out of 100.
+                </td>
+                <td>
+                  Higher scores mean higher review priority. Scores are
+                  uncalibrated: 68.5 out of 100 is not a verified 68.5% chance
+                  of delay and does not predict days late. These are historical
+                  test scores, not live predictions.
+                </td>
+              </tr>
+              <tr>
+                <td>Top 20% review rule</td>
+                <td>
+                  Rank eligible comparisons separately within each period; flag
+                  the highest 20%, rounded up. Break ties by PID.
+                </td>
+                <td>
+                  Across six periods: 1,085 flags, 584 correct flags, 501 false
+                  alarms and 949 missed later movements. A PID can recur across
+                  periods. Filtering a project list does not change its original
+                  rank or flag.
+                </td>
+              </tr>
+              <tr>
+                <td>Precision / recall</td>
+                <td>
+                  Precision = correct flags / all flags. Recall = correct flags
+                  / all later movements.
+                </td>
+                <td>
+                  At the top-20% capacity across six periods: 584/1,085 = 53.8%
+                  precision; 584/1,533 = 38.1% recall.
+                </td>
+              </tr>
+              <tr>
+                <td>Overall accuracy</td>
+                <td>
+                  (Correct flags + correctly unflagged comparisons) / all
+                  eligible comparisons.
+                </td>
+                <td>
+                  Across six periods at the top-20% capacity: (584 +
+                  3,378)/5,412 = 73.2%. Always predicting unchanged/earlier
+                  gives 71.7%. Accuracy alone does not measure the review list’s
+                  usefulness.
+                </td>
+              </tr>
+              <tr>
+                <td>ROC AUC</td>
+                <td>
+                  Summarises how well scores rank later-movement projects above
+                  unchanged/earlier projects across score cut-offs.
+                </td>
+                <td>
+                  Calculated separately for each assessment; the selected
+                  January–May 2026 rolling assessment has AUC 0.733. AUC is not
+                  the percentage of predictions that are correct.
+                </td>
+              </tr>
+              <tr>
+                <td>Feature importance</td>
+                <td>
+                  Shuffle one input across test projects and measure the
+                  decrease in average precision, in percentage points.
+                </td>
+                <td>
+                  A larger positive decrease means the model relied more on that
+                  input in this assessment. It does not establish causation or
+                  whether a larger input value increases risk.
+                  Near-zero/negative values show little reliable added
+                  information in this test.
+                </td>
+              </tr>
+              <tr>
+                <td>Infrastructure-type score summaries</td>
+                <td>
+                  Arithmetic mean of individual test-project review scores
+                  within each assigned typology.
+                </td>
+                <td>
+                  A higher group mean indicates higher average model review
+                  priority. It does not show the group’s observed delay rate or
+                  how accurately the model predicts that type.
+                </td>
+              </tr>
+              <tr>
+                <td>Additional predictive tests</td>
+                <td>
+                  A separate random forest predicts forecast movements of at
+                  least 90 days. Other experiments examine material budget
+                  revisions, same-phase persistence, completed-phase duration
+                  ranges and earlier reason flags.
+                </td>
+                <td>
+                  The 90-day rolling model finds 419 of 1,097 setbacks across
+                  six periods (38.6% precision; 38.2% recall). Other experiments
+                  retain their clearly labelled single-period assessments. They
+                  use different outcomes and, for budgets or phases, different
+                  observation units.
+                </td>
+              </tr>
+              <tr>
+                <td>Sensitivity / reliability checks</td>
+                <td>
+                  Repeat an assessment with a stated rule or assumption changed;
+                  compare performance and uncertainty.
+                </td>
+                <td>
+                  Different review cut-offs change the size of the list.
+                  Different outcome definitions require separate evaluation.
+                  Calibration compares scores with observed frequencies; the
+                  current scores are not calibrated probabilities.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <details class="card" id="model-audit-files">
+        <summary>Data provenance and independent review</summary>
+        <p>
+          The report uses saved MCP exports retrieved on 8 November 2026 from
+          the local source build downloaded on 14 September 2026. It contains no
+          observations after May 2026 and does not claim a fresh upstream data
+          download.
+        </p>
+        <p>
+          Detailed modelling inputs, audit packages and earlier report versions
+          are retained privately. The published source describes how the saved
+          report is rendered and rebuilt; it does not claim to reproduce model
+          fitting without those private inputs.
+        </p>
+        <p>
+          Current typology counts: 2,253 assigned and 47 unresolved, totalling
+          2,300 Infrastructure PIDs.
+        </p>
+      </details>
+      <section class="card">
+        <h2>How the reference was checked</h2>
+        <p>
+          This tab was reviewed line by line on 10 November 2026 against the
+          MCP’s NYC Open Data dictionary, saved master reconciliation, current
+          chart calculations and fitted-model outputs. This reference
+          distinguishes source fields from calculated measures and states their
+          meaning for the current portfolio and reporting coverage.
+        </p>
+        <p>
+          Each chart retains its specific data points, calculations and
+          inclusion rules. Chart-specific notes state the observation dates,
+          eligible sample and calculation. Different chart samples should not be
+          interpreted as changes to the master classification roster.
+        </p>
+      </section>
+      <details class="card" id="definitions-current-coverage">
+        <summary>Current data coverage and exclusions</summary>
+        <p>
+          Coverage refers to different stages of the analysis. Missing
+          observations are not counted as zero values or as unchanged forecasts.
+        </p>
+        <div class="table-container definitions-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>Included</th>
+                <th>Not included / meaning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Master classification</td>
+                <td>
+                  3,618 PIDs: 2,300 Infrastructure + 1,318 Public Building.
+                </td>
+                <td>All master PIDs have a main class.</td>
+              </tr>
+              <tr>
+                <td>Infrastructure typology</td>
+                <td>2,253 assigned across 15 asset categories.</td>
+                <td>
+                  47 unresolved subtypes remain in the records; unassigned
+                  segments are excluded from typology graphs.
+                </td>
+              </tr>
+              <tr>
+                <td>Dashboard-aligned schedule history</td>
+                <td>2,282 Infrastructure PIDs; 16,132 observations.</td>
+                <td>
+                  18 master Infrastructure PIDs have no dashboard-aligned
+                  history. Native source reconciliation is recorded separately.
+                </td>
+              </tr>
+              <tr>
+                <td>Main-model January–May 2026 assessment</td>
+                <td>919 forecast-to-forecast project comparisons.</td>
+                <td>
+                  Of 2,300 PIDs: 890 are not active at the starting observation;
+                  437 have no January starting observation; 21 have a
+                  missing/invalid starting forecast; 1 has missing/invalid next
+                  forecast or implausible movement; 32 have Actual or untyped
+                  date pairs. These mutually exclusive exclusions total 1,381.
+                </td>
+              </tr>
+              <tr>
+                <td>Financial and completed-phase charts</td>
+                <td>Each chart states its eligible PID or record count.</td>
+                <td>
+                  Incomplete or shared funding is withheld from exclusive-PID
+                  financial sums. Missing, reversed or future actual milestone
+                  pairs are withheld from completed-duration calculations.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+
+    <!-- REPORT:DATA:projectData -->
+    <!-- REPORT:DATA:typologyData -->
+    <!-- REPORT:DATA:descriptive-data -->
+    <!-- REPORT:DATA:additional-prediction-data -->
+    <!-- REPORT:DATA:rolling-model-data -->
+    <!-- REPORT:SCRIPTS -->
+  </body>
+</html>

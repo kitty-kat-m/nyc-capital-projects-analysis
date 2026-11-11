@@ -15,3 +15,8 @@ analysis/
 *.xlsx
 *.docx
 *.pptx
+
+# Local build and test dependencies
+node_modules/
+.test-results/
+docs/index.html.tmp

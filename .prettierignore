@@ -1,0 +1,4 @@
+docs/index.html
+src/vendor/
+node_modules/
+package-lock.json
