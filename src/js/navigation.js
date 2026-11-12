@@ -5,6 +5,7 @@ const sections = [
   "pid-budget",
   "schedule",
   "predictive",
+  "historical",
   "definitions",
 ];
 function selectTab(name) {
@@ -21,6 +22,7 @@ function selectTab(name) {
     window.renderDescriptive();
   if (name === "predictive" && window.renderPredictive)
     window.renderPredictive();
+  if (name === "historical" && window.renderHistorical) window.renderHistorical();
   location.hash = name;
 }
 for (const name of sections) {

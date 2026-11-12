@@ -32,7 +32,7 @@
           <h1>NYC Capital<br /><span>Projects.</span></h1>
           <p class="city-subtitle">Classification, funding &amp; delivery</p>
           <p class="city-period">
-            May 2023–May 2026 <span>·</span> Ten reporting periods
+            Current portfolio: May 2023–May 2026 <span>·</span> Ten reporting periods
           </p>
         </div>
         <svg
@@ -134,9 +134,9 @@
           </g>
         </svg>
         <div class="meta-bar">
-          <span>Version 11 · Analysis update: 11 November 2026</span
+          <span>Version 11 · Historical-data pilot: 12 November 2026</span
           ><span
-            ><strong>AI assistance:</strong> Codex · Latest review:
+            ><strong>AI assistance:</strong> Codex and Claude Fable · Latest review:
             GPT-6.1</span
           >
         </div>
@@ -262,6 +262,7 @@
             <circle cx="10" cy="10" r="1.5" />
             <circle cx="14" cy="13" r="1.5" /></svg
           ><span>Predictive Analysis</span></button
+        ><button id="tab-historical" role="tab" aria-selected="false" aria-controls="panel-historical" tabindex="-1"><svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2 7 M3 4v7h7 M12 7v5l3 2"/></svg><span>Historical Data</span></button
         ><button
           id="tab-definitions"
           role="tab"
@@ -4020,6 +4021,873 @@
         </p>
       </details>
     </div>
+<!-- HISTORICAL:TAB:START -->
+<div id="panel-historical" role="tabpanel" aria-labelledby="tab-historical" hidden>
+ <section class="card">
+  <p class="model-kicker">Historical Data · integration pilot</p>
+  <h2>What does the older data look like?</h2>
+  <p>The historical workbook adds project records from <strong>September 2013 to January 2023</strong>.</p>
+  <ul>
+   <li><strong>The older dashboard covered projects above $25 million.</strong> A study spanning both datasets must therefore focus on comparable completed projects above $25m.</li>
+   <li><strong>Matching PID numbers are not reliable project matches.</strong> None of the 193 same-number pairs has the same project name; only one shares a funding reference. A separate check found 172 historical projects with matching names and funding references under different current PIDs. Those are stronger candidates for linking.</li>
+   <li><strong>Completed projects tested:</strong> The older data has 62 projects marked Completed with a recorded budget above $25m, across all project types. After classification and duplicate/overlap checks, this trial adds 31 older Infrastructure projects to the current completed-project sample. Results appear below.</li>
+  </ul>
+  <div class="historical-stats">
+<div><strong>1,012</strong><span>Unique historical PIDs · all project types</span>
+</div>
+<div><strong>193</strong><span>PID numbers also present in our current report</span>
+</div>
+<div><strong>819</strong><span>PID numbers absent from our current report</span>
+</div>
+<div><strong>24</strong><span>Historical reporting periods</span>
+</div>
+</div>
+  <h3>Why the PID numbers need checking</h3>
+  <p>A PID identifies a project within its own dashboard. It is <strong>not a permanent project number shared by both dashboards</strong>, so matching numbers can describe different projects.</p>
+  <ul>
+<li><strong>Same number, different projects:</strong> older PID 1 describes wastewater-treatment upgrades; current PID 1 describes the Zerega Avenue food-cart inspection station.</li>
+<li><strong>Different numbers, matching project records:</strong> 1 Centre Street — Elevator Modernization is older PID 1331 and current PID 4699. Its project name and linked FMS funding reference match.</li>
+</ul>
+  <details class="historical-notes">
+<summary>Data points, calculations and detailed figures</summary>
+<p>Scope threshold: team guidance received 12 November 2026. Screening uses strictly > $25,000,000, not ≥. Older screen = latest financial Current Forecast Total; current screen = latest available complete, exclusively linked budget. These are provisional size screens, not proof of a common original admission-budget definition. Historical source candidates include all project types. The separate trial below applies provisional classifications and conservative duplicate/overlap exclusions.</p>
+<p>Checks use the approved unchanged historical workbook and the saved 8 November current MCP exports with the 2,300-PID Infrastructure roster. The historical MCP importer’s validation passed; a live historical MCP connection was not required or tested. Existing classifications, charts and predictive results have not been recalculated.</p>
+</details>
+ </section>
+ <section class="card">
+  <h2>How many unique PIDs appear in each historical report?</h2>
+  <div id="historical-coverage-chart" class="historical-chart">
+</div>
+  <ul>
+<li><strong>Each bar counts unique PIDs in that report.</strong> The same PID can appear in several reporting periods; January 2023 contains 410 unique PIDs.</li>
+<li><strong>Across all reports, there are 1,012 unique PIDs.</strong> Their repeated appearances create 7,230 project/report records. Adding the bars does not give the number of different projects.</li>
+</ul>
+  <details class="historical-notes">
+<summary>Data points, calculations and detailed figures</summary>
+<p>Each bar counts distinct legacy PIDs appearing in that reporting period. The same project may recur; bars must not be added as unique projects. Missing observations do not establish completion. The historical and current identifiers are kept separate.</p>
+<p>Across the 23 gaps between historical reports, nine are 4 months, eleven are 5 months, two are 6 months and one is 9 months (May 2014 to February 2015). This differs from the current four-month reporting cycle.</p>
+<table>
+<thead>
+<tr>
+<th>Reporting period</th>
+<th>Recorded legacy projects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2013-09</td>
+<td>268</td>
+</tr>
+<tr>
+<td>2014-01</td>
+<td>239</td>
+</tr>
+<tr>
+<td>2014-05</td>
+<td>232</td>
+</tr>
+<tr>
+<td>2015-02</td>
+<td>225</td>
+</tr>
+<tr>
+<td>2015-08</td>
+<td>219</td>
+</tr>
+<tr>
+<td>2016-01</td>
+<td>209</td>
+</tr>
+<tr>
+<td>2016-06</td>
+<td>221</td>
+</tr>
+<tr>
+<td>2016-11</td>
+<td>231</td>
+</tr>
+<tr>
+<td>2017-04</td>
+<td>252</td>
+</tr>
+<tr>
+<td>2017-09</td>
+<td>273</td>
+</tr>
+<tr>
+<td>2018-03</td>
+<td>368</td>
+</tr>
+<tr>
+<td>2018-08</td>
+<td>333</td>
+</tr>
+<tr>
+<td>2019-01</td>
+<td>365</td>
+</tr>
+<tr>
+<td>2019-05</td>
+<td>368</td>
+</tr>
+<tr>
+<td>2019-09</td>
+<td>394</td>
+</tr>
+<tr>
+<td>2020-01</td>
+<td>230</td>
+</tr>
+<tr>
+<td>2020-05</td>
+<td>227</td>
+</tr>
+<tr>
+<td>2020-10</td>
+<td>229</td>
+</tr>
+<tr>
+<td>2021-03</td>
+<td>136</td>
+</tr>
+<tr>
+<td>2021-07</td>
+<td>480</td>
+</tr>
+<tr>
+<td>2021-12</td>
+<td>451</td>
+</tr>
+<tr>
+<td>2022-04</td>
+<td>434</td>
+</tr>
+<tr>
+<td>2022-09</td>
+<td>436</td>
+</tr>
+<tr>
+<td>2023-01</td>
+<td>410</td>
+</tr>
+</tbody>
+</table>
+</details>
+ </section>
+ <section class="card">
+<h2>What differs from our current data?</h2>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Older dashboard · September 2013–January 2023</th>
+<th>Current report · May 2023–May 2026</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Project coverage</td>
+<td>Projects above $25m, according to the team’s source guidance. Includes building and Infrastructure work.</td>
+<td>3,618 unique PIDs: 2,300 Infrastructure and 1,318 Public Building projects. All are retained in the report; the analysis focuses on Infrastructure. Includes projects below $25m.</td>
+</tr>
+<tr>
+<td>Project identifiers</td>
+<td>Older project numbering system. Checks found no matching project names among the 193 PID numbers reused in both datasets.</td>
+<td>Current project numbering system. Some of the same projects appear under different PIDs; use names and linked funding records to check identity.</td>
+</tr>
+<tr>
+<td>Reporting dates</td>
+<td>24 reports from September 2013 to January 2023. Reports are usually 4–6 months apart, with one 9-month gap; they do not follow a fixed schedule.</td>
+<td>10 reports from May 2023 to May 2026, every four months: January, May and September.</td>
+</tr>
+<tr>
+<td>Schedule dates</td>
+<td>Includes planned phase dates and dates labelled <strong>“Actual / Forecast”</strong>. That combined label does not directly confirm whether the work happened.<p>The historical importer treats a date on/before the 15th of its reporting month as actual, and a later date as forecast. This is an analytical convention, not a source flag confirming completion. Planned dates remain plans.</p>
+</td>
+<td>Provides actual phase dates and explicitly labels the overall project completion date <strong>Actual</strong> or <strong>Forecast</strong>.<p>For a completed-phase duration, we need actual start and end dates; a forecast end gives an expected duration instead. Construction end and overall project completion are different milestones, so we must compare the same milestone across sources.</p>
+</td>
+</tr>
+<tr>
+<td>Budget information</td>
+<td>Financial figures sit against a project/report record: the forecast cost, expenditure to date and reported cost variance.<p>“Current Forecast Total” is a money amount, not a completion date. The reported cost-variance baseline has not been verified, so we cannot assume it means the same thing as our period-to-period budget change.</p>
+</td>
+<td>Money is recorded in linked <strong>FMS funding records</strong>. One project can have several funding records, and one funding record can support several projects.<p>For example, if two projects share a $50m funding record, counting $50m against each would incorrectly give $100m. Before comparing or adding amounts, we must check which funding records support each project and avoid counting shared money twice.</p>
+</td>
+</tr>
+<tr>
+<td>Classification and geography</td>
+<td>Contains project names and an <strong>Agency</strong> field, but no equivalent reviewed Infrastructure/Public Building labels, Infrastructure typologies or dedicated borough field.<p>We need to classify the older projects using asset and scope evidence. We must also confirm what Agency represents before treating it as sponsor or manager.</p>
+</td>
+<td>Retains reviewed Infrastructure/Public Building classifications, Infrastructure typologies and borough information.<p>It distinguishes the <strong>sponsor agency</strong>—whose project the work is carried out for—from the <strong>managing agency</strong>, which oversees delivery. These existing classifications should transfer to older records only after we verify that they describe the same project and scope.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+ <section class="card">
+<h2>Which projects pass our completion checks?</h2>
+<p><strong>83 projects meet this trial’s completion, Infrastructure and above-$25m checks: 31 older additions and 52 current projects.</strong> This is a selected analysis sample, not the number of projects NYC has completed since 2013.</p>
+<h3>What does “completed” mean here?</h3>
+<ul>
+<li><strong>Older data:</strong> the project’s latest available status explicitly says <strong>Completed</strong>.</li>
+<li><strong>Current data:</strong> the overall project completion date is explicitly marked <strong>Actual</strong>, rather than Forecast.</li>
+</ul>
+<p><strong>Construction finished is different from the whole project being finished.</strong> A project can finish construction and still be in financial or administrative close-out. A forecast date or a close-out phase alone does not pass these checks.</p>
+<p>The two datasets provide different evidence of completion, so these checks are not identical. This trial uses the stricter whole-project evidence; a broader construction-completed sample would need a separate check. Other tabs are unchanged.</p>
+<div class="trial-chart-grid"><figure class="trial-chart"><figcaption>Which older records can we add?</figcaption>
+<p class="trial-chart-subtitle">Number remaining after each check</p>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older PIDs labelled Completed</span><strong>67</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:100.0000%;background:#237c83">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Classified as Infrastructure</span><strong>42</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:62.6866%;background:#237c83">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Recorded budget above $25m*</span><strong>39</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:58.2090%;background:#237c83">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>After older duplicate checks</span><strong>34</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:50.7463%;background:#237c83">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older additions in this trial</span><strong>31</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:46.2687%;background:#237c83">
+</div>
+</div>
+</div>
+<p class="trial-bar-note">* Three Infrastructure PIDs have no usable budget evidence: one records $0 and two have missing amounts. These are not confirmed budgets below $25m; they are excluded from this trial’s size check.</p></figure><figure class="trial-chart"><figcaption>How much larger is the sample?</figcaption>
+<p class="trial-chart-subtitle">Completed Infrastructure projects above $25m</p>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Current sample</span><strong>52</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:62.6506%;background:#355f79">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older additions</span><strong>31</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:37.3494%;background:#237c83">
+</div>
+</div>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Combined trial sample</span><strong>83</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:100.0000%;background:#174958">
+</div>
+</div>
+</div>
+<p class="trial-chart-takeaway"><strong>31 more projects · a 60% larger sample</strong><br>52 current + 31 older = 83 trial projects</p></figure>
+</div>
+<h3>How does this change the duration analysis?</h3>
+<p class="phase-trial-caption">Median duration in days · all three charts use the same scale</p>
+<div class="phase-trial-grid"><figure class="trial-chart phase-trial-chart"><figcaption>Design</figcaption>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Current sample</span><strong>1,067 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:59.2778%;background:#355f79">
+</div>
+</div>
+<p class="trial-bar-note">51 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older additions</span><strong>873.5 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:48.5278%;background:#68a6a9">
+</div>
+</div>
+<p class="trial-bar-note">30 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Combined trial</span><strong>968 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:53.7778%;background:#237c83">
+</div>
+</div>
+<p class="trial-bar-note">81 projects</p>
+</div>
+<div class="phase-trial-axis"><span>0</span><span>900</span><span>1,800 days</span>
+</div></figure><figure class="trial-chart phase-trial-chart"><figcaption>Procurement</figcaption>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Current sample</span><strong>380 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:21.1111%;background:#355f79">
+</div>
+</div>
+<p class="trial-bar-note">52 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older additions</span><strong>354 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:19.6667%;background:#68a6a9">
+</div>
+</div>
+<p class="trial-bar-note">30 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Combined trial</span><strong>369.5 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:20.5278%;background:#237c83">
+</div>
+</div>
+<p class="trial-bar-note">82 projects</p>
+</div>
+<div class="phase-trial-axis"><span>0</span><span>900</span><span>1,800 days</span>
+</div></figure><figure class="trial-chart phase-trial-chart"><figcaption>Construction</figcaption>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Current sample</span><strong>1,673 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:92.9444%;background:#355f79">
+</div>
+</div>
+<p class="trial-bar-note">51 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Older additions</span><strong>1,243.5 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:69.0833%;background:#68a6a9">
+</div>
+</div>
+<p class="trial-bar-note">28 projects</p>
+</div>
+<div class="trial-bar-row">
+<div class="trial-bar-label"><span>Combined trial</span><strong>1,514 days</strong>
+</div>
+<div class="trial-bar-track">
+<div style="width:84.1111%;background:#237c83">
+</div>
+</div>
+<p class="trial-bar-note">79 projects</p>
+</div>
+<div class="phase-trial-axis"><span>0</span><span>900</span><span>1,800 days</span>
+</div></figure>
+</div>
+<ul>
+<li><strong>The sample becomes larger.</strong> Usable construction durations increase from 51 to 79 projects.</li>
+<li><strong>The combined construction median is 1,514 days, compared with 1,673 days in the current sample.</strong> This describes the enlarged sample; it does not establish that delivery has improved or worsened over time.</li>
+</ul>
+<details class="historical-notes">
+<summary>Data points, calculations and detailed figures</summary><h3>Exact duration figures</h3>
+<table>
+<thead>
+<tr>
+<th>Completed phase</th>
+<th>Current sample only · median</th>
+<th>Older additions · median</th>
+<th>Combined trial · median</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Design</td>
+<td>1,067 days · 51 projects</td>
+<td>873.5 days · 30 projects</td>
+<td>968 days · 81 projects</td>
+</tr>
+<tr>
+<td>Procurement</td>
+<td>380 days · 52 projects</td>
+<td>354 days · 30 projects</td>
+<td>369.5 days · 82 projects</td>
+</tr>
+<tr>
+<td>Construction</td>
+<td>1,673 days · 51 projects</td>
+<td>1,243.5 days · 28 projects</td>
+<td>1,514 days · 79 projects</td>
+</tr>
+</tbody>
+</table><h3>Detailed selection steps</h3>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identify completed projects</td>
+<td>67 older PIDs have a latest status of Completed.</td>
+</tr>
+<tr>
+<td>Classify the physical asset</td>
+<td>42 Infrastructure, 24 Public Building and 1 requiring scope review. These are provisional asset-and-scope judgements for this trial.</td>
+</tr>
+<tr>
+<td>Apply the size rule</td>
+<td>39 Infrastructure PIDs have a latest recorded financial forecast above $25m.</td>
+</tr>
+<tr>
+<td>Remove repeated older records</td>
+<td>Five PIDs repeat the same named intervention, funding reference and construction dates under another older PID; retain the later record once.</td>
+</tr>
+<tr>
+<td>Check current-report overlaps</td>
+<td>Hold out three remaining records with possible current-report overlaps until their project boundaries are resolved.</td>
+</tr>
+<tr>
+<td>Build the trial dataset</td>
+<td>31 older additions + 52 current completed Infrastructure projects = 83 trial projects.</td>
+</tr>
+</tbody>
+</table>
+<p>Each retained project is counted once. Public Building projects and the unresolved Emergency Construction Capital Program are excluded. This is a completed-project trial, not a rerun of the predictive model.</p>
+<p>The >$25m rule uses the older latest financial forecast and the current latest complete exclusively linked budget. These are available size measures, not a verified common original admission budget; amounts are nominal and not adjusted for inflation. Phase medians use valid non-negative start-to-end durations; missing phases are omitted separately. Older mixed Actual/Forecast dates must be on/before the 15th of their reporting month. Completed status supports screening but is not an independent milestone certification. Current durations retain the existing actual-date measures. Project type, size and reporting era can influence differences.</p><h3>Duplicate and overlap decisions</h3>
+<p>Older duplicate pairs (retain the later PID): 613→1266, 984→1269, 1003→1268, 988→1253 and 1150→1254. Their names, shared funding references and construction dates agree. The different SEC20004V emergency-sewer contract is retained separately.</p>
+<p>Conservative overlap holdouts: older 538/current 5709 share bridge funding; older 743/current 3864 share Beach Channel Drive funding but may describe different phases; older 1254 shares a generic emergency-sewer title with current 3988, 4436, 7105 and 7449, although funding references differ. These are possible overlaps, not confirmed duplicates. No funding/name match was found for the other 31 against the current roster; that does not prove that every possible renamed or restructured project has been identified.</p><h3>Review the 67 older completed records</h3>
+<table>
+<thead>
+<tr>
+<th>Older PID</th>
+<th>Project</th>
+<th>Classification</th>
+<th>Trial decision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>57</td>
+<td>Springfield Gardens Area Street Reconstruction and Replacement</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>93</td>
+<td>St. George Terminal Ramp Reconstruction</td>
+<td>Infrastructure</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>95</td>
+<td>Manhattan Bridge Suspension Cable Inspection and Replacement</td>
+<td>Infrastructure</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>104</td>
+<td>Citywide Bridge Wood Pile Restoration</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>116</td>
+<td>Macombs Dam Bridge Rehabilitation</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>146</td>
+<td>Ozone Park Street Reconstruction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>154</td>
+<td>FDNY 5 Borough Communication Office Facility Upgrades</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>166</td>
+<td>Rosedale Area Roadway Reconstruction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>171</td>
+<td>Riverside Health Center Renovation</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>184</td>
+<td>Pugsley Creek Sewer Relief and Water Main Repair</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>186</td>
+<td>Queens Water Main New Installations</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Edgemere Roadway Construction, Phase 2</td>
+<td>Infrastructure</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>208</td>
+<td>Police Academy Training Center Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>221</td>
+<td>Queens Public School 316 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>234</td>
+<td>Abraham Stockton (IS 297) Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>244</td>
+<td>Manhattan  Public School 340 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>245</td>
+<td>Manhattan PS 281 New School Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>252</td>
+<td>Staten Island  Public School 62 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>254</td>
+<td>Queens Public School 29 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>255</td>
+<td>Elias Howe School (PS 51) Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>257</td>
+<td>Bronx Public School 292 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>259</td>
+<td>Queens Public School 290 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>262</td>
+<td>Queens Public School 313 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>330</td>
+<td>Parkchester School (PS 106) Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>337</td>
+<td>Richard Rogers School (PS 96) Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>361</td>
+<td>Bronx Public School 56 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>372</td>
+<td>Baisley Boulevard Sewers and Watermain Construction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>385</td>
+<td>South Beach Reconstruction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>394</td>
+<td>Francis Lewis Boulevard Construction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>399</td>
+<td>Carnegie Hall Studio Tower Construction, Phase 3</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>424</td>
+<td>Bronx Public School 317 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>427</td>
+<td>Southern Boulevard Trunk Water Main Replacement</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>436</td>
+<td>Queens Public School 332 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>438</td>
+<td>Queens Public School 335 New Construction</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>455</td>
+<td>Queens Long Island City Distribution Water Main</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>475</td>
+<td>Grand Concourse, Phase 3</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>485</td>
+<td>Staten Iasland ECC @ 1625 Forest Avenue</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>495</td>
+<td>Brooklyn PRE-K CENTER @ 1423 62ND ST</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>512</td>
+<td>210 Joralemon St. Electrical Upgrade</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>538</td>
+<td>Citywide Movable Bridges Rehabilitation</td>
+<td>Infrastructure</td>
+<td>Possible current overlap: hold out; current PID(s) 5709</td>
+</tr>
+<tr>
+<td>569</td>
+<td>New Signals Installation</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>613</td>
+<td>NEW 20&quot; SUB-AQUEOUS WATER MAIN TO CITY ISLAND</td>
+<td>Infrastructure</td>
+<td>Older duplicate: retain legacy PID 1266</td>
+</tr>
+<tr>
+<td>614</td>
+<td>NEW 20&quot; SUB-AQUEOUS WM EXT. TO RANDALL&#x27;S ISLAND</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>622</td>
+<td>WEBSTER AVE SELECT BUS SERVICE, BRONX</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>632</td>
+<td>BRONX RIVER GREENWAY: STARLIGHT PARK PHASE II</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>642</td>
+<td>REPLACEMENT OF WM IN VARIOUS LOCATIONS (JWS), QNS</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>649</td>
+<td>STORM &amp; SANITARY SEWERS IN ROBINSON AVENUE</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>650</td>
+<td>SANITARY &amp; STRM SEWER IN RAMBLE ROAD</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>660</td>
+<td>COMBINED SEWER IN PENELOPE AVENUE</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>743</td>
+<td>Reconstruction Of Beach Channel Drive, Queens</td>
+<td>Infrastructure</td>
+<td>Possible current overlap: hold out; current PID(s) 3864</td>
+</tr>
+<tr>
+<td>796</td>
+<td>Storm &amp; Sanitary Sewers In Travis Area, Phase 1</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>982</td>
+<td>ACCELERATED DIST WATER MAIN REPLACEMENT, BK</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>984</td>
+<td>CONS OF ROW GI FLUSHING CRK CSO TRIB AREA TI-10-3</td>
+<td>Infrastructure</td>
+<td>Older duplicate: retain legacy PID 1269</td>
+</tr>
+<tr>
+<td>988</td>
+<td>STORM &amp; SANITARY SEWERS IN FOCH BLVD, QUEENS</td>
+<td>Infrastructure</td>
+<td>Older duplicate: retain legacy PID 1253</td>
+</tr>
+<tr>
+<td>995</td>
+<td>RECONSTRUCTION OF ROCKAWAY BEACH, QUEENS</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>Beach 108th Streetscape Improvements</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1003</td>
+<td>CONS OF ROW GI FLUSHING CRK CSO TRIB AREA TI-10-4B</td>
+<td>Infrastructure</td>
+<td>Older duplicate: retain legacy PID 1268</td>
+</tr>
+<tr>
+<td>1007</td>
+<td>Citywide Emergency Sewer Reconstruction</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1150</td>
+<td>Citywide Emergency Reconstruction of Sewers</td>
+<td>Infrastructure</td>
+<td>Older duplicate: retain legacy PID 1254</td>
+</tr>
+<tr>
+<td>1161</td>
+<td>Emergency Construction Capital Program</td>
+<td>Review</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+<tr>
+<td>1189</td>
+<td>EDGEMERE (PHASE C1) - (INCLUDING SEQ002562/200406)</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1253</td>
+<td>STORM &amp; SANITARY SEWERS IN FOCH BLVD, QUEENS</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1254</td>
+<td>Citywide Emergency Reconstruction of Sewers</td>
+<td>Infrastructure</td>
+<td>Possible current overlap: hold out; current PID(s) 3988, 4436, 7105, 7449</td>
+</tr>
+<tr>
+<td>1266</td>
+<td>NEW 20&quot; SUB-AQUEOUS WATER MAIN TO CITY ISLAND</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1268</td>
+<td>CONS OF ROW GI FLUSHING CRK CSO TRIB AREA TI-10-4B</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1269</td>
+<td>CONS OF ROW GI FLUSHING CRK CSO TRIB AREA TI-10-3</td>
+<td>Infrastructure</td>
+<td>Included in trial</td>
+</tr>
+<tr>
+<td>1339</td>
+<td>P.S. @ 24 SHELLEY AVENUE - STATEN ISLAND</td>
+<td>Public Building</td>
+<td>Outside completed Infrastructure &gt;$25m trial</td>
+</tr>
+</tbody>
+</table><h3>Source reference</h3>
+<p>Unchanged historical workbook: 40 fields covering identity, planned and observed phase dates, expenditure and financial forecasts. Current comparison uses the saved MCP exports and existing master classifications. Full source exports and the reproducible trial audit remain local.</p>
+</details>
+</section>
+</div>
+<!-- HISTORICAL:TAB:END -->
     <div
       id="panel-definitions"
       role="tabpanel"
@@ -4027,6 +4895,7 @@
       hidden
     >
       <section class="card" id="rolling-data-definitions">
+        <p>The separate <a href="#historical" data-kx-tab="historical">Historical Data</a> tab covers September 2013–January 2023: 24 reports of projects above $25m under the course guidance. Its completed-project pilot is kept separate from the current portfolio and model results below.</p>
         <h2>Current predictive evaluation: six reporting periods</h2>
         <p>
           The main predictive section now uses an expanding-window random

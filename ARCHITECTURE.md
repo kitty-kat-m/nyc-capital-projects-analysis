@@ -14,6 +14,7 @@
 | `src/js/descriptive.js`    | Infrastructure, budget and schedule views                         |
 | `src/js/experiments.js`    | Supplementary predictive tests                                    |
 | `src/js/predictive.js`     | Rolling model evaluation, summaries and project lists             |
+| `src/js/historical.js`     | Aggregate historical coverage chart; no legacy project rows      |
 | `src/js/navigation.js`     | Tab selection, initialisation and table presentation              |
 | `src/vendor/`              | Existing D3 distribution and its licence                          |
 | `scripts/build.mjs`        | Assemble the portable HTML                                        |
@@ -31,6 +32,8 @@ Do not format the generated HTML or minified vendor library. Format maintained f
 
 ## Checks
 
-`npm run check` confirms the build is current, checks JavaScript syntax and validates the master roster, unresolved typology count and rolling evaluation totals. Browser checks open all seven tabs, exercise project searches and predictive controls, and check mobile page overflow. They validate the saved report rather than reproduce model fitting.
+`npm run check` confirms the build is current, checks JavaScript syntax and validates the master roster, unresolved typology count and rolling evaluation totals. Browser checks open all eight tabs, exercise project searches and predictive controls, verify historical scope and the 24 coverage bars, and check mobile page overflow. They validate the saved report rather than reproduce model fitting.
+
+The Historical Data tab contains an overview, source comparisons and PID-identity explanations. Its source does not append historical rows to the five current datasets or alter model results. Private historical source workbooks, detailed compatibility audits and candidate extracts remain outside this repository.
 
 `npm test` uses Playwright Chromium by default. An installed browser can be selected with `BROWSER_CHANNEL` or `BROWSER_EXECUTABLE`; an alternate Playwright module URL can be supplied through `PLAYWRIGHT_MODULE`. Test screenshots and results stay in `.test-results/`, outside version control.

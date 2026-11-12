@@ -36,6 +36,7 @@ try {
     "pid-budget",
     "schedule",
     "predictive",
+    "historical",
     "definitions",
   ]) {
     await page.locator(`#tab-${tab}`).click();
@@ -52,6 +53,11 @@ try {
   assert.equal(snapshots.overview.charts, 9);
   assert.equal(snapshots["pid-budget"].charts, 5);
   assert.equal(snapshots.schedule.charts, 6);
+  assert.equal(snapshots.historical.charts, 1);
+  assert.equal(await page.locator("#historical-coverage-chart .historical-bar").count(), 24);
+  assert.match(await page.locator("#panel-historical").textContent(), /above \$25 million/);
+  assert.match(await page.locator("#panel-historical").textContent(), /62 projects marked Completed/);
+  assert.match(await page.locator("#panel-historical").textContent(), /Matching PID numbers are not reliable project matches/);
 
   await page.locator("#tab-classification").click();
   await page.locator("#search").fill("PID 595");
@@ -144,6 +150,7 @@ try {
     "pid-budget",
     "schedule",
     "predictive",
+    "historical",
     "definitions",
   ]) {
     await page.setViewportSize({ width: 390, height: 844 });
@@ -163,7 +170,7 @@ try {
     JSON.stringify({ snapshots, errors }, null, 2),
   );
   console.log(
-    "Seven tabs, chart counts, searches, typology review, predictive controls and mobile layout passed.",
+    "Eight tabs, chart counts, historical scope, searches, typology review, predictive controls and mobile layout passed.",
   );
 } finally {
   await browser.close();

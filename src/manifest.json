@@ -1,5 +1,7 @@
 {
-  "styles": ["src/styles/report.css"],
+  "styles": [
+    "src/styles/report.css"
+  ],
   "scripts": [
     "src/vendor/d3.v7.9.0.min.js",
     "src/js/shared.js",
@@ -9,6 +11,7 @@
     "src/js/descriptive.js",
     "src/js/experiments.js",
     "src/js/predictive.js",
+    "src/js/historical.js",
     "src/js/navigation.js"
   ],
   "data": [
